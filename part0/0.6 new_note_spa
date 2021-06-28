@@ -1,0 +1,34 @@
+single page app
+Submitting a new_note form in https://studies.cs.helsinki.fi/exampleapp/spa
+
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server-->browser: HTML-code
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code to fetch data.json 
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: 
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...] ===> (Rendering JSON data from server.)
+
+
+browser-->server: submit new_note_spa
+note over browser:
+browser executes the event handler no HTTP GET request 
+that renders notes to display
+end note 
+
+Form as no attribute action and method
+browser-->server:  HTTP POST request to the address new_note. (status code 201= create  to load browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa)
+Sever create new_note_spa in notes and render on the same page 
+The POST request to the address new_note_spa contains the new note as JSON-data containing both the content of the note (content) and the timestamp (date):
+The server responds with status code 201 created. This time the server does not ask for a redirect, the browser stays on the same page, and it sends no further HTTP requests.
