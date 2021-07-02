@@ -7,19 +7,18 @@ This is the introduction part focuses on following topics.
 
 ### Exercises 1.1.-1.2
 
-- Multiple components
+- Create Multiple components
 - props: passing data to components
-- Component
-- JSX
+- JSX rendering 
 
 ### Exercises 1.3:
 
-- using objects
+- Using objects variable definitions in App.js and also refactor the application so that it still works.
 
-### 1.4: course information
+### Exercises 1.4:
 
-- place the objects into an array
+- place the objects into an array and modify the other parts of the application accordingly.
 
-  ### 1.5: course information
+### Exercises 1.5:
 
-- course and its parts into a single JavaScript object
+- Change the course and its parts into a single JavaScript object.
