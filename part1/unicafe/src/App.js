@@ -70,7 +70,7 @@ const App = () => {
   //   setClicks({ ...clicks, Average: clicks.Positive / objlength })
   return (
     <div className="unicafecontainer">
-      <h1>Give Feedback</h1>
+    <h1>Feedback Unicafe</h1>
       <Button handleClick={goodFeedback} text="Good" />
       <Button handleClick={neutralFeedback} text="Neutral" />
       <Button handleClick={badFeedback} text="Bad" />
