@@ -2,6 +2,10 @@
 
 \*Like most companies, Unicafe collects feedback from its customers. Your task is to implement a web application for collecting customer feedback. There are only three options for feedback: good, neutral, and bad.
 
+![Screen Shot 2021-07-02 at 4 12 54 pm](https://user-images.githubusercontent.com/67087939/124229065-6008fb00-db50-11eb-85d2-1edbe2c64186.png)
+
+
+
 ### Exercise 1.16: 
 
 The application must display the total number of collected feedback for each category.
