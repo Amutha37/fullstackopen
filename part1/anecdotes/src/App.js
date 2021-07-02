@@ -1,0 +1,86 @@
+import "./App.css";
+import React, { useState, useEffect } from "react";
+
+// Button component
+const Button = ({ handleClick, text }) => (
+  <button onClick={handleClick}>{text}</button>
+);
+
+// Print the anecdotes
+const Printanecdote = ({ text, anecdotes, vote }) => {
+  return (
+    <>
+      <p>{text}</p>
+      <p>{vote}</p>
+      <p>{anecdotes}</p>
+    </>
+  );
+};
+
+const App = () => {
+  const anecdotes = [
+    "If it hurts, do it more often",
+    "Adding manpower to a late software project makes it later!",
+    "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
+    "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "Premature optimization is the root of all evil.",
+    "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
+    "Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blod tests when dianosing patients",
+  ];
+
+  const [selected, setSelected] = useState(0);
+  const [votes, setVotes] = useState(new Array(7).fill(0));
+  // const [votes, setVotes] = useState([0,0,0,00]);
+  const [most, setMost] = useState();
+  const [ind, setInd] = useState();
+
+  const anecDotes = () =>
+    setSelected(Math.floor(Math.random() * anecdotes.length));
+  // console.log(selected);
+
+  // This section of call back function return a function for even handler .This is just my choice of trying to apply (practice )what I have came to learn in part1 of this course
+
+  const handleVote = (selected) => () => {
+    const copy = [...votes];
+    copy[selected] += 1;
+    setVotes(copy);
+  };
+  // Most votes
+  useEffect(
+    (selected) => {
+      let xMax = Math.max(...votes);
+      setMost(xMax);
+
+      let indd = votes.indexOf(Math.max(...votes));
+      setInd(indd);
+    },
+    [votes]
+  );
+  // console.log("max val", most);
+  // console.log(ind);
+
+  return (
+    <div>
+      <h1>Random Anecdotes</h1>
+      <Printanecdote
+        anecdotes={anecdotes[selected]}
+        vote={votes[selected]}
+        text="Votes"
+      />
+
+      <Button handleClick={handleVote(selected)} text="Vote" />
+      <Button handleClick={anecDotes} text="Next Anecdote" />
+      {most ? (
+        <Printanecdote
+          anecdotes={anecdotes[ind]}
+          vote={most}
+          text="Anecdote with most votes."
+        />
+      ) : (
+        <Printanecdote anecdotes={""} vote={""} text="" />
+      )}
+    </div>
+  );
+};
+
+export default App;
