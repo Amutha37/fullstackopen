@@ -1,4 +1,3 @@
-
 # Part 1 - courseinfo
 
 This is the introduction part focuses on following topics.
@@ -22,3 +21,5 @@ This is the introduction part focuses on following topics.
 ### Exercises 1.5:
 
 - Change the course and its parts into a single JavaScript object.
+
+![Screen Shot 2021-07-02 at 4 55 50 pm](https://user-images.githubusercontent.com/67087939/124233667-68fccb00-db56-11eb-8a5a-05656114c3e7.png)
