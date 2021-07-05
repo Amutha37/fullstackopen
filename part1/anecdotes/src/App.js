@@ -30,10 +30,9 @@ const App = () => {
 
   const [selected, setSelected] = useState(0);
   const [votes, setVotes] = useState(new Array(7).fill(0));
-  // const [votes, setVotes] = useState([0,0,0,00]);
-  const [most, setMost] = useState();
-  const [ind, setInd] = useState();
 
+  const [most, setMost] = useState(0);
+  const [maxval, setMaxval] = useState(0);
   const anecDotes = () =>
     setSelected(Math.floor(Math.random() * anecdotes.length));
   // console.log(selected);
@@ -46,17 +45,13 @@ const App = () => {
     setVotes(copy);
   };
   // Most votes
-  useEffect(
-    (selected) => {
-      let xMax = Math.max(...votes);
-      setMost(xMax);
+  useEffect(() => {
+    let xMax = Math.max(...votes);
+    setMaxval(Math.max(...votes));
+    const keyy = Object.keys(votes).find((key) => votes[key] === xMax);
+    setMost(keyy);
+  }, [votes]);
 
-      let indd = votes.indexOf(Math.max(...votes));
-      setInd(indd);
-    },
-    [votes]
-  );
-  // console.log("max val", most);
   // console.log(ind);
 
   return (
@@ -70,10 +65,10 @@ const App = () => {
 
       <Button handleClick={handleVote(selected)} text="Vote" />
       <Button handleClick={anecDotes} text="Next Anecdote" />
-      {most ? (
+      {maxval ? (
         <Printanecdote
-          anecdotes={anecdotes[ind]}
-          vote={most}
+          anecdotes={anecdotes[most]}
+          vote={votes[most]}
           text="Anecdote with most votes."
         />
       ) : (
