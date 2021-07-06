@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Button component
 const Button = ({ handleClick, text }) => (
@@ -43,18 +43,15 @@ const App = () => {
     const copy = [...votes];
     copy[selected] += 1;
     setVotes(copy);
-    countmax();
   };
 
   // Most votes
-  // useEffect(() => {
-  const countmax = () => {
+  useEffect(() => {
     let xMax = Math.max(...votes);
-    setMaxval(Math.max(...votes));
+    setMaxval(xMax);
     const keyy = Object.keys(votes).find((key) => votes[key] === xMax);
     setMost(keyy);
-  };
-  // }, [votes]);
+  }, [votes]);
 
   return (
     <div>
