@@ -2,26 +2,25 @@
 
 This is the introduction part focuses on following topics.
 
-# a Introduction to React
+# Exercises 1.1.-1.5 courseinfo
 
 - Component
 - JSX
 - Multiple components
 - props: passing data to components
-- Some notes
--
-
-# b JavaScript :-
-
-- Variables
-- Arrays
+  Arrays
 - Objects
 - Functions
 
-- Object methods and "this"
-- Classes
-- JavaScript materials
+1. Using objects in our application to modify the variable definitions of the App component. Refactor the application .
 
-# c Component state, event handlers
+# Exercises 1.6.-1.11 unicafe
 
-# d A more complex state, debugging React apps
+Unicafe collects feedback from its customers. Collect customer feedback for : good, neutral and bad. Display statistics.
+
+- Event handlers
+- Refactor components
+
+# Exercises 1.6.-1.14
+
+Add a button that can be clicked to display a random anecdote from the field of software engineering and votes for the displyed anecdote. Display the largest number of votes and the quote.
