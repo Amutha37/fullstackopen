@@ -5,3 +5,5 @@
 3. Add phone number to the phone book.
 4. Implement search field.
 5. Refactor code and place components in a separate component folder.
+
+![Screen Shot 2021-07-08 at 2 08 20 pm](https://user-images.githubusercontent.com/67087939/124860939-f7a99600-dff5-11eb-980e-50c2054a09a1.png)
