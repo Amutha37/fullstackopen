@@ -6,49 +6,48 @@ import Personform from "./components/Personform";
 import "./App.css";
 
 const App = () => {
-  const [persons, setPersons] = useState([]);
-  // const [persons, setPersons] = useState([
-  //   {
-  //     Id: 1,
-  //     Name: "Arto Hellas",
-  //     Number: "0678945342",
-  //   },
-  //   {
-  //     Id: 2,
-  //     Name: "Stella Hellas",
-  //     Number: "0678943342",
-  //   },
-  //   {
-  //     Id: 3,
-  //     Name: "Ashaa George",
-  //     Number: "0678946633",
-  //   },
-  //   {
-  //     Id: 4,
-  //     Name: "Kishen George",
-  //     Number: "0678945533",
-  //   },
-  //   {
-  //     Id: 5,
-  //     Name: "Thenaan",
-  //     Number: "0678948897",
-  //   },
-  //   {
-  //     Id: 6,
-  //     Name: "Thylor ",
-  //     Number: "0672194887",
-  //   },
-  //   {
-  //     Id: 7,
-  //     Name: "William George",
-  //     Number: "0672881947",
-  //   },
-  //   {
-  //     Id: 8,
-  //     Name: "George  David",
-  //     Number: "0672687831",
-  //   },
-  // ]);
+  const [persons, setPersons] = useState([
+    {
+      Id: 1,
+      Name: "Arto Hellas",
+      Number: "0678945342",
+    },
+    {
+      Id: 2,
+      Name: "Stella Hellas",
+      Number: "0678943342",
+    },
+    {
+      Id: 3,
+      Name: "Ashaa George",
+      Number: "0678946633",
+    },
+    {
+      Id: 4,
+      Name: "Kishen George",
+      Number: "0678945533",
+    },
+    {
+      Id: 5,
+      Name: "Thenaan",
+      Number: "0678948897",
+    },
+    {
+      Id: 6,
+      Name: "Thylor ",
+      Number: "0672194887",
+    },
+    {
+      Id: 7,
+      Name: "William George",
+      Number: "0672881947",
+    },
+    {
+      Id: 8,
+      Name: "George  David",
+      Number: "0672687831",
+    },
+  ]);
   const [searchName, setSearchName] = useState("");
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
