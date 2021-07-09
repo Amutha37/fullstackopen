@@ -11,6 +11,7 @@ const SearchBar = ({ handlesearch, value }) => {
         value={value}
         placeholder="search by name..."
         onChange={handlesearch}
+        autoComplete="off"
       />
       {/* <label> Search by name :</label>
    <input */}
