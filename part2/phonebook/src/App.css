@@ -14,6 +14,9 @@ button {
   border-radius: 5px;
   margin-top: 4px;
 }
+.printInput {
+  padding: 1rem;
+}
 input {
   margin-left: 5px;
   margin-top: 3px;
@@ -26,12 +29,11 @@ table {
 }
 
 table {
-  width: 80%;
+  width: 60%;
   box-sizing: border-box;
   margin: 3rem auto;
   background-color: rgb(107, 156, 27);
   text-align: center;
-  /* width: fit-content; */
 }
 tr th {
   background: #688c0d;
@@ -42,7 +44,6 @@ tr th {
   border-bottom: 2px solid rgb(2, 14, 11);
   border-top: 4px solid rgb(2, 14, 11);
   border-left: 4px solid rgb(2, 14, 11);
-  /* width: fit-content; */
 }
 tr {
   border-collapse: collapse;
@@ -57,7 +58,6 @@ tr td {
   padding: 0.5rem;
   border-top: 2px solid rgb(2, 12, 11);
   border-left: 3px solid rgb(2, 14, 11);
-  /* width: fit-content; */
 }
 
 /* .dml_table tr th:last-child, */
