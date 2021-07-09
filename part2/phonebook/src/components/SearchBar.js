@@ -8,7 +8,6 @@ const SearchBar = ({ handlesearch, value }) => {
         type="text"
         name="name"
         id="name"
-        // disabled
         value={value}
         placeholder="search by name..."
         onChange={handlesearch}

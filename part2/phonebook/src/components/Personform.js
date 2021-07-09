@@ -9,13 +9,29 @@ const Personform = ({
 }) => {
   return (
     <form onSubmit={addContact}>
-      <div>
-        <h2>Add new contact</h2>
-        Name: <input value={newName} onChange={handleNewName} />
-        Phone Number: <input value={newNumber} onChange={handleNewNumber} />
-      </div>
-      <div>
-        <button type="submit">add</button>
+      <h2>Add new contact</h2>
+      Name:{" "}
+      <input
+        type="text"
+        name="name"
+        value={newName}
+        onChange={handleNewName}
+        placeholder="name..."
+        autoComplete="off"
+      />
+      Phone Number:{" "}
+      <input
+        autoComplete="off"
+        placeholder="phone number..."
+        value={newNumber}
+        onChange={handleNewNumber}
+      />
+      <button type="submit">add</button>
+      <div className="printInput">
+        <p>
+          {newName}
+          {newNumber}
+        </p>
       </div>
     </form>
   );
