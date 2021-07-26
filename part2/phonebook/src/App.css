@@ -34,6 +34,7 @@ table {
   margin: 3rem auto;
   background-color: rgb(107, 156, 27);
   text-align: center;
+  width: fit-content;
 }
 tr th {
   background: #688c0d;
@@ -48,7 +49,6 @@ tr th {
 tr {
   border-collapse: collapse;
   font-weight: bold;
-  width: fit-content;
 }
 tr th:last-child {
   border-right: 4px solid rgb(2, 14, 11);

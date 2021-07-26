@@ -22,14 +22,5 @@ const Persons = ({ allContacts }) => {
     </table>
   );
 };
-//     <ol>
-//       {allContact.map((contact) => (
-//         <li key={contact.Id}>
-//           {contact.Name} {contact.Number}
-//         </li>
-//       ))}
-//     </ol>
-//   );
-// };
 
 export default Persons;
