@@ -22,7 +22,7 @@ input {
   margin-top: 3px;
 }
 table {
-  width: 95%;
+  /* width: 95%; */
   box-sizing: border-box;
   margin: 4rem auto;
   background-color: rgb(243, 246, 238);
@@ -32,12 +32,14 @@ table {
   width: 60%;
   box-sizing: border-box;
   margin: 3rem auto;
-  background-color: rgb(107, 156, 27);
+
   text-align: center;
-  width: fit-content;
+  /* width: fit-content; */
+}
+thead th {
+  background: rgb(24, 36, 5);
 }
 tr th {
-  background: #688c0d;
   color: rgba(14, 14, 20, 0.77);
   font-size: 1rem;
   padding: 0.6rem;
@@ -49,6 +51,7 @@ tr th {
 tr {
   border-collapse: collapse;
   font-weight: bold;
+  width: fit-content;
 }
 tr th:last-child {
   border-right: 4px solid rgb(2, 14, 11);
@@ -58,6 +61,7 @@ tr td {
   padding: 0.5rem;
   border-top: 2px solid rgb(2, 12, 11);
   border-left: 3px solid rgb(2, 14, 11);
+  background: rgb(184, 194, 167);
 }
 
 /* .dml_table tr th:last-child, */
