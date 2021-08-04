@@ -24,7 +24,6 @@ const App = () => {
       setPersons(initialPersons);
     });
   }, []);
-  console.log("render", persons.length, "persons");
 
   // addcontact
   const addContact = (event) => {
@@ -41,28 +40,72 @@ const App = () => {
       let result = preventDoubleName(newName);
 
       if (result) {
-        alert(`${newName} is already added to phonebook`);
+        window.confirm(
+          `${result.name} is already added to phonebook. Do you want to change the number?`
+        );
+        {
+          const updatePerson = persons.find(
+            (n) => n.name.toLowerCase() === newName.toLowerCase().trim()
+          );
+
+          const changedNumber = {
+            ...updatePerson,
+            number: newNumber,
+            date: new Date(),
+          };
+
+          personsService
+            .update(updatePerson.id, changedNumber)
+            .then((returnedPerson) => {
+              setPersons(
+                persons.map((pers) =>
+                  pers.id !== updatePerson.id ? pers : returnedPerson
+                )
+              );
+            });
+        }
       } else {
-        console.log("effect");
+        let lastPosition = persons[persons.length - 1];
+        let lastId = lastPosition.id;
+
+        const charcap = characterCapital(newName);
+
+        // const chaName = newName.charAt(0).toUpperCase() + newName.slice(1);
+
         const newname = {
-          id: persons.length + 1,
-          name: newName,
+          id: lastId + 1,
+          name: charcap.trim(),
           date: new Date(),
           number: newNumber,
         };
         personsService.create(newname).then((returnedPersons) => {
           setPersons(persons.concat(returnedPersons));
           printperson();
-          // <Persons
-          //   allContact={persons}
-          //   handleDelete={() => handleDeleteContact(id)}
         });
       }
       setNewName("");
       setNewNumber("");
     }
   };
+  // character set to capital letter
+  const characterCapital = (str) => {
+    //   const arrOfWords = str.split(" ");
+    // const arrOfWordsCased = [];
 
+    // for (let i = 0; i < arrOfWords.length; i++) {
+    //   const word = arrOfWords[i];
+    //   arrOfWordsCased.push(word[0].toUpperCase() + word.slice(1).toLowerCase());
+    // }
+
+    // return arrOfWordsCased.join(" ");
+    return str
+      .split(/ /g)
+      .map(
+        (word) => `${word.substring(0, 1).toUpperCase()}${word.substring(1)}`
+      )
+      .join(" ");
+  };
+  // characterCapital(newName)
   // handlenewname and number
   const handleNewName = (event) => setNewName(event.target.value);
   const handleNewNumber = (event) => setNewNumber(event.target.value);
@@ -71,7 +114,7 @@ const App = () => {
 
   const preventDoubleName = (samename) =>
     persons.find(({ name }) =>
-      name.toLowerCase().includes(samename.toLowerCase())
+      name.toLowerCase().trim().includes(samename.toLowerCase().trim())
     );
 
   const handlesearch = (event) => {
@@ -82,26 +125,37 @@ const App = () => {
     );
     setfilteredList(filtered);
   };
+  // handle delete
 
+  const handleDeleteContact = (id) => {
+    const deletePerson = persons.find((n) => n.id === id);
+
+    if (
+      window.confirm(`Do you want to delete ${deletePerson.name}'s contact?`)
+    ) {
+      personsService.delContact(id);
+      setPersons(persons.filter((n) => n.id !== id));
+    }
+  };
   // print persons
   const printperson = () => {
-    console.log("printperson");
     return (
       <div>
         <table className="dml_table" cellPadding={0} cellSpacing={0}>
           <thead className="sticky-thc">
             <tr>
-              <td>Id</td>
+              <td>Seq.</td>
               <td>Name</td>
               <td>Number</td>
               <td>Delete</td>
             </tr>
           </thead>
           <tbody>
-            {persons.map((contact) => (
+            {persons.map((contact, i) => (
               <Persons
-                key={contact.name}
+                key={i}
                 contact={contact}
+                ind={i}
                 handleDelete={() => handleDeleteContact(contact.id)}
               />
             ))}
@@ -109,31 +163,8 @@ const App = () => {
         </table>
       </div>
     );
-    // <Person contact={contact} handleDelete={() => handleDeleteContact(contact.id)}/>)
   };
-  // handle delete
 
-  const handleDeleteContact = (id) => {
-    const deletePerson = persons.find((n) => n.id === id);
-    console.log(deletePerson);
-    // const changedNote = { ...note, important: !note.important }
-
-    if (
-      window.confirm(`Do you want to delete ${deletePerson.name}'s contact?`)
-    ) {
-      personsService.delContact(id);
-      //   .then((returnedPersons) => {
-      //   setPersons(
-      //     persons.map((person) =>
-      //       person.id !== id ? deletePerson : returnedPersons
-      //     )
-      //   );
-      // });
-
-      setPersons(persons.filter((n) => n.id !== id));
-      window.open("exit.html", "Thanks for Visiting!");
-    }
-  };
   return (
     <div>
       <h2>Phonebook</h2>

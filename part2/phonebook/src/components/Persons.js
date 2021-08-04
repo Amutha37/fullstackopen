@@ -1,6 +1,6 @@
 import React from "react";
 
-const Persons = ({ contact, handleDelete }) => {
+const Persons = ({ contact, handleDelete, ind }) => {
   // const columns = allContacts[0] && Object.keys(allContacts[0]);
   return (
     <>
@@ -15,12 +15,14 @@ const Persons = ({ contact, handleDelete }) => {
     //   </thead>
     //   <tbody> */}
       {/* {allContacts.map((contact) => ( */}
-      <tr key={contact.id}>
-        <td>{contact.id}</td>
+      <tr>
+        <td>{ind + 1}</td>
         <td>{contact.name}</td>
         <td>{contact.number}</td>
         <td>
-          <button onClick={handleDelete}>Delete</button>
+          <button className="delbtn" onClick={handleDelete}>
+            Delete
+          </button>
         </td>
       </tr>
       {/* ))} */}
