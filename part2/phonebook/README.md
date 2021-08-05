@@ -12,4 +12,11 @@
 
 i) Storing initial state data in db.json in the root of the project. (start json server on different port to port 3000 which is reserved for npm start)
 
-ii) Change the way data is being fetch using axios and react hook 'useEffect'.
+## Exercise 2.15 - 2.18 phonebook
+
+I) Change the way data is being fetch using axios and react hook 'useEffect'.
+
+II) Save the numbers to backend server.
+III) Handle the communication with backend into its own module.
+IV) Make delete possible for each contact person. Display confirmation message using window.confirm if the user want to really delete the contact.
+V) Allow user to change existing phone number. Display confirmation message if the user already exist and want to change old number.

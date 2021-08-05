@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Contacts from "./components/Contacts";
-import Persons from "./components/Persons";
+// import Contacts from "./components/Contacts";
+import PrintContacts from "./components/PrintContacts";
+// import Persons from "./components/Persons";
 import SearchBar from "./components/SearchBar";
 import Personform from "./components/Personform";
 import "./App.css";
@@ -11,6 +12,7 @@ const App = () => {
   const [searchName, setSearchName] = useState("");
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
+  // const [btnValue, setBtnValue] = useState("");
   const [filteredList, setfilteredList] = useState([]);
 
   //  fetch data from json server
@@ -29,11 +31,6 @@ const App = () => {
   const addContact = (event) => {
     event.preventDefault();
 
-    // prevent user entering same name
-    // if (!votes[mostVotes] || selectedVoteCount + 1 > votes[mostVotes]) {
-    //   setMostVotes(selected);
-    // }
-
     if (!newName) {
       alert(`Please enter a contact name.`);
     } else {
@@ -45,9 +42,8 @@ const App = () => {
         );
         {
           const updatePerson = persons.find(
-            (n) => n.name.toLowerCase() === newName.toLowerCase().trim()
+            (n) => n.name.toLowerCase() === newName.toLowerCase()
           );
-
           const changedNumber = {
             ...updatePerson,
             number: newNumber,
@@ -70,8 +66,6 @@ const App = () => {
 
         const charcap = characterCapital(newName);
 
-        // const chaName = newName.charAt(0).toUpperCase() + newName.slice(1);
-
         const newname = {
           id: lastId + 1,
           name: charcap.trim(),
@@ -80,7 +74,7 @@ const App = () => {
         };
         personsService.create(newname).then((returnedPersons) => {
           setPersons(persons.concat(returnedPersons));
-          printperson();
+          // printperson();
         });
       }
       setNewName("");
@@ -89,15 +83,6 @@ const App = () => {
   };
   // character set to capital letter
   const characterCapital = (str) => {
-    //   const arrOfWords = str.split(" ");
-    // const arrOfWordsCased = [];
-
-    // for (let i = 0; i < arrOfWords.length; i++) {
-    //   const word = arrOfWords[i];
-    //   arrOfWordsCased.push(word[0].toUpperCase() + word.slice(1).toLowerCase());
-    // }
-
-    // return arrOfWordsCased.join(" ");
     return str
       .split(/ /g)
       .map(
@@ -105,7 +90,7 @@ const App = () => {
       )
       .join(" ");
   };
-  // characterCapital(newName)
+
   // handlenewname and number
   const handleNewName = (event) => setNewName(event.target.value);
   const handleNewNumber = (event) => setNewNumber(event.target.value);
@@ -114,9 +99,9 @@ const App = () => {
 
   const preventDoubleName = (samename) =>
     persons.find(({ name }) =>
-      name.toLowerCase().trim().includes(samename.toLowerCase().trim())
+      name.toLowerCase().includes(samename.toLowerCase().trim())
     );
-
+  // SEARCH BAR TARGET VALUE
   const handlesearch = (event) => {
     setSearchName(event.target.value);
 
@@ -125,44 +110,23 @@ const App = () => {
     );
     setfilteredList(filtered);
   };
+
   // handle delete
 
-  const handleDeleteContact = (id) => {
-    const deletePerson = persons.find((n) => n.id === id);
+  const handleDeleteContact = (event) => {
+    const btnValue = parseFloat(event.target.value);
+    const deletePerson = persons.find((n) => n.id === btnValue);
 
     if (
       window.confirm(`Do you want to delete ${deletePerson.name}'s contact?`)
     ) {
-      personsService.delContact(id);
-      setPersons(persons.filter((n) => n.id !== id));
+      if (searchName) {
+        setfilteredList(filteredList.filter((n) => n.id !== deletePerson.id));
+      } else {
+        personsService.delContact(deletePerson.id);
+        setPersons(persons.filter((n) => n.id !== deletePerson.id));
+      }
     }
-  };
-  // print persons
-  const printperson = () => {
-    return (
-      <div>
-        <table className="dml_table" cellPadding={0} cellSpacing={0}>
-          <thead className="sticky-thc">
-            <tr>
-              <td>Seq.</td>
-              <td>Name</td>
-              <td>Number</td>
-              <td>Delete</td>
-            </tr>
-          </thead>
-          <tbody>
-            {persons.map((contact, i) => (
-              <Persons
-                key={i}
-                contact={contact}
-                ind={i}
-                handleDelete={() => handleDeleteContact(contact.id)}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
   };
 
   return (
@@ -179,11 +143,15 @@ const App = () => {
       />
 
       {searchName ? (
-        <Contacts filteredList={filteredList} />
+        <PrintContacts
+          contactname={filteredList}
+          handleDelete={handleDeleteContact}
+        />
       ) : (
-        printperson()
-        //   {persons.map(contact =>
-        //  <Persons contacts={contact} />)}
+        <PrintContacts
+          contactname={persons}
+          handleDelete={handleDeleteContact}
+        />
       )}
     </div>
   );
