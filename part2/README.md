@@ -25,18 +25,18 @@ I) Open a db.json file to be backend data base . Run this file in json sever Por
 
 ## 2.12 - 2.14 Countries
 
-I) Create app to look at various contries data.
+1) Create app to look at various contries data.
 
 - The API http://restcountries.au
 
-II) Use search field to match max of 10 countries.
+2) Use search field to match max of 10 countries.
 
-III) Use buttons to display information on population, capital and temperature for each country.
+3) Use buttons to display information on population, capital and temperature for each country.
 
 ## Exercise 2.15 - 2.18 phonebook
 
 step 7
-I) Save the numbers to backend server.
-II) Handle the communication with backend into its own module.
-III) Make delete possible for each contact person. Display confirmation message using window.confirm if the user want to really delete the contact.
-IV) Allow user to change existing phone number. Display confirmation message if the user already exist and want to change old number.
+1) Save the numbers to backend server.
+2) Handle the communication with backend into its own module.
+3) Make delete possible for each contact person. Display confirmation message using window.confirm if the user want to really delete the contact.
+4) Allow user to change existing phone number. Display confirmation message if the user already exist and want to change old number.
