@@ -6,21 +6,29 @@ const API_key = process.env.REACT_APP_API_KEY;
 export const Weather = ({ countryname }) => {
   const [weather, setWeather] = useState([{}]);
 
-  // const { country } = props;
   useEffect(() => {
+    const source = axios.CancelToken.source();
+
     getweather(countryname, API_key);
+
+    return () => {
+      source.cancel();
+    };
   }, [countryname]);
 
   const getweather = (name, key) => {
+    const source = axios.CancelToken.source();
+    const urlWeather = `http://api.weatherstack.com/current?access_key=${key}&query=${name}`;
     axios
-      .get(
-        `http://api.weatherstack.com/current?access_key=${key}&query=${name}`
-      )
+      .get(urlWeather, { cancelToken: source.token })
       .then((response) => {
         setWeather(response.data.current);
       })
       .catch((error) => {
-        return <p>{error}</p>;
+        if (axios.isCancel(error)) {
+        } else {
+          throw error;
+        }
       });
   };
 
@@ -39,7 +47,9 @@ export const Weather = ({ countryname }) => {
             Wind : {weather.wind_speed} km/h direction :{weather.wind_dir}
           </li>
         </ul>
-      ) : null}
+      ) : (
+        <p>Possible usage limit reached for weather data.</p>
+      )}
     </div>
   );
 };

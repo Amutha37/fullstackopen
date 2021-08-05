@@ -3,7 +3,7 @@ import { Weather } from "./Weather";
 
 function Countryinfo({ country }) {
   return (
-    <div>
+    <div className="tablecontainer">
       <table className="dml_table" cellPadding={0} cellSpacing={0}>
         <thead className="sticky-thc">
           <tr>
@@ -34,7 +34,7 @@ function Countryinfo({ country }) {
               <img
                 src={country.flag}
                 width="180"
-                // height="100"
+                height="100"
                 alt={`${country.name} flag`}
               />
             </td>

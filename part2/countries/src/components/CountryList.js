@@ -11,7 +11,7 @@ function CountryList({ filteredList, country }) {
   const handleClick = (e) => {
     const countryClicked = e.target.name;
 
-    var countryIndex = filteredList.findIndex(
+    const countryIndex = filteredList.findIndex(
       (item) => item.name === countryClicked
     );
 
@@ -24,9 +24,8 @@ function CountryList({ filteredList, country }) {
 
   return (
     <div className="Am_country_list_container">
-      <div className="Am_country_list">
+      <div className="country_list">
         <ul key={country.name}>
-          <div className="country_list"></div>
           <ol>
             {country.name}
             <div className="button_list">
@@ -42,6 +41,7 @@ function CountryList({ filteredList, country }) {
           </ol>
         </ul>
       </div>
+
       <div className="Am_country_info">
         {status[oneIndex] && show && <Countryinfo country={country} />}
       </div>

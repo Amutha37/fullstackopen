@@ -1,7 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
-// import { SearchBar } from "./components/SearchBar";
+import SearchBar from "./components/SearchBar";
 
-import SelectedCountry from "./components/SelectedCountry";
+// import SelectedCountry from "./components/SelectedCountry";
+import Countryinfo from "./components/Countryinfo";
+import CountryList from "./components/CountryList";
 import axios from "axios";
 import "./App.css";
 
@@ -10,7 +12,6 @@ function App() {
   const [query, setQuery] = useState("");
   const [filteredList, setfilteredList] = useState([]);
 
-  // const [multiList, setMultiList] = useState(false);
   // fetch data
 
   useEffect(() => {
@@ -30,14 +31,22 @@ function App() {
 
   return (
     <Fragment>
-      <h2>
-        Search by country : <input onChange={handleSearch} />
-      </h2>
+      <SearchBar handlesearch={handleSearch} />
 
       {filteredList.length > 10 ? (
         <p> "Too many matches, specify another filter" </p>
+      ) : filteredList.length === 1 ? (
+        <Countryinfo country={filteredList[0]} />
       ) : (
-        <SelectedCountry filteredList={filteredList} />
+        filteredList.map((country) => {
+          return (
+            <CountryList
+              key={country.name}
+              country={country}
+              filteredList={filteredList}
+            />
+          );
+        })
       )}
     </Fragment>
   );

@@ -28,7 +28,7 @@ table {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: fit-content;
+  margin-top: 1rem;
 }
 tr th {
   background: #1d6c6f;
@@ -43,7 +43,7 @@ tr th {
 tr {
   border-collapse: collapse;
   font-weight: bold;
-  /* width: fit-content; */
+  width: fit-content;
 }
 tr th:last-child {
   border-right: 4px solid rgb(2, 14, 11);
@@ -70,12 +70,17 @@ tr td {
 img {
   margin-left: 0;
   margin-right: 0;
+  /* width: 40%; */
 }
 .showing {
   background-color: rgb(181, 75, 79);
 }
 .closing {
   background-color: rgb(66, 195, 139);
+}
+.Am_country_list_container {
+  /* display: flex; */
+  margin-top: 2rem;
 }
 .weatherdisplay ul li {
   list-style-type: none;

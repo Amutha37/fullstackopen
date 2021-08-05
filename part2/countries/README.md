@@ -1,7 +1,9 @@
-## 2.12 - 2.14 Exercises 
-1) Create app to look at various contries data. 
-   * The API http://restcountries.au
-   
-2) Use search field to match max of 10 countries.
+## 2.12 - 2.14 Exercises
 
-3) Use buttons to display data for each country.
+I) Create app to look at various contries data.
+
+- The API http://restcountries.au
+
+II) Use search field to match max of 10 countries.
+
+III) Use buttons to display information on population, capital and temperature for each country.
