@@ -24,7 +24,7 @@ input {
 table {
   box-sizing: border-box;
   margin: 4rem auto;
-  background-color: rgb(243, 246, 238);
+  /* background-color: rgb(243, 246, 238); */
   width: 60%;
   box-sizing: border-box;
   margin: 3rem auto;
@@ -47,9 +47,9 @@ tr {
   font-weight: bold;
   width: fit-content;
 }
-/* tr th:first-child {
-  border-right: 5px solid rgb(2, 14, 11);
-} */
+tr th:last-child {
+  border-right: 4px solid rgb(2, 14, 11);
+}
 tr td {
   color: rgba(13, 13, 14, 0.77);
   padding: 0.5rem;
@@ -69,4 +69,14 @@ tr:last-child td {
 
 tr td {
   font-weight: bold;
+}
+
+.error {
+  color: rgb(21, 150, 57);
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }

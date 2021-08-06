@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-// import Contacts from "./components/Contacts";
+import React, { useState, useEffect, Fragment } from "react";
+
 import PrintContacts from "./components/PrintContacts";
-// import Persons from "./components/Persons";
+import Notification from "./components/Notification";
 import SearchBar from "./components/SearchBar";
 import Personform from "./components/Personform";
 import "./App.css";
@@ -12,16 +12,11 @@ const App = () => {
   const [searchName, setSearchName] = useState("");
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
-  // const [btnValue, setBtnValue] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [filteredList, setfilteredList] = useState([]);
 
   //  fetch data from json server
   useEffect(() => {
-    // axios.get("http://localhost:3002/persons").then((response) => {
-    //   console.log("promise fulfilled");
-    //   setPersons(response.data);
-    // });
-
     personsService.getAll().then((initialPersons) => {
       setPersons(initialPersons);
     });
@@ -58,6 +53,20 @@ const App = () => {
                   pers.id !== updatePerson.id ? pers : returnedPerson
                 )
               );
+              setErrorMessage(
+                `${updatePerson.name}'s contact was successfully updated.`
+              );
+              setTimeout(() => {
+                setErrorMessage(null);
+              }, 5000);
+            })
+            .catch((error) => {
+              setErrorMessage(
+                `ERROR!  ${updatePerson.name} has already been removed from server.`
+              );
+              setTimeout(() => {
+                setErrorMessage(null);
+              }, 5000);
             });
         }
       } else {
@@ -74,14 +83,17 @@ const App = () => {
         };
         personsService.create(newname).then((returnedPersons) => {
           setPersons(persons.concat(returnedPersons));
-          // printperson();
+          setErrorMessage(`Added '${returnedPersons.name}'`);
+          setTimeout(() => {
+            setErrorMessage(null);
+          }, 3000);
         });
       }
-      setNewName("");
-      setNewNumber("");
     }
+    setNewName("");
+    setNewNumber("");
   };
-  // character set to capital letter
+  // First letter of the names set to capital letter
   const characterCapital = (str) => {
     return str
       .split(/ /g)
@@ -130,7 +142,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <Fragment>
       <h2>Phonebook</h2>
       <SearchBar value={searchName} handlesearch={handlesearch} />
 
@@ -141,6 +153,8 @@ const App = () => {
         handleNewNumber={handleNewNumber}
         addContact={addContact}
       />
+
+      {errorMessage && <Notification message={errorMessage} />}
 
       {searchName ? (
         <PrintContacts
@@ -153,7 +167,7 @@ const App = () => {
           handleDelete={handleDeleteContact}
         />
       )}
-    </div>
+    </Fragment>
   );
 };
 
