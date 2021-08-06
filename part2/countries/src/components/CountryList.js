@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Countryinfo from "./Countryinfo";
+import Button from "./Button";
 
 function CountryList({ filteredList, country }) {
   const [status, setStatus] = useState(
@@ -9,7 +10,7 @@ function CountryList({ filteredList, country }) {
   const [show, setShow] = useState(false);
 
   const handleClick = (e) => {
-    const countryClicked = e.target.name;
+    const countryClicked = e.target.value;
 
     const countryIndex = filteredList.findIndex(
       (item) => item.name === countryClicked
@@ -29,14 +30,14 @@ function CountryList({ filteredList, country }) {
           <ol>
             {country.name}
             <div className="button_list">
-              <button
+              <Button
                 className={show ? "showing" : "closing"}
-                name={country.name}
-                type="submit"
-                onClick={handleClick}
-              >
-                {status[oneIndex] ? "Hide" : "Show"}
-              </button>
+                show={show}
+                value={country.name}
+                handleClick={handleClick}
+                status={status}
+                oneIndex={oneIndex}
+              />
             </div>
           </ol>
         </ul>
