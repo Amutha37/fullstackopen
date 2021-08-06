@@ -1,5 +1,5 @@
 import React from "react";
-import Personslist from "./Persons";
+import Personslist from "./PersonsList";
 
 const PrintContacts = ({ contactname, handleDelete }) => {
   return (

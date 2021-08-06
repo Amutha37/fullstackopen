@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const Personslist = ({ contact, handleDelete, ind }) => {
   return (
@@ -8,14 +9,7 @@ const Personslist = ({ contact, handleDelete, ind }) => {
         <td>{contact.name}</td>
         <td>{contact.number}</td>
         <td>
-          <button
-            // className={onClick ? btndel : btnsav}
-            className="delbtn"
-            value={contact.id}
-            onClick={handleDelete}
-          >
-            Delete
-          </button>
+          <Button value={contact.id} handleDelete={handleDelete} />
         </td>
       </tr>
     </>
