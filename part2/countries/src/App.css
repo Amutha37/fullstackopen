@@ -2,9 +2,6 @@ body {
   text-align: center;
 }
 
-/* .phonebookcontainer {
-  font-family: serif;
-} */
 button {
   padding: 2px;
   background-color: rgb(129, 238, 156);
@@ -22,7 +19,7 @@ input {
 }
 
 table {
-  width: 75%;
+  width: 60%;
   box-sizing: border-box;
   box-sizing: border-box;
   margin-left: auto;
