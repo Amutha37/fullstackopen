@@ -93,10 +93,11 @@ app.post("/api/persons", (request, response) => {
   console.log(persons.id);
   response.json(persons);
 });
-
+// checking status git
 // prevent double entry
 const preventDoubleid = (sameid) =>
   persons.find(({ id }) => id.includes(sameid));
+
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
