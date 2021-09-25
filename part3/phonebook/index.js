@@ -1,7 +1,30 @@
 const express = require("express");
 const app = express();
+var morgan = require("morgan");
+
 //  jason-parser to access data to dd new notes in the request body in JSON format.
 app.use(express.json());
+
+// morgan(function (tokens, req, res) {
+//   return [
+//     tokens.method(req, res),
+//     tokens.url(req, res),
+//     tokens.status(req, res),
+//     tokens.res(req, res, "content-length"),
+//     "-",
+//     tokens["response-time"](req, res),
+//     "ms",
+//   ].join(" ");
+// });
+morgan.token("body", (req, res) => JSON.stringify(req.body));
+app.use(
+  morgan(
+    ":method :url :body - status :status length :res[content-length] - :response-time ms"
+    // ":method :url :status :response-time ms - :res[content-length] :body - :req[content-length]"
+  )
+);
+
+console.log("im here");
 
 let persons = [
   {
@@ -25,6 +48,7 @@ let persons = [
     number: "39-23-6423122",
   },
 ];
+
 // fetch all the data
 app.get("/api/persons", (request, response) => {
   response.json(persons);
@@ -66,6 +90,11 @@ app.delete("/api/persons/:id", (request, response) => {
 
 const generateId = () => Math.floor(Math.random() * 100);
 
+// app.use(
+//   morgan(
+//     ":method :url :body - status :status length :res[content-length] - :response-time ms"
+//   )
+// );
 app.post("/api/persons", (request, response) => {
   const body = request.body;
 
@@ -74,29 +103,57 @@ app.post("/api/persons", (request, response) => {
       error: "content missing",
     });
   }
+
   let autoid = generateId();
   let result = preventDoubleid(autoid);
 
   if (result) {
-    window.confirm(
-      `${result.name} is already added to phonebook. Do you want to change the number?`
-    );
+    return response.status(302).json({
+      error: "This id already exist.",
+    });
   }
   const person = {
     content: body.content,
-    important: body.important || false,
-    date: new Date(),
     id: autoid,
+    name: "Ada Lovelace",
+    number: "",
+    // name: "Ada Lovelace",
+    // number: "39-44-553622523",
   };
+
+  if (!person.name) {
+    return response.status(204).json({
+      error: "Name missing",
+    });
+  }
+  if (!person.number) {
+    return response.status(204).json({
+      error: "Phone number missing",
+    });
+  }
+
+  let chekname = nam(person.name);
+
+  if (chekname) {
+    return response.status(302).json({
+      error: "This name already exist.",
+    });
+  }
 
   persons = persons.concat(person);
   console.log(persons.id);
   response.json(persons);
 });
+
 // checking status git
-// prevent double entry
+// prevent double entry id
 const preventDoubleid = (sameid) =>
   persons.find(({ id }) => id.includes(sameid));
+
+// check name from double entry
+const nam = (n) => {
+  return persons.find(({ name }) => name.includes(n));
+};
 
 const PORT = 3001;
 app.listen(PORT, () => {
