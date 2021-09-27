@@ -36,4 +36,5 @@
 ### 3.6 Configure Morgan logger to show HTTP POST data log. 
 
 ![Screen Shot 2021-09-27 at 11 15 19 am](https://user-images.githubusercontent.com/67087939/134831801-e54a02b8-d929-4a54-bfc3-0779d7951fab.png)
+![Screen Shot 2021-09-27 at 11 25 26 am](https://user-images.githubusercontent.com/67087939/134832408-7e5b1672-f61a-4d11-844f-5200f8a49596.png)
 
