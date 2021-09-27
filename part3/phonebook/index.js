@@ -5,26 +5,11 @@ var morgan = require("morgan");
 //  jason-parser to access data to dd new notes in the request body in JSON format.
 app.use(express.json());
 
-// morgan(function (tokens, req, res) {
-//   return [
-//     tokens.method(req, res),
-//     tokens.url(req, res),
-//     tokens.status(req, res),
-//     tokens.res(req, res, "content-length"),
-//     "-",
-//     tokens["response-time"](req, res),
-//     "ms",
-//   ].join(" ");
-// });
 morgan.token("body", (req, res) => JSON.stringify(req.body));
-app.use(
-  morgan(
-    ":method :url :body - status :status length :res[content-length] - :response-time ms"
-    // ":method :url :status :response-time ms - :res[content-length] :body - :req[content-length]"
-  )
-);
 
-console.log("im here");
+app.use(
+  morgan(":method :url :status :req[Content-Length] - :response-time ms :body")
+);
 
 let persons = [
   {
@@ -154,6 +139,12 @@ const preventDoubleid = (sameid) =>
 const nam = (n) => {
   return persons.find(({ name }) => name.includes(n));
 };
+
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: "unknown endpoint" });
+};
+
+app.use(unknownEndpoint);
 
 const PORT = 3001;
 app.listen(PORT, () => {
