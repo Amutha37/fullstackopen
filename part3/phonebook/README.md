@@ -27,9 +27,13 @@
 
 .Create hard code data object to add new note.
 
-### 3.6 HTTP POST
+### 3.6 Error handling for blank entry and double entry.
 
+### 3.5 HTTP POST 
 .Validation check to display error message if name or number is missing.
 . Prevent double entry.
+
+### 3.6 Configure Morgan logger to show HTTP POST data log. 
+
 ![Screen Shot 2021-09-27 at 11 15 19 am](https://user-images.githubusercontent.com/67087939/134831801-e54a02b8-d929-4a54-bfc3-0779d7951fab.png)
 
