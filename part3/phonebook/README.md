@@ -29,12 +29,11 @@
 
 ### 3.6 Error handling for blank entry and double entry.
 
-### 3.5 HTTP POST 
+### 3.5 HTTP POST
+
 .Validation check to display error message if name or number is missing.
 . Prevent double entry.
 
-### 3.6 Configure Morgan logger to show HTTP POST data log. 
+### 3.6 Configure Morgan logger to show HTTP POST data log.
 
-
-![Screen Shot 2021-09-27 at 11 25 26 am](https://user-images.githubusercontent.com/67087939/134832408-7e5b1672-f61a-4d11-844f-5200f8a49596.png)
-
+![Screen Shot 2021-09-27 at 11 25 26 am](https://user-images.githubusercontent.com/67087939/
