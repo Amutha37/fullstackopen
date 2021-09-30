@@ -35,4 +35,6 @@
 
 Repository for backend : -
 
-`https://github.com/Amutha37/fullstackopenpart3-phonebook-backend.git`
+Back-end repository is located at
+
+https://github.com/Amutha37/fullstackopenpart3-phonebook-backend.git
