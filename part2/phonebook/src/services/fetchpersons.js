@@ -1,5 +1,9 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001/persons/";
+// JSON server dev
+// const baseUrl = "http://localhost:3001/persons/";
+
+// backend fetch from express
+const baseUrl = "http://localhost:3001/api/persons";
 
 // list all contact
 const getAll = () => {
