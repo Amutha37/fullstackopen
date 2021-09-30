@@ -3,7 +3,10 @@ import axios from "axios";
 // const baseUrl = "http://localhost:3001/persons/";
 
 // backend fetch from express
-const baseUrl = "http://localhost:3001/api/persons";
+// const baseUrl = "http://localhost:3001/api/persons";
+
+// backend heroku express
+const baseUrl = `https://quiet-dawn-80146.herokuapp.com/api/persons`;
 
 // list all contact
 const getAll = () => {
