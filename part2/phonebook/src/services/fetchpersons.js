@@ -6,7 +6,10 @@ import axios from "axios";
 // const baseUrl = "http://localhost:3001/api/persons";
 
 // backend heroku express
-const baseUrl = `https://quiet-dawn-80146.herokuapp.com/api/persons`;
+// const baseUrl = `https://quiet-dawn-80146.herokuapp.com/api/persons`;
+// production site
+
+const baseUrl = `/api/persons`;
 
 // list all contact
 const getAll = () => {
