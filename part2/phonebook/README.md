@@ -31,6 +31,47 @@
 2. Display error message when contact of deleted item is call for edit.
 3. Display message for successfull update.
 
+## 3.11 The next steps will be to create the a production build.
+  * Before the production build make sure the front end works with the backend URL.
+    Change the frontend address base URL to backend. 
+
+    The should work the same way as the frontend before changing and this time fetches data from backend. 
+
+   * Production build (run in the root of the frontend)
+
+
+    > npm run build 
+      (This will create build folder which contains another folder static which holds our application file index.HTML.
+    *Allbthe js code is minified into one file. 
+
+    Serving static files from backend. 
+
+    To deploy the frontend with the backend we copy the frontend build file into the root of backend repository.
+     
+   * For Mac/Linux 
+   > cp -r build ../fullstackopenpart3-phonebook-backend
+     (Or your preferred method)
+
+    *To make express to show the frontend static we need to build-in muddleware from express call static.
+      
+     Add the following code in backend index.is .
+
+     app.use(express.static('build'))
+
+     (Now the server will get request to index.HTML)
+
+     *Now the frontend and backend will have the same URL this means we can leave the 
+      server URL which is the front part and only leave the relative URL in the frontend.
+ 
+      /api/person
+
+      After this change we need create a new production build 'npm run build' 
+      and copy the build file to backend, to make sure any changes on front end is reflected in application.
+
+      The frontend application is now be used from the backend.
+
+      
+ 
 ### Part 3 Link to backend
 
 Repository for backend : -
