@@ -26,8 +26,8 @@ const App = () => {
   const addContact = (event) => {
     event.preventDefault();
 
-    if (!newName) {
-      alert(`Please enter a contact name.`);
+    if (!newName || !newNumber) {
+      alert(`Please enter contact name and number.`);
     } else {
       let result = preventDoubleName(newName);
 
@@ -126,7 +126,8 @@ const App = () => {
   // handle delete
 
   const handleDeleteContact = (event) => {
-    const btnValue = parseFloat(event.target.value);
+    // const btnValue = parseFloat(event.target.value);
+    const btnValue = event.target.value;
     const deletePerson = persons.find((n) => n.id === btnValue);
 
     if (

@@ -35,6 +35,10 @@
 
 Repository for backend : -
 
-Back-end repository is located at
+`https://github.com/Amutha37/fullstackopenpart3-phonebook-backend.git`
 
-https://github.com/Amutha37/fullstackopenpart3-phonebook-backend.git
+### 3.11 Create production buil
+
+1. Run `npm run build` in root of frontend.
+
+2. copy the build file from frontend to backend.

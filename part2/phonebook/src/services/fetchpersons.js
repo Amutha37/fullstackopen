@@ -25,12 +25,12 @@ const create = (newname) => {
 // update
 
 const update = (iddPerson, changedNumber) => {
-  const request = axios.put(`${baseUrl}${iddPerson}`, changedNumber);
+  const request = axios.put(`${baseUrl}/${iddPerson}`, changedNumber);
   return request.then((response) => response.data);
 };
 // delete contact
 const delContact = (id) => {
-  const request = axios.delete(`${baseUrl}${id}`);
+  const request = axios.delete(`${baseUrl}/${id}`);
   return request.then((response) => response.data);
 };
 
