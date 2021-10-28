@@ -1,14 +1,14 @@
 import axios from "axios";
 // JSON server dev
 // const baseUrl = "http://localhost:3001/persons/";
-
 // backend fetch from express
 // const baseUrl = "http://localhost:3001/api/persons";
 
 // backend heroku express
 // const baseUrl = `https://quiet-dawn-80146.herokuapp.com/api/persons`;
-// production site
 
+// production site
+// The web domain url is same as the backend as for frontend for this we use the relative url.
 const baseUrl = `/api/persons`;
 
 // list all contact
@@ -33,5 +33,10 @@ const delContact = (id) => {
   const request = axios.delete(`${baseUrl}/${id}`);
   return request.then((response) => response.data);
 };
-
-export default { getAll, create, delContact, update };
+const fetchAll = {
+  getAll,
+  create,
+  delContact,
+  update,
+};
+export default fetchAll;
