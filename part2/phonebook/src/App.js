@@ -81,13 +81,23 @@ const App = () => {
           date: new Date(),
           number: newNumber,
         };
-        personsService.create(newname).then((returnedPersons) => {
-          setPersons(persons.concat(returnedPersons));
-          setErrorMessage(`Added '${returnedPersons.name}'`);
-          setTimeout(() => {
-            setErrorMessage(null);
-          }, 3000);
-        });
+        personsService
+          .create(newname)
+          .then((returnedPersons) => {
+            setPersons(persons.concat(returnedPersons));
+            setErrorMessage(`Added '${returnedPersons.name}'`);
+            setTimeout(() => {
+              setErrorMessage(null);
+            }, 3000);
+          })
+          .catch((e) => {
+            setErrorMessage(
+              `Error : Minimum length for name is (3) and minimum length for phone number is (8)`
+            );
+            setTimeout(() => {
+              setErrorMessage(null);
+            }, 5000);
+          });
       }
     }
     setNewName("");
