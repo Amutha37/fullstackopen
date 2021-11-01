@@ -120,9 +120,12 @@ const App = () => {
   // Check if user entered the same name
 
   const preventDoubleName = (samename) =>
-    persons.find(({ name }) =>
-      name.toLowerCase().includes(samename.toLowerCase().trim())
-    );
+    persons.find(({ name }) => {
+      console.log(name.length, samename.length);
+      if (name.length === samename.length) {
+        return name.toLowerCase().includes(samename.toLowerCase().trim());
+      }
+    });
   // SEARCH BAR TARGET VALUE
   const handlesearch = (event) => {
     setSearchName(event.target.value);
