@@ -60,14 +60,6 @@ const App = () => {
                 setErrorMessage(null)
               }, 5000)
             })
-            .catch((error) => {
-              setErrorMessage(
-                `ERROR!  ${updatePerson.name} has already been removed from server.`
-              )
-              setTimeout(() => {
-                setErrorMessage(null)
-              }, 5000)
-            })
         }
       } else {
         let lastPosition = persons[persons.length - 1]
