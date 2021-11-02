@@ -78,7 +78,7 @@ Repository for backend : -
 
 `https://github.com/Amutha37/fullstackopenpart3-phonebook-backend.git`
 
-### 3.11 Create production buil
+### 3.11 Create production build the update all the final changes
 
 1. Run `npm run build` in root of frontend.
 
