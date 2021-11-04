@@ -2,7 +2,9 @@ const http = require('http')
 
 const app = http.createServer((request, response) => {
   response.writeHead(200, { 'Content-Type': 'text/plain' })
-  response.end('Blog list Test run with nodemon')
+  response.end(
+    'Blog list Test run with nodemon edited script file in package.json'
+  )
 })
 
 const PORT = 3001
