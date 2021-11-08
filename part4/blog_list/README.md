@@ -11,7 +11,7 @@ Exercises 4.1.-4.2.
   4.1. Step 1 Initial setup
 
 > `npm init`
-> Create index.js
+> touch index.js
 > (Write a simple code that create-server and print a message on the browser.
 > Edit script in package.json.
 
