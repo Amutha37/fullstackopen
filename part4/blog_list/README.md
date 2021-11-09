@@ -59,36 +59,7 @@ content-type: application/json
 
 This should create a database in mongoDB, we should able to print it out the local server `http://localhost:3003/api/blogs`
 
-4.2.  Step 2  
-Refactor the application into separate modules to adhere to Node.js best practices.
-
-Create separate modules for configuration  config.js 
-Test the app.
-
-Create separate modules for message handler logger.js and middleware.js .
-Test the app.
-
-Create separate modules for the event handler router.  This will be in the folder name ‘controller’.
-Now the ‘ index .js ‘ file will not import the app.js the actual application file. Index.js file will be used for creating the server. 
-The app.js file will be the main app that starts the application. 
-Test the app.
-
-
-*Install Lint tools to perform static analysis of source code.
-
-> `npm install eslint --save-dev`
-
-Initialize a default ESlint configuration with the command:
-> `node_modules/.bin/eslint --init`
-
-Testing Node applications
-
-Jest is a natural choice for this course, as it works well for testing backends, and it shines when it comes to testing React applications.
-
-** Since tests are only executed during the development of our application, we will install jest as a development dependency with the command:
-
-Exercise 4.3. - 4.7.
-
+Exercises 4.3. - 4.7.
 
 > `npm install --save-dev jest`
 
@@ -96,10 +67,20 @@ Edit npm script test in package.json to execute tests with Jest and to report ab
 ![Screen Shot 2021-11-09 at 10 39 37 am](https://user-images.githubusercontent.com/67087939/140835437-ff82602f-e091-4071-8dd6-44a3006ba7e9.png)
 
 Edit ‘.eslintrc.js’ to get rid of the complaints by adding "jest": true to the env property in the .eslintrc.js file.
-![Screen Shot 2021-11-09 at 10 40 11 am](https://user-images.githubusercontent.com/67087939/140835482-f33ea774-eee9-4ecc-9cb6-dcc08863ffc0.png)
+![Screen Shot 2021-11-09 at 10 53 07 am](https://user-images.githubusercontent.com/67087939/140836602-32f51aef-a6c3-4927-808c-6c8767cd24ce.png)
 
-Create a file called ‘utils/list_helper.js’  and define a dummy function that returns the value 1.
+Create a file called ‘utils/list_helper.js’ and define a dummy function that returns the value 1.
 
 Create a test file under the test directory to run the dummy function.
 
+> `npm test`
 
+![Screen Shot 2021-11-09 at 10 59 04 am](https://user-images.githubusercontent.com/67087939/140837082-a5694845-a3cc-4dfc-819f-56dc72baf25b.png)
+
+> `npm test`
+
+4.4: helper functions and unit tests, step2
+
+\*Define a new totalLikes function that receives a list of blog posts as a parameter. The function returns the total sum of likes in all of the blog posts. Group the test report so we can see each test is grouped with description titles. This can be achieved using ‘describe block function’ .
+
+![Screen Shot 2021-11-09 at 11 33 34 am](https://user-images.githubusercontent.com/67087939/140840055-0c68b04c-13f0-4934-b483-84a533130c42.png)
