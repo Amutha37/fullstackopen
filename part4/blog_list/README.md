@@ -81,6 +81,13 @@ Create a test file under the test directory to run the dummy function.
 
 4.4: helper functions and unit tests, step2
 
+<<<<<<< HEAD
 \*Define a new totalLikes function that receives a list of blog posts as a parameter. The function returns the total sum of likes in all of the blog posts. Group the test report so we can see each test is grouped with description titles. This can be achieved using ‘describe block function’ .
+=======
+*Define a new totalLikes function that receives a list of blog posts as a parameter. The function returns the total sum of likes in all of the blog posts. Group the test report so we can see each test is grouped with description titles. This can be achieved using ‘describe block function’ .
+
+
+![Screen Shot 2021-11-09 at 11 33 34 am](https://user-images.githubusercontent.com/67087939/140840055-0c68b04c-13f0-4934-b483-84a533130c42.png)
+>>>>>>> c146fa40f877f31304762e4c3da8f6a15eaf5385
 
 ![Screen Shot 2021-11-09 at 11 33 34 am](https://user-images.githubusercontent.com/67087939/140840055-0c68b04c-13f0-4934-b483-84a533130c42.png)
