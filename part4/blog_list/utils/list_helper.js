@@ -8,15 +8,14 @@ const TotalLikes = (blogs) => {
 };
 
 const FavouriteBlog = (blogs) => {
-  const favour = blogs.map((blog) => blog.likes);
-  // eslint-disable-next-line no-undef
-  const id = favour.indexOf(Math.max(...favour));
+  let Id = blogs.indexOf(blogs.reduce((p, c) => (p.likes > c.likes ? p : c)));
   return {
-    title: blogs[id].title,
-    author: blogs[id].author,
-    likes: blogs[id].likes,
+    title: blogs[Id].title,
+    author: blogs[Id].author,
+    likes: blogs[Id].likes,
   };
 };
+
 module.exports = {
   dummy,
   TotalLikes,

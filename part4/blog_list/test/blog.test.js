@@ -30,7 +30,7 @@ describe('total likes', () => {
     },
   ];
 
-  test('when list has only one blog, equals the likes of that', () => {
+  test('when list has only two blogs, add the likes of that', () => {
     const result = listHelper.TotalLikes(blogs);
     expect(result).toBe(12);
   });
@@ -46,13 +46,13 @@ describe('total likes', () => {
     },
   ];
 
-  test('when list has only two blog,add the likes of that', () => {
+  test('when list has only one blog,equal the likes of that', () => {
     const result = listHelper.TotalLikes(listMoreBlogs);
     expect(result).toBe(14);
   });
 });
 
-describe('total likes', () => {
+describe('favourite blog', () => {
   const blogss = [
     {
       _id: '5a422a851b54a676234d17f7',
