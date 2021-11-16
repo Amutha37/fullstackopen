@@ -6,7 +6,6 @@ const dummy = () => {
 };
 // Total like
 const TotalLikes = (blogs) => {
-Console.log(’Total-likes :’,sumBlogs(blogs.likes);
   return blogs.reduce((totalLikes, current) => totalLikes + current.likes, 0);
 };
 
@@ -22,16 +21,15 @@ const FavouriteBlog = (blogs) => {
 
 // using LODASH most blogs
 const mostBlogs = (blogs) => {
-  let typeCounts = _.countBy(blogs, (blog) => blog.author);
+  let countBlogs = _.countBy(blogs, (blog) => blog.author);
 
-  let valuePair = [_.maxBy(Object.entries(typeCounts))];
-  console.log(valuePair);
-Object.entries(valuePair){
+  // let valuePair = _.fromPairs([_.maxBy(Object.entries(typeCounts))]);
+  let blogPairs = _.maxBy(Object.entries(countBlogs));
+
   return {
-    author: ‘${key}’,
-    blogs_Count: ‘${value}
+    author: blogPairs[0],
+    blogs: blogPairs[1],
   };
-}
 };
 
 module.exports = {
@@ -39,4 +37,5 @@ module.exports = {
   TotalLikes,
   FavouriteBlog,
   mostBlogs,
+  // mostLikes,
 };

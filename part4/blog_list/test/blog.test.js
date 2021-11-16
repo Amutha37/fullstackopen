@@ -165,12 +165,10 @@ describe('Author with Most Blogs', () => {
   ];
 
   test('When 2 author and 3 author with blogs print the most blogs author', () => {
-    const expectResult = {
-      author: 'Robert C. Martin',
-      blogs_Count: 3,
-    };
-
     const resultBlogs = listHelper.mostBlogs(objLodash);
-    expect(resultBlogs).toEqual(expectResult);
+    expect(resultBlogs).toEqual({
+      author: 'Robert C. Martin',
+      blogs: 3,
+    });
   });
 });
