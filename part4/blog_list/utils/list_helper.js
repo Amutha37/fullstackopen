@@ -6,6 +6,7 @@ const dummy = () => {
 };
 // Total like
 const TotalLikes = (blogs) => {
+Console.log(’Total-likes :’,sumBlogs(blogs.likes);
   return blogs.reduce((totalLikes, current) => totalLikes + current.likes, 0);
 };
 
@@ -23,12 +24,14 @@ const FavouriteBlog = (blogs) => {
 const mostBlogs = (blogs) => {
   let typeCounts = _.countBy(blogs, (blog) => blog.author);
 
-  let valuePair = _.fromPairs([_.maxBy(Object.entries(typeCounts))]);
+  let valuePair = [_.maxBy(Object.entries(typeCounts))];
   console.log(valuePair);
+Object.entries(valuePair){
   return {
-    author: Object.keys(valuePair),
-    blogs_Count: Object.values(valuePair),
+    author: ‘${key}’,
+    blogs_Count: ‘${value}
   };
+}
 };
 
 module.exports = {
