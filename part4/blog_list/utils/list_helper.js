@@ -31,11 +31,36 @@ const mostBlogs = (blogs) => {
     blogs: blogPairs[1],
   };
 };
+// most likes
+
+const mostLikes = (blogs) => {
+  let newObj = _.map(blogs, (o) => _.pick(o, ['author', 'likes']));
+  let summalikes = _(newObj)
+    .map('author')
+    .uniq()
+    .map(function (key) {
+      var user = _(newObj).filter({
+        author: key,
+      });
+      return {
+        author: key,
+        likes: user.sumBy('likes'),
+        // gender: user.get('[0]').gender
+      };
+    })
+    .value();
+  let sumaLikes = _.maxBy(summalikes, 'likes');
+  console.log('sumaLikes', sumaLikes);
+  return {
+    author: sumaLikes.author,
+    likes: sumaLikes.likes,
+  };
+};
 
 module.exports = {
   dummy,
   TotalLikes,
   FavouriteBlog,
   mostBlogs,
-  // mostLikes,
+  mostLikes,
 };
