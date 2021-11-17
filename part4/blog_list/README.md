@@ -86,3 +86,7 @@ Create a test file under the test directory to run the dummy function.
 - Another way of running a single test (or describe block) is to specify the name of the test to be run with the -t flag:
 
 > `npm test -- -t 'when list has only one blog, equals the likes of that'`
+
+![Screen Shot 2021-11-17 at 5 10 09 pm](https://user-images.githubusercontent.com/67087939/142144470-e139735c-71b0-4df0-9198-f6273aa455ab.png)
+
+
