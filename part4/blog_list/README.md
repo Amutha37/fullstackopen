@@ -90,3 +90,63 @@ Create a test file under the test directory to run the dummy function.
 ![Screen Shot 2021-11-17 at 5 10 09 pm](https://user-images.githubusercontent.com/67087939/142144470-e139735c-71b0-4df0-9198-f6273aa455ab.png)
 
 
+* This will allow the user to only choose specific test file and not all the test file existing in the project folder.
+
+4.5 - 4.7 Exercise 
+* This part of test will be focussing on printing the outcome for test function : -
+
+1. Define a new function ` favoriteBlog` to print the favourite blog by returning the blogs and author with the most likes. 
+2. Define a new function `mostBlogs` to print the author with most blogs and the total number of the blogs. 
+3. Define a new function `mostLikes` to print the the author with largest amount of likes. The return print value that contains the total number of likes that the author has received. 
+
+
+# Exercises 4.8 - 4.12  This section of the test we will be testing directly with mongoDB. 
+
+1. Define the exercution mode of the application with NODE_ENV environment variable. This is to ensure we able to run the application in development and testing mode.
+
+Edit Script file to use the node convention.
+
+1.1. In order for this to work on `Windows` install `cross-env`
+
+>`npm install --save-dev cross-env`
+
+Edit script file to achieve cross-platfrom compatibility by using the cross-env library.
+
+2. Modify .env file to configure the application to execute test using separate database. We will achive our test database using `Mongo in-memory or Docker container.  
+
+3. Make changes in `config.js` file. Use ternary operator to define the application mode of database URL.
+
+
+
+4.8 Blog list test, step 1 
+
+1.  Install supertest package as a developent dependency. 
+
+>`npm install --save-dev supertest`
+
+* Supertest imports the Express application from the app.js module and wraps it with supertest function into a so-called superagent object which is then assign to the api variable and we can you it to make HTTP request for this test.
+
+2. Create test file `test/blog_api.test.js` to print the blog list total.
+
+2.1 Wrap the import module in supertest method as a parameter.
+
+2.2. Test the content type for `application\/jason/` .
+
+### To run individual test file : -
+
+run test file :
+
+> `npm test -- test/blog_api.test.js`
+
+3. Create `test_helper.js` to create initial data.
+
+4.  Initialize the database in `blog_api.test.js` before every test with the `beforeEach` function offered by `Jest`.
+
+* Use `asyn...await ` to achieve this process and `for...of` to complete the promise all return in specific order.
+
+5. Write test for blog list application returns the correct amount of blogs posts in the JSON format.
+
+6. Edit logger.js to from executing console message when  on test environment. 
+
+![Screen Shot 2021-11-25 at 10 20 09 am](https://user-images.githubusercontent.com/67087939/143324682-3d3ca404-4b94-40e4-9077-ce859abcedf9.png)
+
