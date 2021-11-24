@@ -13,7 +13,7 @@ module.exports = {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: 'error',
+    semi: ['error', 'never'],
     'no-console': 0,
   },
   // eslint-disable-next-line semi
