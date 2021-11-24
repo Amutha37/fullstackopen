@@ -4,10 +4,13 @@
   "description": "Record favourite blog list",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "build:ui": "rm -rf build && cd ../part2-notes/ && npm run build --prod && cp -r build ../notes-backend",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "lint": "eslint .",
-    "test": "jest --verbose"
+    "test": "cross-env NODE_ENV=test  jest --verbose --runInBand"
   },
   "repository": {
     "type": "git",
@@ -16,11 +19,9 @@
   "author": "Amutha Muhunthan",
   "license": "ISC",
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "eslint": "^8.2.0",
     "jest": "^27.3.1",
-    "nodemon": "^2.0.14",
-    "supertest": "^6.1.6"
+    "nodemon": "^2.0.14"
   },
   "dependencies": {
     "cors": "^2.8.5",
