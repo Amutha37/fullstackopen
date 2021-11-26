@@ -142,8 +142,14 @@ run test file :
 5. Write test for blog list application returns the correct amount of blogs posts in the JSON format.
 
 6. Edit logger.js to from executing console message when on test environment.
+![Screen Shot 2021-11-26 at 3 54 42 pm](https://user-images.githubusercontent.com/67087939/143528890-8c15a58b-1cd4-4a57-b236-5b082198eafd.png)
 
-### 4.9 Verify existence of id property
+
+
+
+4.9 Verify existence of id property
+
+### 4.![Screen Shot 2021-11-26 at 3 51 27 pm](https://user-images.githubusercontent.com/67087939/143528621-b0b12c84-ded7-435b-a1cb-3137942f8f10.png)
 
 ### 4.10 Add new blog
 
@@ -161,3 +167,5 @@ Import the library in `app.js`
 3. If an exception(error) occurs in a async route, the execution is automatically passed to the error handling middleware.
 
 - Run the test again if the supertest and cros.env is missing error is and issue reinstall again.
+![Screen Shot 2021-11-26 at 3 48 22 pm](https://user-images.githubusercontent.com/67087939/143528348-7e05ab3c-7962-400c-9793-5373b2cc8eef.png)
+
