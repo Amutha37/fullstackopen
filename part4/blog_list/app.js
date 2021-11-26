@@ -1,11 +1,13 @@
 const config = require('./utils/config')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
+require('express-async-errors')
 const express = require('express')
 
 const app = express()
 const blogsRouter = require('./controllers/blogs')
 const cors = require('cors')
+require('express-async-errors')
 
 // mongoDB atlas
 const mongoose = require('mongoose')

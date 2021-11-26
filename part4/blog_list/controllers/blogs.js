@@ -27,15 +27,16 @@ blogsRouter.get('/:id', (request, response, next) => {
     .catch((error) => next(error))
 })
 // create/add new blog list
-blogsRouter.post('/', (request, response, next) => {
+blogsRouter.post('/', async (request, response) => {
   const blog = new Blog(request.body)
-
-  blog
-    .save()
-    .then((result) => {
-      response.status(201).json(result)
-    })
-    .catch((error) => next(error))
+  const saveBlog = await blog.save()
+  response.json(saveBlog)
+  // blog
+  //   .save()
+  //   .then((result) => {
+  //     response.status(201).json(result)
+  //   })
+  //   .catch((error) => next(error))
 })
 
 // update database
@@ -59,7 +60,7 @@ blogsRouter.put('/:id', (request, response, next) => {
 // deleting database
 blogsRouter.delete('/:id', (request, response, next) => {
   Blog.findByIdAndRemove(request.params.id)
-    .then((result) => {
+    .then(() => {
       response.status(204).end()
     })
     .catch((error) => next(error))

@@ -53,6 +53,30 @@ describe('check unique id property', () => {
     })
   })
 })
+// add blogs
+// 1. add new obj
+describe('add first new blog.', () => {
+  test('a valid blog can be added', async () => {
+    const newBlog = {
+      title: 'Content Management',
+      author: 'Andrew Humphries',
+      url: 'https://www.paperflite.com/',
+      likes: 10,
+    }
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(200)
+      .expect('Content-Type', /application\/json/)
+
+    const blogsAtEnd = await helper.blogsInDb()
+    expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length + 1)
+
+    const contents = blogsAtEnd.map((r) => r.title)
+    expect(contents).toContain('Content Management')
+  })
+})
 
 afterAll(() => {
   mongoose.connection.close()

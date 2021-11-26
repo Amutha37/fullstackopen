@@ -83,24 +83,21 @@ Create a test file under the test directory to run the dummy function.
 
 ![Screen Shot 2021-11-09 at 11 33 34 am](https://user-images.githubusercontent.com/67087939/140840055-0c68b04c-13f0-4934-b483-84a533130c42.png)
 
-- Another way of running a single test (or describe block) is to specify the name of the test to be run with the -t flag:
+- Another way of running a single test (or describe block name) is to specify the name of the test to be run with the -t flag:
 
 > `npm test -- -t 'when list has only one blog, equals the likes of that'`
 
-![Screen Shot 2021-11-17 at 5 10 09 pm](https://user-images.githubusercontent.com/67087939/142144470-e139735c-71b0-4df0-9198-f6273aa455ab.png)
+- This will allow the user to only choose specific test file and not all the test file existing in the project folder.
 
+  4.5 - 4.7 Exercise
 
-* This will allow the user to only choose specific test file and not all the test file existing in the project folder.
+- This part of test will be focussing on printing the outcome for test function : -
 
-4.5 - 4.7 Exercise 
-* This part of test will be focussing on printing the outcome for test function : -
+1. Define a new function ` favoriteBlog` to print the favourite blog by returning the blogs and author with the most likes.
+2. Define a new function `mostBlogs` to print the author with most blogs and the total number of the blogs.
+3. Define a new function `mostLikes` to print the the author with largest amount of likes. The return print value that contains the total number of likes that the author has received.
 
-1. Define a new function ` favoriteBlog` to print the favourite blog by returning the blogs and author with the most likes. 
-2. Define a new function `mostBlogs` to print the author with most blogs and the total number of the blogs. 
-3. Define a new function `mostLikes` to print the the author with largest amount of likes. The return print value that contains the total number of likes that the author has received. 
-
-
-# Exercises 4.8 - 4.12  This section of the test we will be testing directly with mongoDB. 
+# Exercises 4.8 - 4.12 This section of the test we will be testing directly with mongoDB.
 
 1. Define the exercution mode of the application with NODE_ENV environment variable. This is to ensure we able to run the application in development and testing mode.
 
@@ -108,23 +105,21 @@ Edit Script file to use the node convention.
 
 1.1. In order for this to work on `Windows` install `cross-env`
 
->`npm install --save-dev cross-env`
+> `npm install --save-dev cross-env`
 
 Edit script file to achieve cross-platfrom compatibility by using the cross-env library.
 
-2. Modify .env file to configure the application to execute test using separate database. We will achive our test database using `Mongo in-memory or Docker container.  
+2. Modify .env file to configure the application to execute test using separate database. We will achive our test database using `Mongo in-memory or Docker container.
 
 3. Make changes in `config.js` file. Use ternary operator to define the application mode of database URL.
 
+### 4.8 Blog list test, step 1
 
+1.  Install supertest package as a developent dependency.
 
-4.8 Blog list test, step 1 
+> `npm install --save-dev supertest`
 
-1.  Install supertest package as a developent dependency. 
-
->`npm install --save-dev supertest`
-
-* Supertest imports the Express application from the app.js module and wraps it with supertest function into a so-called superagent object which is then assign to the api variable and we can you it to make HTTP request for this test.
+- Supertest imports the Express application from the app.js module and wraps it with supertest function into a so-called superagent object which is then assign to the api variable and we can you it to make HTTP request for this test.
 
 2. Create test file `test/blog_api.test.js` to print the blog list total.
 
@@ -140,13 +135,29 @@ run test file :
 
 3. Create `test_helper.js` to create initial data.
 
-4.  Initialize the database in `blog_api.test.js` before every test with the `beforeEach` function offered by `Jest`.
+4. Initialize the database in `blog_api.test.js` before every test with the `beforeEach` function offered by `Jest`.
 
-* Use `asyn...await ` to achieve this process and `for...of` to complete the promise all return in specific order.
+- Use `asyn...await ` to achieve this process and `for...of` to complete the promise all return in specific order.
 
 5. Write test for blog list application returns the correct amount of blogs posts in the JSON format.
 
-6. Edit logger.js to from executing console message when  on test environment. 
+6. Edit logger.js to from executing console message when on test environment.
 
-![Screen Shot 2021-11-25 at 10 20 09 am](https://user-images.githubusercontent.com/67087939/143324682-3d3ca404-4b94-40e4-9077-ce859abcedf9.png)
+### 4.9 Verify existence of id property
 
+### 4.10 Add new blog
+
+4.1 Verify it correctly saved.
+4.2 Refactor the operatioin to use async/await instead of promises.
+
+- Install > `npm install express-async-errors`
+
+Import the library in `app.js`
+
+`require('express-async-errors')`
+
+1. The 'magic' of the library allows us to eliminate the try-catch blocks completely.
+2. The library handles everything under the hood.
+3. If an exception(error) occurs in a async route, the execution is automatically passed to the error handling middleware.
+
+- Run the test again if the supertest and cros.env is missing error is and issue reinstall again.
