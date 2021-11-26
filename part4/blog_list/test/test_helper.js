@@ -6,7 +6,7 @@ const initialBlogs = [
     author: 'Michael Arrington',
     url: 'https://techcrunch.com/',
     likes: 4.5,
-    id: '61846696203d0a5c62b64a88',
+    _id: '61846696203d0a5c62b64a88',
   },
   {
     title: 'Neil Patel/blog',
@@ -20,14 +20,14 @@ const initialBlogs = [
     author: 'Greatist',
     url: 'https://greatist.com/',
     likes: 3,
-    id: '6188503729028f6d04889ad2',
+    _id: '6188503729028f6d04889ad2',
   },
   {
     title: 'tiny buddha',
     author: 'Tiny Buddha',
     url: 'https://tinybuddha.com/',
     likes: 4,
-    id: '61886cbad0598d4f69a8269f',
+    _id: '61886cbad0598d4f69a8269f',
   },
 ]
 

@@ -27,12 +27,30 @@ describe('content type', () => {
       .expect('Content-Type', /application\/json/)
   })
 })
-
+// step 1
 describe('all blogs', () => {
-  test('all blogs are returned', async () => {
+  test('return the correct amount of blogs post', async () => {
     const response = await api.get('/api/blogs')
 
     expect(response.body).toHaveLength(helper.initialBlogs.length)
+  })
+})
+
+// step 12
+describe('check unique id property', () => {
+  test('verifies the unique identifier propety of the blog named is id', async () => {
+    const response = await api.get('/api/blogs')
+
+    console.log(response.body[0].id)
+
+    // eslint-disable-next-line no-undef
+    // returnedObject = response.body._id.toString()
+    // // eslint-disable-next-line no-undef
+
+    // expect(response.body[0].id).toBeDefined()
+    response.body.forEach((blog) => {
+      expect(blog.id).toBeDefined()
+    })
   })
 })
 
