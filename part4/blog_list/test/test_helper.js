@@ -12,7 +12,6 @@ const initialBlogs = [
     title: 'Neil Patel/blog',
     author: 'Neil Patel',
     url: 'https://neilpatel.com/blog/',
-    likes: 4,
     id: '61846a7e203d0a5c62b64a8a',
   },
   {
@@ -26,7 +25,7 @@ const initialBlogs = [
     title: 'tiny buddha',
     author: 'Tiny Buddha',
     url: 'https://tinybuddha.com/',
-    likes: 4,
+    likes: 15,
     _id: '61886cbad0598d4f69a8269f',
   },
 ]

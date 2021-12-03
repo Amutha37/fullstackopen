@@ -28,7 +28,7 @@ describe('content type', () => {
   })
 })
 // step 1
-describe('all blogs', () => {
+describe('return corrent amount of blogs', () => {
   test('return the correct amount of blogs post', async () => {
     const response = await api.get('/api/blogs')
 
@@ -47,10 +47,10 @@ describe('check unique id property', () => {
     // returnedObject = response.body._id.toString()
     // // eslint-disable-next-line no-undef
 
-    // expect(response.body[0].id).toBeDefined()
-    response.body.forEach((blog) => {
-      expect(blog.id).toBeDefined()
-    })
+    expect(response.body[0].id).toBeDefined()
+    // response.body.forEach((blog) => {
+    //   expect(blog.id).toBeDefined()
+    // })
   })
 })
 // add blogs
@@ -75,6 +75,34 @@ describe('add first new blog.', () => {
 
     const contents = blogsAtEnd.map((r) => r.title)
     expect(contents).toContain('Content Management')
+  })
+})
+
+// Test missing like and set default 0
+// step 12
+describe('Likes property missing from request', () => {
+  test('If likes propery is missing set default the vote to be 0', async () => {
+    const newBlog = {
+      title: 'My Garden',
+      author: 'Michael Cooke',
+      url: 'https://www.michaelcooke.com.au/blog',
+    }
+
+    expect(newBlog).not.toHaveProperty('likes')
+
+    await api
+      .post('/api/blogs')
+      .send(newBlog)
+      .expect(200)
+      .expect('Content-Type', /application\/json/)
+    let expectedResult = newBlog
+    expectedResult.likes = 0
+
+    // the below test is done from direct fetcthed data The test pass the check for object 1 without likes.
+    const response = await api.get('/api/blogs')
+    response.body.forEach((blog) => {
+      expect(blog[1].likes).not.toHaveProperty('likes')
+    })
   })
 })
 
