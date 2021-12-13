@@ -16,5 +16,4 @@ module.exports = {
     semi: ['error', 'never'],
     'no-console': 0,
   },
-  // eslint-disable-next-line semi
 }

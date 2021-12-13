@@ -93,7 +93,14 @@ Create a test file under the test directory to run the dummy function.
 
 - This part of test will be focussing on printing the outcome for test function : -
 
+* Use lodash to test this part of task
+
 1. Define a new function ` favoriteBlog` to print the favourite blog by returning the blogs and author with the most likes.
+
+### 4.6 - 4.7 Helper function and unit test
+
+> `npm i --save lodash`
+
 2. Define a new function `mostBlogs` to print the author with most blogs and the total number of the blogs.
 3. Define a new function `mostLikes` to print the the author with largest amount of likes. The return print value that contains the total number of likes that the author has received.
 
