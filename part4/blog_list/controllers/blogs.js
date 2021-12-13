@@ -28,26 +28,15 @@ blogsRouter.get('/:id', async (request, response) => {
 })
 // create/add new blog list
 blogsRouter.post('/', async (request, response) => {
-  const body = request.body
+  // const body = request.body
 
   // with mongoDB
-
-  // if (body.title === undefined) {
-  //   return response.status(400).json({ error: 'title missing' })
-  // }
-  // if (body.url === undefined) {
-  //   return response.status(400).json({ error: 'url missing' })
-  // }
 
   const blog = new Blog({
     title: 'Content Management',
     author: 'Andrew Humphries',
     url: 'https://www.paperflite.com/',
     likes: 10,
-    // title: body.title,
-    // author: body.author,
-    // url: body.url,
-    // likes: body.likes,
   })
 
   const saveBlog = await blog.save()
