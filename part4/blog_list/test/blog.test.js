@@ -1,14 +1,14 @@
 /* eslint-disable no-undef */
-const listHelper = require('../utils/list_helper');
+const listHelper = require('../utils/list_helper')
 
 describe('dummy data', () => {
   test('dummy returns one', () => {
-    const blogs = [];
+    const blogs = []
 
-    const result = listHelper.dummy(blogs);
-    expect(result).toBe(1);
-  });
-});
+    const result = listHelper.dummy(blogs)
+    expect(result).toBe(1)
+  })
+})
 
 describe('total likes', () => {
   const blogs = [
@@ -28,12 +28,12 @@ describe('total likes', () => {
       likes: 5,
       __v: 0,
     },
-  ];
+  ]
 
   test('when list has only two blogs, add the likes of that', () => {
-    const result = listHelper.TotalLikes(blogs);
-    expect(result).toBe(12);
-  });
+    const result = listHelper.TotalLikes(blogs)
+    expect(result).toBe(12)
+  })
 
   const listMoreBlogs = [
     {
@@ -44,13 +44,13 @@ describe('total likes', () => {
       likes: 14,
       __v: 0,
     },
-  ];
+  ]
 
   test('when list has only one blog,equal the likes of that', () => {
-    const result = listHelper.TotalLikes(listMoreBlogs);
-    expect(result).toBe(14);
-  });
-});
+    const result = listHelper.TotalLikes(listMoreBlogs)
+    expect(result).toBe(14)
+  })
+})
 
 describe('favourite blog', () => {
   const blogss = [
@@ -78,18 +78,18 @@ describe('favourite blog', () => {
       likes: 12,
       __v: 0,
     },
-  ];
+  ]
 
   test('when list has only 3 blogs, print the blogs with most likes 3rd block', () => {
     const expectThisResult = {
       title: 'Canonical string reduction',
       author: 'Edsger W. Dijkstra',
       likes: 12,
-    };
+    }
 
-    const result = listHelper.FavouriteBlog(blogss);
-    expect(result).toEqual(expectThisResult);
-  });
+    const result = listHelper.FavouriteBlog(blogss)
+    expect(result).toEqual(expectThisResult)
+  })
 
   const bloggs2 = [
     {
@@ -100,24 +100,24 @@ describe('favourite blog', () => {
       likes: 0,
       __v: 0,
     },
-  ];
+  ]
 
   test('when list has only 3 blogs with two same likes, print the last block', () => {
     const expectThisResult2 = {
       title: 'React patterns',
       author: 'Michael Chan',
       likes: 0,
-    };
+    }
     //   {
     //   title: 'React patterns',
     //     author: 'Michael Chan',
     //     likes: 12,
     // };
 
-    const result = listHelper.FavouriteBlog(bloggs2);
-    expect(result).toEqual(expectThisResult2);
-  });
-});
+    const result = listHelper.FavouriteBlog(bloggs2)
+    expect(result).toEqual(expectThisResult2)
+  })
+})
 
 // MostBlogs Author
 describe('Author with Most Blogs', () => {
@@ -162,16 +162,16 @@ describe('Author with Most Blogs', () => {
       likes: 12,
       __v: 0,
     },
-  ];
+  ]
 
   test('When 2 author and 3 author with blogs print the most blogs author', () => {
-    const resultBlogs = listHelper.mostBlogs(objLodash);
+    const resultBlogs = listHelper.mostBlogs(objLodash)
     expect(resultBlogs).toEqual({
       author: 'Robert C. Martin',
       blogs: 3,
-    });
-  });
-});
+    })
+  })
+})
 
 // MostLikes Author
 describe('Author with Most Blogs', () => {
@@ -224,13 +224,13 @@ describe('Author with Most Blogs', () => {
       likes: 15,
       __v: 0,
     },
-  ];
+  ]
 
   test('Add likes of each author and print the most likes', () => {
-    const resultLikes = listHelper.mostLikes(objLodashLikes);
+    const resultLikes = listHelper.mostLikes(objLodashLikes)
     expect(resultLikes).toEqual({
       author: 'Robert C. Martin',
       likes: 24,
-    });
-  });
-});
+    })
+  })
+})
