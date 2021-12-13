@@ -196,3 +196,13 @@ Import the library in `app.js`
 
 . Update the likes of any post.
 . Write a test for this functionality.
+
+A more sophisticated way is to use the dotenv library. You can install the library with the command:
+
+> `npm install dotenv`
+
+\*\*\* The .env file should be gitignored right away, since we do not want to publish any confidential information publicly online!
+
+The environment variables defined in the .env file can be taken into use with the expression require('dotenv').config() and you can reference them in your code just like you would reference normal environment variables, with the familiar process.env.MONGODB_URI syntax.
+
+It's important that dotenv gets imported before the note model is imported. This ensures that the environment variables from the .env file are available globally before the code from the other modules is imported.
