@@ -32,12 +32,12 @@ blogsRouter.post('/', async (request, response) => {
 
   // with mongoDB
 
-  if (body.title === undefined) {
-    return response.status(400).json({ error: 'title missing' })
-  }
-  if (body.url === undefined) {
-    return response.status(400).json({ error: 'url missing' })
-  }
+  // if (body.title === undefined) {
+  //   return response.status(400).json({ error: 'title missing' })
+  // }
+  // if (body.url === undefined) {
+  //   return response.status(400).json({ error: 'url missing' })
+  // }
 
   const blog = new Blog({
     title: 'Content Management',
