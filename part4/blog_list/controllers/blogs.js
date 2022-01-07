@@ -7,6 +7,7 @@ blogsRouter.get('/api/blogs', (request, response) => {
     response.json(blogs)
   })
 })
+
 // GET ALL blog list
 blogsRouter.get('/', (request, response) => {
   Blog.find({}).then((blogs) => {

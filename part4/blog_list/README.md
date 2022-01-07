@@ -201,7 +201,7 @@ A more sophisticated way is to use the dotenv library. You can install the libra
 
 > `npm install dotenv`
 
-\*\*\* The .env file should be gitignored right away, since we do not want to publish any confidential information publicly online!
+** The .env file should be gitignored right away, since we do not want to publish any confidential information publicly online!
 
 The environment variables defined in the .env file can be taken into use with the expression require('dotenv').config() and you can reference them in your code just like you would reference normal environment variables, with the familiar process.env.MONGODB_URI syntax.
 
