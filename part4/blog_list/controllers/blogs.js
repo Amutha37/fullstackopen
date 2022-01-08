@@ -1,19 +1,37 @@
 const blogsRouter = require('express').Router()
 const Blog = require('../models/blog')
+const User = require('../models/user')
+const jwt = require('jsonwebtoken')
 
 // GET ALL blog list
-blogsRouter.get('/api/blogs', (request, response) => {
-  Blog.find({}).then((blogs) => {
-    response.json(blogs)
-  })
+blogsRouter.get('/api/blogs', async (request, response) => {
+  // Blog.find({}).then((blogs) => {
+  //   response.json(blogs)
+  // })
+  const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
+
+  response.json(blogs.map((blog) => blog.toJSON()))
 })
 
 // GET ALL blog list
-blogsRouter.get('/', (request, response) => {
-  Blog.find({}).then((blogs) => {
-    response.json(blogs)
-  })
+blogsRouter.get('/', async (request, response) => {
+  // Blog.find({}).then((blogs) => {
+  //   response.json(blogs)
+  // })
+  const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
+
+  response.json(blogs.map((blog) => blog.toJSON()))
 })
+
+// token authorization
+const getTokenFrom = (request) => {
+  const authorization = request.get('authorization')
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+    return authorization.substring(7)
+  }
+  return null
+}
+
 // pull one record blog
 // check for individual id to load from the url to code to filter
 blogsRouter.get('/:id', async (request, response) => {
@@ -29,7 +47,15 @@ blogsRouter.get('/:id', async (request, response) => {
 })
 // create/add new blog list
 blogsRouter.post('/', async (request, response) => {
-  // const body = request.body
+  const body = request.body
+
+  // token authorization
+  const token = getTokenFrom(request)
+  const decodedToken = jwt.verify(token, process.env.SECRET)
+  if (!decodedToken.id) {
+    return response.status(401).json({ error: 'token missing or invalid' })
+  }
+  const user = await User.findById(decodedToken.id)
 
   // with mongoDB
 
@@ -38,9 +64,13 @@ blogsRouter.post('/', async (request, response) => {
     author: 'Andrew Humphries',
     url: 'https://www.paperflite.com/',
     likes: 10,
+    user: user._id,
   })
 
   const saveBlog = await blog.save()
+  user.blogs = user.blogs.concat(savedBlog._id)
+  await user.save()
+
   response.json(saveBlog)
   // blog
   //   .save()
