@@ -4,14 +4,11 @@ const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 
 // GET ALL blog list
-blogsRouter.get('/api/blogs', async (request, response) => {
-  // Blog.find({}).then((blogs) => {
-  //   response.json(blogs)
-  // })
-  const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
+// blogsRouter.get('/api/blogs', async (request, response) => {
+//   const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
 
-  response.json(blogs.map((blog) => blog.toJSON()))
-})
+//   response.json(blogs.map((blog) => blog.toJSON()))
+// })
 
 // GET ALL blog list
 blogsRouter.get('/', async (request, response) => {
