@@ -8,18 +8,31 @@ const User = require('../models/user')
 //   response.json(users)
 // })
 usersRouter.get('/', async (request, response) => {
+  // const users = await User.find({}).populate('blogs')
+
+  // response.json(users)
   const users = await User.find({}).populate('blogs', {
     title: 1,
     author: 1,
     url: 1,
     likes: 1,
+    // blogs: 1,
   })
-
+  console.log(users)
   response.json(users.map((u) => u.toJSON()))
 })
 
 usersRouter.post('/', async (request, response) => {
   const body = request.body
+  if (body.username.length < 3) {
+    return response
+      .status(400)
+      .json({ error: 'Username must be grater than 2' })
+  } else if (body.password.length < 5) {
+    return response
+      .status(400)
+      .json({ error: 'Password must be grater than 4' })
+  }
 
   const saltRounds = 10
   const passwordHash = await bcrypt.hash(body.password, saltRounds)

@@ -4,13 +4,6 @@ const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 
 // GET ALL blog list
-// blogsRouter.get('/api/blogs', async (request, response) => {
-//   const blogs = await Blog.find({}).populate('user', { username: 1, name: 1 })
-
-//   response.json(blogs.map((blog) => blog.toJSON()))
-// })
-
-// GET ALL blog list
 blogsRouter.get('/', async (request, response) => {
   // Blog.find({}).then((blogs) => {
   //   response.json(blogs)
@@ -53,22 +46,22 @@ blogsRouter.post('/', async (request, response) => {
     return response.status(401).json({ error: 'token missing or invalid' })
   }
   const user = await User.findById(decodedToken.id)
-
+  // const user = await User.findById(body.userId)
   // with mongoDB
 
   const blog = new Blog({
-    title: 'Content Management',
-    author: 'Andrew Humphries',
-    url: 'https://www.paperflite.com/',
-    likes: 10,
+    title: body.title,
+    author: body.author,
+    url: body.url,
+    likes: body.likes,
     user: user._id,
   })
 
-  const saveBlog = await blog.save()
+  const savedBlog = await blog.save()
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
 
-  response.json(saveBlog)
+  response.json(savedBlog)
   // blog
   //   .save()
   //   .then((result) => {
@@ -86,6 +79,7 @@ blogsRouter.put('/:id', async (request, response, next) => {
     author: body.author,
     url: body.url,
     likes: newLikes,
+    // user: body._id,
   }
 
   await Blog.findByIdAndUpdate(request.params.id, blog, { new: true })
