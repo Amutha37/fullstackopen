@@ -16,9 +16,9 @@ usersRouter.get('/', async (request, response) => {
     author: 1,
     url: 1,
     likes: 1,
-    // blogs: 1,
+    blogs: 1,
   })
-  console.log(users)
+  // console.log(blogs)
   response.json(users.map((u) => u.toJSON()))
 })
 
