@@ -197,15 +197,116 @@ Import the library in `app.js`
 . Update the likes of any post.
 . Write a test for this functionality.
 
-![Screen Shot 2021-12-13 at 1 39 54 pm](https://user-images.githubusercontent.com/67087939/146101657-988c7e46-55be-4a5a-9b8c-41804c0b8951.png)
-
-
 A more sophisticated way is to use the dotenv library. You can install the library with the command:
 
 > `npm install dotenv`
 
-** The .env file should be gitignored right away, since we do not want to publish any confidential information publicly online!
+\*\* The .env file should be gitignored right away, since we do not want to publish any confidential information publicly online!
 
 The environment variables defined in the .env file can be taken into use with the expression require('dotenv').config() and you can reference them in your code just like you would reference normal environment variables, with the familiar process.env.MONGODB_URI syntax.
 
 It's important that dotenv gets imported before the note model is imported. This ensures that the environment variables from the .env file are available globally before the code from the other modules is imported.
+
+# User administration database and token-base authentication
+
+In this part we will implement user admin data-base which will record username,name and password. This will be store in document database MongoDB.
+
+We will use npm package library :
+
+1. `npm uninstall bcrypt` function for hash password
+
+2. `npm install jsonwebtoken` to generate JSON web tokens.
+
+### 4.15 Bloglist step 3
+
+Create a new users using HTTP POST request to address api/users. Field username,password and name. Iinstall password libray `bcrypt`.
+
+> `npm install bcrypt`
+
+\*\*\* NB Some Windows users have had problems with bcrypt. If you run into problems, remove the library with command `npm uninstall bcrypt` and install `bcryptjs` instead.
+
+List all the new user.
+`/api/users`
+
+### 4.16 Bloglist step 4
+
+Add validation for user length and unique username.
+Use suitable status code and error message for invalid data entry.
+
+### 4.17 Bloglist step 5
+
+Record the creator(from the user database) of the blog in each blogs.
+
+List the all blogs with the creator in display.
+
+### 4.18 Bloglist Step 6
+
+## Implement token-based authentication using :
+
+> `npm instal jsonwebtoken`
+
+Create code for the function in `controllers/login.js`.
+
+The process for the new note is : -
+
+1. Create user `controllers/users.js`
+2. Create token `controllers/login.js` using the user and password.
+3. Create new note with token from step 2. 'controllers/notes.js` using token and bearer scheme
+
+- Bearer scheme is necessary for server to offer multiple ways to authenticate. Attach credentials ..
+
+# The token can be faulty (like in our example), falsified, or expired. Let's extend our errorHandler middleware to take into account the different decoding errors. Using middleware to handle decoding errors.
+
+(error.name === 'JsonWebTokenError') {
+return response.status(401).json({
+error: 'invalid token',
+})
+}
+
+If the application has multiple interfaces requiring identification, JWT's(jswebtoken) validation should be separated into its own middleware. Some existing library like express-jwt could also be used.
+
+Problems of Token-based authentication
+
+- Downside of token is it has blind trust to the token holder. It allow a user who access has been denied to still use the token. For this reason we can limit the validity period of the token.
+
+- const token = jwt.sign(userForToken, process.env.SECRET, {
+  expiresIn: 30 \* 30,
+  })`
+
+The client has to get new token once the token expire. We use middleware to handle the expired token error.
+
+Option two is to create a server side session. Saving the token infor in backend datebase and check for API request for access right.
+
+The downside for server side session is it increase the complexity and performance since the token validity needs to be checked for each API request from database which considered slower compare to checking validity from token itself.
+
+### 4.19 Bloglist Step 7
+
+Use the user and password identified by the token as the creator of the blog.
+
+### 4.20 Bloglist Step 8
+
+Refactor token generator to a middleware. Registering the middleware in the app.js file.
+
+`app.use(middleware.tokenExtractor)`
+
+### 4.21 Bloglist Step 9
+
+Delete a blog only by the user with the requested token.
+
+`const blog = await Blog.findById(...)`
+
+Object.id must be string
+
+`if ( blog.user.toString() === userid.toString() ) `
+
+### 4.22 Bloglist Step 10
+
+Use one middleware to extract user token and sets it to the request object.
+
+Register the middleware in app.js
+
+`app.use(middleware.userExtractor)`
+
+On REST API
+
+` const user = request.user`
