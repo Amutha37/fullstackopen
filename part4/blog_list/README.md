@@ -318,12 +318,10 @@ On REST API
 
 # 4.23 Bloglist Step 11
 
-Fixed all jest testing after implementation of `token authentication` .
+Test result of user and token authentication.
 
-Test screen of user_api using token authentication.
+![user_api test](https://user-images.githubusercontent.com/67087939/150930944-b6572cf1-19e2-42a2-a435-d56d82770f79.png)
 
-![user_api test](https://user-images.githubusercontent.com/67087939/150929454-61c1862a-9658-427d-a9cb-8d29f3043d57.png)
+Test result of blog_api.test after implementation of user and token.
 
-Test screen of blog_api.test after using user and token authentication.
-
-![blog_api test](https://user-images.githubusercontent.com/67087939/150929938-5e13d8a6-abc3-4926-9a19-7d0324192663.png)
+![blog_api test](https://user-images.githubusercontent.com/67087939/150930919-9ba6227a-331a-4757-8d4f-a867992f923e.png)
