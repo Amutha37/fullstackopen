@@ -44,6 +44,7 @@ In order for the the given application to work as a functioning npm project, we 
 > `npm install mongoose`
 
 > `npm i mongoose-unique-validator@2.0.1`
+> Mongoose 2.0.1 workd for cross id recording of 2 document database.
 
 Use Postman or VS Code REST client to test operation.
 
@@ -108,6 +109,8 @@ Create a test file under the test directory to run the dummy function.
 
 # Exercises 4.8 - 4.12 This section of the test we will be testing directly with mongoDB.
 
+STEPS
+
 1. Define the exercution mode of the application with NODE_ENV environment variable. This is to ensure we able to run the application in development and testing mode.
 
 Edit Script file to use the node convention.
@@ -140,7 +143,7 @@ Edit script file to achieve cross-platfrom compatibility by using the cross-env 
 
 run test file :
 
-> `npm test -- "test/blog_api.test.js"`
+> `npm test -- test/blog_api.test.js`
 
 3. Create `test_helper.js` to create initial data.
 
@@ -314,3 +317,13 @@ On REST API
 ` const user = request.user`
 
 # 4.23 Bloglist Step 11
+
+Fixed all jest testing after implementation of `token authentication` .
+
+Test screen of user_api using token authentication.
+
+![user_api test](https://user-images.githubusercontent.com/67087939/150929454-61c1862a-9658-427d-a9cb-8d29f3043d57.png)
+
+Test screen of blog_api.test after using user and token authentication.
+
+![blog_api test](https://user-images.githubusercontent.com/67087939/150929938-5e13d8a6-abc3-4926-9a19-7d0324192663.png)
