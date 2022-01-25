@@ -166,7 +166,7 @@ describe('creation of new user', () => {
     expect(usersAtEnd).toHaveLength(1)
   })
 
-  test(`fails if password isn't long enough w/ 400 and is shorter'`, async () => {
+  test("fails if password isn't long enough w/ 400 and is shorter'", async () => {
     const newUser = {
       username: 'MongoDb',
       name: 'MongoDbAtlas',

@@ -7,51 +7,41 @@ const jwt = require('jsonwebtoken')
 const api = supertest(app)
 
 // user password schema
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcrypt')
 const User = require('../models/user')
 const Blog = require('../models/blog')
 // mongoDB test data initialization
+//  ==== setTimeOut ====
+jest.setTimeout(80000)
 
-let token
+//  ===== global token =====
+let globalToken
 
 // describe('when there is initially some notes saved', () => {
 beforeEach(async () => {
   await User.deleteMany({})
 
-  let passwordH = await bcrypt.hash('sekret', 10)
-  console.log(passwordH)
+  let passwordHash = await bcrypt.hash('test', 10)
+
   const user = new User({
-    username: 'Amuthajs',
-    name: 'AmuthaM',
-    password: passwordH,
+    username: 'test',
+    passwordHash,
   })
 
   await user.save()
 
-  const userForToken = {
-    username: user.username,
-    id: user._id,
-  }
+  const response = await api
+    .post('/api/login')
+    .send({ username: 'test', password: 'test' })
+  globalToken = `Bearer ${response.body.token}`
 
-  token = jwt.sign(userForToken, process.env.SECRET)
-
-  // for (let blog of helper.initialBlogs) {
-  //   let blogObject = new Blog(blog)
-  //   await blogObject.save()
-  // }
-  // using insert
-  // await Blog.insertMany(helper.initialBlogs)
-  // using all promise
   await Blog.deleteMany({})
+
   blogs = helper.initialBlogs.map(
     (blog) => new Blog({ ...blog, user: user.id })
   )
   await Blog.insertMany(blogs)
-  // const blogObjects = helper.initialBlogs.map((blog) => new Blog(blog))
-  // const promiseArray = blogObjects.map((blog) => blog.save())
-  // await Promise.all(promiseArray)
-  console.log('done')
-}, 100000)
+})
 
 describe('When there is initially some blogs', () => {
   test('blogs are returned as json', async () => {
@@ -76,16 +66,7 @@ describe('check unique id property', () => {
   test('verifies the unique identifier propety of the blog named is id', async () => {
     const response = await api.get('/api/blogs')
 
-    console.log(response.body[0].id)
-
-    // eslint-disable-next-line no-undef
-    // returnedObject = response.body._id.toString()
-    // // eslint-disable-next-line no-undef
-
     expect(response.body[0].id).toBeDefined()
-    // response.body.forEach((blog) => {
-    //   expect(blog.id).toBeDefined()
-    // })
   })
 })
 // add blogs
@@ -99,13 +80,11 @@ describe('add first new blog', () => {
       author: 'Matt',
       url: 'https://www.paperflite.com/',
       likes: 12,
-      // user: userToken.id,
     }
-
     await api
       .post('/api/blogs')
+      .set('Authorization', globalToken)
       .send(newBlog)
-      .set('Authorization', `bearer ${token}`)
       .expect(200)
       .expect('Content-Type', /application\/json/)
 
@@ -114,7 +93,7 @@ describe('add first new blog', () => {
 
     const contents = blogsAtEnd.map((r) => r.title)
     expect(contents).toContain('Content Management')
-  }, 10000)
+  })
 })
 
 // Test missing like and set default 0
@@ -131,17 +110,14 @@ describe('Likes property missing from request', () => {
 
     await api
       .post('/api/blogs')
+      .set('Authorization', globalToken)
       .send(newBlog)
       .expect(200)
       .expect('Content-Type', /application\/json/)
-    let expectedResult = newBlog
-    expectedResult.likes = 0
 
-    // the below test is done from direct fetcthed data The test pass the check for object 1 without likes.
-    // const response = await api.get('/api/blogs')
-    // response.body.forEach((blog) => {
-    //   expect(blog[1]).not.toHaveProperty('likes')
-    // })
+    const blogsAtEnd = await helper.blogsInDb()
+    const addedBlog = blogsAtEnd[blogsAtEnd.length - 1]
+    expect(addedBlog.likes).toBe(0)
   })
 })
 
@@ -151,30 +127,52 @@ describe('Title and url missing should response with 400 Bad Request', () => {
   test('Fails with status 400 if data invalid', async () => {
     const newTestBlog = {
       author: 'Michael Cooke',
-      url: 'https://techcrunch.com/',
       likes: 10,
     }
-
     await api
       .post('/api/blogs')
+      .set('Authorization', globalToken)
       .send(newTestBlog)
-      .expect('Content-Type', /application\/json/)
       .expect(400)
+      .expect('Content-Type', /application\/json/)
+
     const blogsAtEnd = await helper.blogsInDb()
     expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length)
   })
 })
+// test for updating  likes for blog post
+describe('update individual blog', () => {
+  test('a likes can be updated', async () => {
+    const blogsAtStart = await helper.blogsInDb()
+    const blogToUpdate = blogsAtStart[0]
 
+    const newLikes = 6
+    const blog = {
+      ...blogToUpdate,
+      likes: newLikes,
+    }
+
+    await api
+      .put(`/api/blogs/${blogToUpdate.id}`)
+      .set('Authorization', globalToken)
+      .send(blog)
+      .expect(200)
+
+    const blogsAfterUpdate = await helper.blogsInDb()
+
+    expect(blogsAfterUpdate[0].likes).toBe(blog.likes)
+  })
+})
 //  test for removing individual blog
 describe('deleting a blog', () => {
   test('succeeds deleting with status code 204', async () => {
     const blogsAtStart = await helper.blogsInDb()
     const blogToDelete = blogsAtStart[0]
-    await api
+
+    const deleteBlog = await api
       .delete(`/api/blogs/${blogToDelete.id}`)
-      .expect('Content-Type', /application\/json/)
+      .set('Authorization', globalToken)
     expect(deleteBlog.status).toBe(204)
-    // .expect(204)
 
     const blogsAtEnd = await helper.blogsInDb()
 
@@ -185,25 +183,6 @@ describe('deleting a blog', () => {
     expect(id).not.toContain(blogToDelete.id)
   })
 })
-
-// test for updating  likes for blog post
-describe('update individual blog', () => {
-  test('a likes can be updated', async () => {
-    const blogsAtStart = await helper.blogsInDb()
-    const blogToUpdate = blogsAtStart[0]
-
-    const newLikes = 6
-    const blog = {
-      title: blogToUpdate.title,
-      author: blogToUpdate.author,
-      url: blogToUpdate.url,
-      likes: newLikes,
-    }
-
-    await api.put(`/api/blogs/${blogToUpdate.id}`).send(blog).expect(200)
-  })
-})
-// })
 
 afterAll(() => {
   mongoose.connection.close()

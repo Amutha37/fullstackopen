@@ -23,43 +23,40 @@ blogsRouter.get('/:id', async (request, response) => {
 
 // create/add new blog list
 blogsRouter.post('/', async (request, response) => {
-  const body = request.body
-
-  const token = request.user
-
-  const user = await User.findById(token)
+  const userToken = request.user
+  const user = await User.findById(userToken)
 
   // with mongoDB
-
+  if (!request.body.title || !request.body.url) {
+    return response.status(400).json({
+      error: '`title and url` is required',
+    })
+  }
   const blog = new Blog({
-    title: body.title,
-    author: body.author,
-    url: body.url,
-    likes: body.likes,
+    // title: body.title,
+    // author: body.author,
+    // url: body.url,
+    // likes: body.likes,
+    ...request.body,
     user: user.id,
   })
 
   const savedBlog = await blog.save()
   user.blogs = user.blogs.concat(savedBlog.id)
   await user.save()
-  // await blog.save()
 
   response.json(savedBlog)
 })
 
 // update database
 blogsRouter.put('/:id', async (request, response, next) => {
-  const body = request.body
   const user = request.user
 
   try {
     const blog = await Blog.findById(request.params.id)
     if (blog.user.toString() === user.toString()) {
       const blogUpdate = {
-        title: body.title,
-        author: body.author,
-        url: body.url,
-        likes: body.likes,
+        ...request.body,
       }
 
       await Blog.findByIdAndUpdate(request.params.id, blogUpdate, { new: true })
