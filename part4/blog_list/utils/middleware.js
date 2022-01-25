@@ -34,7 +34,7 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
-const userTokenExtractor = async (request, response, next) => {
+const tokenExtractor = async (request, response, next) => {
   const authorization = request.get('authorization')
 
   if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
@@ -56,25 +56,33 @@ const userTokenExtractor = async (request, response, next) => {
   next()
 }
 
-// const tokenValidator = (request, response, next) => {
-//   const token = request.token
-//   if (!token) {
-//     return response.status(401).json({ error: 'token missing' })
+const userExtractor = async (request, response, next) => {
+  const authorization = request.get('authorization')
 
-//   }
+  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
+    request.token = authorization.substring(7)
+  } else {
+    request.token = null
+  }
+  try {
+    const userToken = await jwt.verify(request.token, process.env.SECRET)
+    if (!request.token || !userToken) {
+      return response.status(401).json({ error: 'token missing or invalid' })
+    } else {
+      request.user = userToken.id
+    }
+  } catch (error) {
+    request.user = null
+  }
 
-//   const decodedToken = jwt.verify(token, process.env.SECRET)
-//   if (!decodedToken.id) {
-//     return response.status(401).json({ error: 'invalid token' })
-//   }
-//   next()
-// }
-
+  next()
+}
 // token
 
 module.exports = {
   requestLogger,
   unknownEndpoint,
   errorHandler,
-  userTokenExtractor,
+  tokenExtractor,
+  userExtractor,
 }

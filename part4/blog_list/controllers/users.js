@@ -18,16 +18,27 @@ usersRouter.get('/', async (request, response) => {
     likes: 1,
     blogs: 1,
   })
-  // console.log(blogs)
   response.json(users.map((u) => u.toJSON()))
 })
 
 usersRouter.post('/', async (request, response) => {
   const body = request.body
-  if (body.username.length < 3) {
+  if (!body.username) {
+    return response.status(400).json({
+      error: '`username` is required',
+    })
+  } else if (body.username.length < 3) {
     return response
       .status(400)
-      .json({ error: 'Username must be grater than 2' })
+      .json({ error: 'is shorter than the minimum allowed length (3)' })
+  }
+
+  if (!body.password || body.password.length < 3) {
+    return response.status(400).json({
+      error: !body.password
+        ? '`password` is required'
+        : '`password` needs to be at least 3 characters long',
+    })
   } else if (body.password.length < 5) {
     return response
       .status(400)

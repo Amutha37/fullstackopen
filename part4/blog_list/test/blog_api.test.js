@@ -2,19 +2,39 @@ const mongoose = require('mongoose')
 const helper = require('./test_helper')
 const supertest = require('supertest')
 const app = require('../app')
+const jwt = require('jsonwebtoken')
 
 const api = supertest(app)
-const Blog = require('../models/blog')
 
 // user password schema
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const User = require('../models/user')
-
+const Blog = require('../models/blog')
 // mongoDB test data initialization
-beforeEach(async () => {
-  await Blog.deleteMany({})
 
-  console.log('cleared')
+let token
+
+// describe('when there is initially some notes saved', () => {
+beforeEach(async () => {
+  await User.deleteMany({})
+
+  let passwordH = await bcrypt.hash('sekret', 10)
+  console.log(passwordH)
+  const user = new User({
+    username: 'Amuthajs',
+    name: 'AmuthaM',
+    password: passwordH,
+  })
+
+  await user.save()
+
+  const userForToken = {
+    username: user.username,
+    id: user._id,
+  }
+
+  token = jwt.sign(userForToken, process.env.SECRET)
+
   // for (let blog of helper.initialBlogs) {
   //   let blogObject = new Blog(blog)
   //   await blogObject.save()
@@ -22,9 +42,14 @@ beforeEach(async () => {
   // using insert
   // await Blog.insertMany(helper.initialBlogs)
   // using all promise
-  const blogObjects = helper.initialBlogs.map((blog) => new Blog(blog))
-  const promiseArray = blogObjects.map((blog) => blog.save())
-  await Promise.all(promiseArray)
+  await Blog.deleteMany({})
+  blogs = helper.initialBlogs.map(
+    (blog) => new Blog({ ...blog, user: user.id })
+  )
+  await Blog.insertMany(blogs)
+  // const blogObjects = helper.initialBlogs.map((blog) => new Blog(blog))
+  // const promiseArray = blogObjects.map((blog) => blog.save())
+  // await Promise.all(promiseArray)
   console.log('done')
 }, 100000)
 
@@ -67,16 +92,20 @@ describe('check unique id property', () => {
 // 1. add new obj
 describe('add first new blog', () => {
   test('a valid blog can be added', async () => {
+    // new blog
+
     const newBlog = {
       title: 'Content Management',
-      author: 'Andrew Humphries',
+      author: 'Matt',
       url: 'https://www.paperflite.com/',
-      likes: 10,
+      likes: 12,
+      // user: userToken.id,
     }
 
     await api
       .post('/api/blogs')
       .send(newBlog)
+      .set('Authorization', `bearer ${token}`)
       .expect(200)
       .expect('Content-Type', /application\/json/)
 
@@ -85,7 +114,7 @@ describe('add first new blog', () => {
 
     const contents = blogsAtEnd.map((r) => r.title)
     expect(contents).toContain('Content Management')
-  })
+  }, 10000)
 })
 
 // Test missing like and set default 0
@@ -122,10 +151,15 @@ describe('Title and url missing should response with 400 Bad Request', () => {
   test('Fails with status 400 if data invalid', async () => {
     const newTestBlog = {
       author: 'Michael Cooke',
+      url: 'https://techcrunch.com/',
       likes: 10,
     }
 
-    await api.post('/api/blogs').send(newTestBlog).expect(400)
+    await api
+      .post('/api/blogs')
+      .send(newTestBlog)
+      .expect('Content-Type', /application\/json/)
+      .expect(400)
     const blogsAtEnd = await helper.blogsInDb()
     expect(blogsAtEnd).toHaveLength(helper.initialBlogs.length)
   })
@@ -136,7 +170,11 @@ describe('deleting a blog', () => {
   test('succeeds deleting with status code 204', async () => {
     const blogsAtStart = await helper.blogsInDb()
     const blogToDelete = blogsAtStart[0]
-    await api.delete(`/api/blogs/${blogToDelete.id}`).expect(204)
+    await api
+      .delete(`/api/blogs/${blogToDelete.id}`)
+      .expect('Content-Type', /application\/json/)
+    expect(deleteBlog.status).toBe(204)
+    // .expect(204)
 
     const blogsAtEnd = await helper.blogsInDb()
 
@@ -165,41 +203,7 @@ describe('update individual blog', () => {
     await api.put(`/api/blogs/${blogToUpdate.id}`).send(blog).expect(200)
   })
 })
-// USER ADMIN
-//  Test blogs for user password authentication
-
-describe('when there is initially one user in db', () => {
-  beforeEach(async () => {
-    await User.deleteMany({})
-
-    const passwordHash = await bcrypt.hash('sekret', 10)
-    const user = new User({ username: 'root', passwordHash })
-
-    await user.save()
-  })
-
-  test('creation succeeds with a fresh username', async () => {
-    const usersAtStart = await helper.usersInDb()
-
-    const newUser = {
-      username: 'AMutha',
-      name: 'Amutha Muhunthan',
-      password: 'narracan',
-    }
-
-    await api
-      .post('/api/users')
-      .send(newUser)
-      .expect(200)
-      .expect('Content-Type', /application\/json/)
-
-    const usersAtEnd = await helper.usersInDb()
-    expect(usersAtEnd).toHaveLength(usersAtStart.length + 1)
-
-    const usernames = usersAtEnd.map((u) => u.username)
-    expect(usernames).toContain(newUser.username)
-  })
-})
+// })
 
 afterAll(() => {
   mongoose.connection.close()

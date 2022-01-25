@@ -43,6 +43,8 @@ In order for the the given application to work as a functioning npm project, we 
 
 > `npm install mongoose`
 
+> `npm i mongoose-unique-validator@2.0.1`
+
 Use Postman or VS Code REST client to test operation.
 
 If you are using VS Code REST install the extension, create file `.rest` use the operation to test.
@@ -310,3 +312,5 @@ Register the middleware in app.js
 On REST API
 
 ` const user = request.user`
+
+# 4.23 Bloglist Step 11
