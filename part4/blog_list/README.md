@@ -314,3 +314,9 @@ On REST API
 ` const user = request.user`
 
 # 4.23 Bloglist Step 11
+
+
+
+![user_api test](https://user-images.githubusercontent.com/67087939/150929454-61c1862a-9658-427d-a9cb-8d29f3043d57.png)
+
+![user_api test](https://user-images.githubusercontent.com/67087939/150929469-e0749412-f90c-4844-8056-fa37a6603717.png)
