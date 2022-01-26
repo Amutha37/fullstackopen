@@ -21,10 +21,10 @@ let globalToken
 beforeEach(async () => {
   await User.deleteMany({})
 
-  let passwordHash = await bcrypt.hash('test', 10)
+  let passwordHash = await bcrypt.hash('Tokenpass', 10)
 
   const user = new User({
-    username: 'test',
+    username: 'Token',
     passwordHash,
   })
 
@@ -32,7 +32,7 @@ beforeEach(async () => {
 
   const response = await api
     .post('/api/login')
-    .send({ username: 'test', password: 'test' })
+    .send({ username: 'Token', password: 'Tokenpass' })
   globalToken = `Bearer ${response.body.token}`
 
   await Blog.deleteMany({})
