@@ -1,25 +1,24 @@
 h2 {
-  /* text-align: center; */
-  margin-left: 7rem;
   color: blue;
+  margin-right: 7rem;
 }
 /* login form   */
 
 .login_form_container {
   width: 30rem;
   height: 20rem;
-  margin-bottom: 3rem;
-  text-align: center;
-  background-color: rgb(138, 236, 203);
+  background-color: rgb(147, 240, 217);
 }
 
 .login_form {
   margin-top: 5rem;
+  text-align: center;
 }
+
 input {
-  margin-top: 2rem;
-  padding: 3px;
+  margin-top: 1rem;
+  margin-left: 5px;
 }
 button {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
