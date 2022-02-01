@@ -32,35 +32,37 @@ const App = () => {
     }
   }, [])
   // === Add new blog list ===
-  const addBlog = (event) => {
+  const addBlog = async (event) => {
     event.preventDefault()
-    const blogObject = {
-      title: title,
-      author: author,
-      url: url,
-      // likes: 18,
-    }
+
+    const newBlog = { title, author, url }
+    // const newBlog = {
+    //   title: title,
+    //   author: author,
+    //   url: url,
+    // }
     setErrTextColour(false)
-    blogService
-      .create(blogObject)
-      .then((returnedBlog) => {
-        setBlogs(blogs.concat(returnedBlog))
-        setTitle('')
-        setUrl('')
-        setAuthor('')
-        setErrorMessage(`Blog '${blogObject.title}' succesfully saved.`)
-        setTimeout(() => {
-          setErrorMessage(null)
-        }, 5000)
-      })
-      .catch((error) => {
-        console.log(error.response.data)
-        setErrTextColour(true)
-        setErrorMessage(error.response.data)
-        setTimeout(() => {
-          setErrorMessage(null)
-        }, 5000)
-      })
+    try {
+      const saveBlog = await blogService.create(newBlog)
+      // .then((returnedBlog) => {
+      // setBlogs(blogs.concat(returnedBlog))
+      setBlogs([...blogs, saveBlog])
+      setTitle('')
+      setUrl('')
+      setAuthor('')
+      setErrorMessage(`Blog '${newBlog.title}' succesfully saved.`)
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)
+      // })
+    } catch (error) {
+      console.log(error.response.data)
+      setErrTextColour(true)
+      setErrorMessage(error.response.data)
+      setTimeout(() => {
+        setErrorMessage(null)
+      }, 5000)
+    }
   }
 
   // === New Blog list form ===
@@ -74,6 +76,7 @@ const App = () => {
       <input
         type='text'
         value={title}
+        name='title'
         onChange={({ target }) => setTitle(target.value)}
       />
 
@@ -81,6 +84,7 @@ const App = () => {
       <input
         type='text'
         value={author}
+        name='author'
         onChange={({ target }) => setAuthor(target.value)}
       />
 
@@ -88,6 +92,7 @@ const App = () => {
       <input
         type='text'
         value={url}
+        name='url'
         onChange={({ target }) => setUrl(target.value)}
       />
 
