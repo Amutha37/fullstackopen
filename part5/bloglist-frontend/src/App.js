@@ -14,6 +14,11 @@ const App = () => {
   const [errTextColour, setErrTextColour] = useState(true)
   const [blogs, setBlogs] = useState([])
 
+  // == new blog list local state ===
+  const [title, setTitle] = useState('')
+  const [author, setAuthor] = useState('')
+  const [url, setUrl] = useState('')
+
   useEffect(() => {
     blogService.getAll().then((blogs) => setBlogs(blogs))
   }, [])
@@ -26,7 +31,69 @@ const App = () => {
       blogService.setToken(user.token)
     }
   }, [])
+  // === Add new blog list ===
+  const addBlog = (event) => {
+    event.preventDefault()
+    const blogObject = {
+      title: title,
+      author: author,
+      url: url,
+      // likes: 18,
+    }
+    setErrTextColour(false)
+    blogService
+      .create(blogObject)
+      .then((returnedBlog) => {
+        setBlogs(blogs.concat(returnedBlog))
+        setTitle('')
+        setUrl('')
+        setAuthor('')
+        setErrorMessage(`Blog '${blogObject.title}' succesfully saved.`)
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
+      })
+      .catch((error) => {
+        console.log(error.response.data)
+        setErrTextColour(true)
+        setErrorMessage(error.response.data)
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
+      })
+  }
 
+  // === New Blog list form ===
+  const blogForm = () => (
+    <form onSubmit={addBlog} className='blog_list_container'>
+      {/* <label>
+    Name:
+    <input type="text" name="name" />
+  </label> */}
+      <label>Title : </label>
+      <input
+        type='text'
+        value={title}
+        onChange={({ target }) => setTitle(target.value)}
+      />
+
+      <label>Author : </label>
+      <input
+        type='text'
+        value={author}
+        onChange={({ target }) => setAuthor(target.value)}
+      />
+
+      <label>URL : </label>
+      <input
+        type='text'
+        value={url}
+        onChange={({ target }) => setUrl(target.value)}
+      />
+
+      <button type='submit'>Save</button>
+    </form>
+  )
   // === handling loging ===
   const handleLogin = async (event) => {
     event.preventDefault()
@@ -103,6 +170,7 @@ const App = () => {
             Log Out
           </button>
           <h3> Title Author</h3>
+          {blogForm()}
           {blogs.map((blog) => (
             <Blog key={blog.id} blog={blog} />
           ))}
