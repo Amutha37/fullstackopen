@@ -11,6 +11,7 @@ const App = () => {
   const [user, setUser] = useState(null)
 
   const [errorMessage, setErrorMessage] = useState(null)
+  const [errTextColour, setErrTextColour] = useState(true)
   const [blogs, setBlogs] = useState([])
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const App = () => {
   }, [])
   // Handle the first loading page with user loged in
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedNoteappUser')
+    const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
@@ -35,13 +36,14 @@ const App = () => {
         username,
         password,
       })
-      window.localStorage.setItem('loggedNoteappUser', JSON.stringify(user))
+      window.localStorage.setItem('loggedBlogappUser', JSON.stringify(user))
       blogService.setToken(user.token)
       setUser(user)
       setUsername('')
       setPassword('')
     } catch (exception) {
-      setErrorMessage('Wrong credentials')
+      setErrTextColour(true)
+      setErrorMessage('Wrong user name or password!')
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
@@ -79,17 +81,27 @@ const App = () => {
       </form>
     </div>
   )
+
+  //  === signoff ===
+  const signOff = () => {
+    window.localStorage.removeItem('loggedBlogappUser')
+    return setUser(null)
+  }
   return (
     <div className='main_container'>
       <h2>List of blogs collections</h2>
-      <Notification message={errorMessage} />
+      <Notification message={errorMessage} textColor={errTextColour} />
 
       {/* == conditional form */}
       {user === null ? (
         loginForm()
       ) : (
         <div>
-          <p>{user.name} logged-in</p>
+          <p>{user.name} logged-in</p>{' '}
+          <button type='button' onClick={signOff}>
+            {' '}
+            Log Out
+          </button>
           <h3> Title Author</h3>
           {blogs.map((blog) => (
             <Blog key={blog.id} blog={blog} />
