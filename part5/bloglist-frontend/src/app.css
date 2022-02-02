@@ -2,6 +2,22 @@ h2 {
   color: blue;
   margin-right: 7rem;
 }
+
+.error,
+.success {
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
 /* login form   */
 
 .login_form_container {
@@ -21,4 +37,22 @@ input {
 }
 button {
   margin-top: 2rem;
+}
+
+/* blog input form */
+
+.blog_list_container {
+  padding: 10rem;
+  background-color: rgb(99, 230, 201);
+  display: block;
+}
+label {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+input {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 20rem;
 }
