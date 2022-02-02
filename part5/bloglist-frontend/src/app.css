@@ -9,8 +9,8 @@ h2 {
   font-size: 20px;
   border-style: solid;
   border-radius: 5px;
-  padding: 5px;
-  margin-bottom: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .error {
   color: red;
@@ -42,7 +42,7 @@ button {
 /* blog input form */
 
 .blog_list_container {
-  padding: 10rem;
+  padding: 3rem;
   background-color: rgb(99, 230, 201);
   display: block;
 }
@@ -56,3 +56,73 @@ input {
   margin-left: 10px;
   width: 20rem;
 }
+
+table {
+  box-sizing: border-box;
+  margin: 4rem auto;
+  width: 60%;
+  box-sizing: border-box;
+  margin: 3rem auto;
+  text-align: center;
+}
+thead {
+  background-color: rgb(49, 49, 226);
+  color: #fff;
+}
+tr th {
+  /* color: rgba(14, 14, 20, 0.77); */
+  font-size: 1rem;
+  padding: 0.6rem;
+  /* color: white; */
+  border-bottom: 2px solid rgb(2, 14, 11);
+  border-top: 4px solid rgb(2, 14, 11);
+  border-left: 4px solid rgb(2, 14, 11);
+}
+tr {
+  border-collapse: collapse;
+  font-weight: bold;
+  width: fit-content;
+}
+tr th:last-child {
+  border-right: 4px solid rgb(2, 14, 11);
+}
+tr td {
+  padding: 0.5rem;
+  border-top: 2px solid rgb(2, 12, 11);
+  border-left: 3px solid rgb(2, 14, 11);
+}
+
+tr td:last-child {
+  border-right: 3px solid rgb(1, 11, 9);
+}
+
+tr:last-child td {
+  border-bottom: 2px solid rgb(1, 11, 9);
+}
+
+tr td {
+  font-weight: bold;
+}
+
+.error {
+  color: rgb(21, 150, 57);
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* .dml_table {
+  width: 95%;
+  box-sizing: border-box;
+  margin: 4rem auto;
+  background-color: rgb(243, 246, 238);
+}
+
+.dml_table tr {
+  border-collapse: collapse;
+  font-weight: bold;
+}
+ */
