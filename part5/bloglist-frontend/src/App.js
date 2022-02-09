@@ -103,7 +103,7 @@ const App = () => {
 
   // === New Blog list form ===
   const blogForm = () => (
-    <Togglable buttonLabel='New blog'>
+    <Togglable buttonLabel='Create new blog list'>
       <BlogForm
         onSubmit={addBlog}
         valTitle={title}
@@ -135,12 +135,13 @@ const App = () => {
         loginForm()
       ) : (
         <>
-          <p>{user.name} logged-in</p>{' '}
-          <button type='button' onClick={signOff}>
-            {' '}
-            Log Out
-          </button>
-          <h3> Title Author</h3>
+          <div className='logInBy'>
+            <p>{user.name} logged-in</p>
+            <button type='button' onClick={signOff}>
+              {' '}
+              Log Out
+            </button>
+          </div>
           {blogForm()}
           <table className='dml_table' cellPadding={0} cellSpacing={0}>
             <thead className='sticky-thc'>

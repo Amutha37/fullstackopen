@@ -37,9 +37,16 @@ input {
   margin-left: 5px;
 }
 button {
-  margin-top: 2rem;
+  padding: 2px 2px 2px 2px;
 }
-
+.logInBy {
+  display: inline-flex;
+}
+.logInBy button {
+  background-color: rgb(230, 59, 59);
+  margin-left: 1rem;
+  padding: 2px 2px 2px 2px;
+}
 /* blog input form */
 
 .blog_list_container {
@@ -53,8 +60,7 @@ label {
 }
 
 input {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 10px 10px 10px 10px;
   width: 20rem;
 }
 
@@ -71,10 +77,8 @@ thead {
   color: #fff;
 }
 tr th {
-  /* color: rgba(14, 14, 20, 0.77); */
   font-size: 1rem;
   padding: 0.6rem;
-  /* color: white; */
   border-bottom: 2px solid rgb(2, 14, 11);
   border-top: 4px solid rgb(2, 14, 11);
   border-left: 4px solid rgb(2, 14, 11);
@@ -114,16 +118,3 @@ tr td {
   padding: 10px;
   margin-bottom: 10px;
 }
-
-/* .dml_table {
-  width: 95%;
-  box-sizing: border-box;
-  margin: 4rem auto;
-  background-color: rgb(243, 246, 238);
-}
-
-.dml_table tr {
-  border-collapse: collapse;
-  font-weight: bold;
-}
- */
