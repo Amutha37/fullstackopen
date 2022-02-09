@@ -4,6 +4,9 @@ import Notification from './components/Notification'
 import Blog from './components/Blog.js'
 import blogService from './services/blogs'
 import loginService from './services/login'
+import LoginForm from './components/LoginForm'
+import BlogForm from './components/BlogForm'
+import Togglable from './components/Togglable'
 
 const App = () => {
   const [username, setUsername] = useState('')
@@ -50,8 +53,6 @@ const App = () => {
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
-
-      // })
     } catch (error) {
       console.log(error.response.data)
       setErrTextColour(true)
@@ -63,43 +64,9 @@ const App = () => {
     }
   }
 
-  // === New Blog list form ===
-  const blogForm = () => (
-    <form onSubmit={addBlog} className='blog_list_container'>
-      <label>
-        Title :
-        <input
-          type='text'
-          value={title}
-          name='title'
-          onChange={({ target }) => setTitle(target.value)}
-        />
-      </label>
-      <label>
-        Author :
-        <input
-          type='text'
-          value={author}
-          name='author'
-          onChange={({ target }) => setAuthor(target.value)}
-        />
-      </label>
-      <label>
-        URL :
-        <input
-          type='text'
-          value={url}
-          name='url'
-          onChange={({ target }) => setUrl(target.value)}
-        />
-      </label>
-      <button type='submit'>Save</button>
-    </form>
-  )
   // === handling loging ===
   const handleLogin = async (event) => {
     event.preventDefault()
-    // console.log('logging in with', username, password)
     try {
       const user = await loginService.login({
         username,
@@ -123,33 +90,31 @@ const App = () => {
   // === login form ===
 
   const loginForm = () => (
-    <div className='login_form_container'>
-      <form className='login_form' onSubmit={handleLogin}>
-        <div>
-          username
-          <input
-            required
-            autoComplete='off'
-            type='text'
-            value={username}
-            name='Username'
-            onChange={({ target }) => setUsername(target.value)}
-          />
-        </div>
-        <div>
-          password
-          <input
-            required
-            autoComplete='on'
-            type='password'
-            value={password}
-            name='Password'
-            onChange={({ target }) => setPassword(target.value)}
-          />
-        </div>
-        <button type='submit'>login</button>
-      </form>
-    </div>
+    <Togglable buttonLabel='log in'>
+      <LoginForm
+        username={username}
+        password={password}
+        handleUsernameChange={({ target }) => setUsername(target.value)}
+        handlePasswordChange={({ target }) => setPassword(target.value)}
+        handleSubmit={handleLogin}
+      />
+    </Togglable>
+  )
+
+  // === New Blog list form ===
+  const blogForm = () => (
+    <Togglable buttonLabel='New blog'>
+      <BlogForm
+        onSubmit={addBlog}
+        valTitle={title}
+        valAuthor={author}
+        valUrl={url}
+        handleChangeTitle={({ target }) => setTitle(target.value)}
+        handleChangeAuthor={({ target }) => setAuthor(target.value)}
+        handleChangeUrl={({ target }) => setUrl(target.value)}
+        signOff={signOff}
+      />
+    </Togglable>
   )
 
   //  === signoff ===
@@ -159,7 +124,7 @@ const App = () => {
   }
 
   return (
-    <div className='main_container'>
+    <>
       <h2>List of blogs collections</h2>
       {showing && (
         <Notification message={errorMessage} textColor={errTextColour} />
@@ -195,7 +160,7 @@ const App = () => {
           </table>
         </>
       )}
-    </div>
+    </>
   )
 }
 

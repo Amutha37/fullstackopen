@@ -24,6 +24,7 @@ h2 {
   width: 30rem;
   height: 20rem;
   background-color: rgb(147, 240, 217);
+  text-align: center;
 }
 
 .login_form {
@@ -66,7 +67,7 @@ table {
   text-align: center;
 }
 thead {
-  background-color: rgb(49, 49, 226);
+  background-color: rgb(114, 114, 241);
   color: #fff;
 }
 tr th {
