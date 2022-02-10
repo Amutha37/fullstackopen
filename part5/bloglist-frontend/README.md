@@ -19,3 +19,11 @@ Implement a form to allow user to add new favourite blog list. Save the blog lis
 ### 5.4.
 
 Implement notification message of the successful and unsuccessfull of the operation on the top.
+
+### 5.5
+
+Add create blog button and it only displayed when appropriate button selected.
+
+### 5.6
+
+Separate the new blog form into its own component and move all the states that belong the component .

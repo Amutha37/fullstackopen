@@ -1,25 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const BlogForm = ({
-  onSubmit,
-  handleChangeTitle,
-  handleChangeAuthor,
-  handleChangeUrl,
-  valTitle,
-  valAuthor,
-  valUrl,
-}) => {
+const BlogForm = ({ createBlog }) => {
+  // == new blog list local state ===
+  const [title, setTitle] = useState('')
+  const [author, setAuthor] = useState('')
+  const [url, setUrl] = useState('')
+
+  // === handle change ===
+  const handleChangeTitle = (event) => {
+    setTitle(event.target.value)
+  }
+  const handleChangeAuthor = (event) => {
+    setAuthor(event.target.value)
+  }
+  const handleChangeUrl = (event) => {
+    setUrl(event.target.value)
+  }
+
+  // === add blog ===
+
+  const addBlog = (e) => {
+    e.preventDefault()
+
+    createBlog({
+      title,
+      author,
+      url,
+    })
+
+    setTitle('')
+    setUrl('')
+    setAuthor('')
+  }
+
   return (
     <div className='newBlog'>
       <h2>Create a new blog list</h2>
 
-      <form onSubmit={onSubmit} className='blog_list_container'>
+      <form onSubmit={addBlog}>
         <label>
           Title :
           <input
             type='text'
-            value={valTitle}
-            name='title'
+            value={title}
+            // name='title'
             placeholder='title'
             onChange={handleChangeTitle}
           />
@@ -28,8 +52,8 @@ const BlogForm = ({
           Author :
           <input
             type='text'
-            value={valAuthor}
-            name='author'
+            value={author}
+            // name='author'
             placeholder='author'
             onChange={handleChangeAuthor}
           />
@@ -38,8 +62,8 @@ const BlogForm = ({
           URL :
           <input
             type='text'
-            value={valUrl}
-            name='url'
+            value={url}
+            // name='url'
             placeholder='web url'
             onChange={handleChangeUrl}
           />

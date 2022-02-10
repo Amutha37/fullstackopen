@@ -9,18 +9,12 @@ import BlogForm from './components/BlogForm'
 import Togglable from './components/Togglable'
 
 const App = () => {
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
 
   const [errorMessage, setErrorMessage] = useState(null)
   const [errTextColour, setErrTextColour] = useState(true)
   const [blogs, setBlogs] = useState([])
   const [showing, setShowing] = useState(false)
-  // == new blog list local state ===
-  const [title, setTitle] = useState('')
-  const [author, setAuthor] = useState('')
-  const [url, setUrl] = useState('')
 
   useEffect(() => {
     blogService.getAll().then((blogs) => setBlogs(blogs))
@@ -35,21 +29,20 @@ const App = () => {
     }
   }, [])
   // === Add new blog list ===
-  const addBlog = async (event) => {
-    event.preventDefault()
+  const addBlog = async (blogObject) => {
+    // const newBlog = { title, author, url }
 
-    const newBlog = { title, author, url }
+    // blogService.create(blogObject).then((returnedBlog) => {
+    //   setBlogs(blogs.concat(returnedBlog))
+    // })
 
     setErrTextColour(false)
     try {
-      const saveBlog = await blogService.create(newBlog)
+      const saveBlog = await blogService.create(blogObject)
 
       setBlogs([...blogs, saveBlog])
-      setTitle('')
-      setUrl('')
-      setAuthor('')
       setShowing(true)
-      setErrorMessage(`Blog '${newBlog.title}' succesfully saved.`)
+      setErrorMessage(`Blog '${saveBlog.title}' succesfully saved.`)
       setTimeout(() => {
         setErrorMessage(null)
       }, 5000)
@@ -65,18 +58,15 @@ const App = () => {
   }
 
   // === handling loging ===
-  const handleLogin = async (event) => {
-    event.preventDefault()
+  const handleLogin = async (loginObject) => {
     try {
       const user = await loginService.login({
-        username,
-        password,
+        username: loginObject.username,
+        password: loginObject.password,
       })
       window.localStorage.setItem('loggedBlogappUser', JSON.stringify(user))
       blogService.setToken(user.token)
       setUser(user)
-      setUsername('')
-      setPassword('')
     } catch (exception) {
       setErrTextColour(true)
       setShowing(true)
@@ -91,29 +81,14 @@ const App = () => {
 
   const loginForm = () => (
     <Togglable buttonLabel='log in'>
-      <LoginForm
-        username={username}
-        password={password}
-        handleUsernameChange={({ target }) => setUsername(target.value)}
-        handlePasswordChange={({ target }) => setPassword(target.value)}
-        handleSubmit={handleLogin}
-      />
+      <LoginForm createLogin={handleLogin} />
     </Togglable>
   )
 
   // === New Blog list form ===
   const blogForm = () => (
     <Togglable buttonLabel='Create new blog list'>
-      <BlogForm
-        onSubmit={addBlog}
-        valTitle={title}
-        valAuthor={author}
-        valUrl={url}
-        handleChangeTitle={({ target }) => setTitle(target.value)}
-        handleChangeAuthor={({ target }) => setAuthor(target.value)}
-        handleChangeUrl={({ target }) => setUrl(target.value)}
-        signOff={signOff}
-      />
+      <BlogForm createBlog={addBlog} signOff={signOff} />
     </Togglable>
   )
 
