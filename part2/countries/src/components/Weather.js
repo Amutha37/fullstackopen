@@ -15,10 +15,14 @@ export const Weather = ({ countryname }) => {
       source.cancel()
     }
   }, [countryname])
-  // `http://api.weatherstack.com/current?access_key=${key}&query=${name}`
+
   const getweather = (name, key) => {
     const source = axios.CancelToken.source()
-    const urlWeather = `http://api.weatherapi.com/v1/forecast.json?key=${API_key}002 &q=${name}&days=1&aqi=no&alerts=no`
+
+    const urlWeather = `http://api.weatherstack.com/current?access_key=${key}&query=${name}`
+
+    console.log('urlWeather', urlWeather)
+
     axios
       .get(urlWeather, { cancelToken: source.token })
       .then((response) => {
@@ -31,7 +35,9 @@ export const Weather = ({ countryname }) => {
         }
       })
   }
-  console.log(weather)
+
+  console.log('weather', weather)
+
   return (
     <div className='weatherdisplay'>
       {weather ? (

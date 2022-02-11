@@ -13,19 +13,19 @@ function App() {
   const [filteredList, setfilteredList] = useState([])
 
   // fetch data
-  // https://restcountries.eu/rest/v2/all
 
   useEffect(() => {
-    axios.get(`http://api.weatherapi.com/rest/v1`).then((response) => {
+    axios.get(`https://restcountries.com/v3.1/all`).then((response) => {
       setData(response.data)
     })
   }, [])
+  // console.log('data', data)
   // onchange input
   const handleSearch = (event) => {
     setQuery(event.target.value)
     // filtering search list
     const filtered = data.filter((row) => {
-      return row.name.toLowerCase().includes(query.toLowerCase())
+      return row.name.common.toLowerCase().includes(query.toLowerCase())
     })
     setfilteredList(filtered)
   }
@@ -42,7 +42,7 @@ function App() {
         filteredList.map((country) => {
           return (
             <CountryList
-              key={country.name}
+              key={country.name.common}
               country={country}
               filteredList={filteredList}
             />

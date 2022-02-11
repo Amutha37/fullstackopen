@@ -1,11 +1,12 @@
-import React from "react";
-import { Weather } from "./Weather";
+import React from 'react'
+import { Weather } from './Weather'
 
 function Countryinfo({ country }) {
+  console.log('countryInfo', country)
   return (
-    <div className="tablecontainer">
-      <table className="dml_table" cellPadding={0} cellSpacing={0}>
-        <thead className="sticky-thc">
+    <div className='tablecontainer'>
+      <table className='dml_table' cellPadding={0} cellSpacing={0}>
+        <thead className='sticky-thc'>
           <tr>
             <th>Country</th>
 
@@ -19,33 +20,33 @@ function Countryinfo({ country }) {
         </thead>
         <tbody>
           {/* {country.map((info) => ( */}
-          <tr key={country.name}>
-            <td>{country.name}</td>
+          <tr key={country.name.common}>
+            <td>{country.name.common}</td>
             <td>{country.capital}</td>
             <td>{country.population.toLocaleString()}</td>
             <td>
               <ul>
-                {country.languages.map((speak) => (
-                  <li key={speak.name}> {speak.name}</li>
+                {Object.keys(country.languages).map((speak, i) => (
+                  <li key={i}>{country.languages[speak]}</li>
                 ))}
               </ul>
             </td>
             <td>
               <img
-                src={country.flag}
-                width="180"
-                height="100"
-                alt={`${country.name} flag`}
+                src={country.flags.png}
+                width='180'
+                height='100'
+                alt={`${country.name.common} flag`}
               />
             </td>
             <td>
-              <Weather countryname={country.name} />
+              <Weather countryname={country.name.common} />
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-  );
+  )
 }
 
-export default Countryinfo;
+export default Countryinfo
