@@ -1,39 +1,39 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 // Api key
-const API_key = process.env.REACT_APP_API_KEY;
+const API_key = process.env.REACT_APP_API_KEY
 
 export const Weather = ({ countryname }) => {
-  const [weather, setWeather] = useState([{}]);
+  const [weather, setWeather] = useState([{}])
 
   useEffect(() => {
-    const source = axios.CancelToken.source();
+    const source = axios.CancelToken.source()
 
-    getweather(countryname, API_key);
+    getweather(countryname, API_key)
 
     return () => {
-      source.cancel();
-    };
-  }, [countryname]);
-
+      source.cancel()
+    }
+  }, [countryname])
+  // `http://api.weatherstack.com/current?access_key=${key}&query=${name}`
   const getweather = (name, key) => {
-    const source = axios.CancelToken.source();
-    const urlWeather = `http://api.weatherstack.com/current?access_key=${key}&query=${name}`;
+    const source = axios.CancelToken.source()
+    const urlWeather = `http://api.weatherapi.com/v1/forecast.json?key=${API_key}002 &q=${name}&days=1&aqi=no&alerts=no`
     axios
       .get(urlWeather, { cancelToken: source.token })
       .then((response) => {
-        setWeather(response.data.current);
+        setWeather(response.data.current)
       })
       .catch((error) => {
         if (axios.isCancel(error)) {
         } else {
-          throw error;
+          throw error
         }
-      });
-  };
-
+      })
+  }
+  console.log(weather)
   return (
-    <div className="weatherdisplay">
+    <div className='weatherdisplay'>
       {weather ? (
         <ul>
           <li>Temperature : {weather.temperature} ℃</li>
@@ -51,5 +51,5 @@ export const Weather = ({ countryname }) => {
         <p>Possible usage limit reached for weather data.</p>
       )}
     </div>
-  );
-};
+  )
+}
