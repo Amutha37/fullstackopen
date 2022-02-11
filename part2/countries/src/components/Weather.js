@@ -21,8 +21,6 @@ export const Weather = ({ countryname }) => {
 
     const urlWeather = `http://api.weatherstack.com/current?access_key=${key}&query=${name}`
 
-    console.log('urlWeather', urlWeather)
-
     axios
       .get(urlWeather, { cancelToken: source.token })
       .then((response) => {
@@ -35,8 +33,6 @@ export const Weather = ({ countryname }) => {
         }
       })
   }
-
-  console.log('weather', weather)
 
   return (
     <div className='weatherdisplay'>

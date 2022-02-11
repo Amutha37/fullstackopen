@@ -2,7 +2,6 @@ import React from 'react'
 import { Weather } from './Weather'
 
 function Countryinfo({ country }) {
-  console.log('countryInfo', country)
   return (
     <div className='tablecontainer'>
       <table className='dml_table' cellPadding={0} cellSpacing={0}>

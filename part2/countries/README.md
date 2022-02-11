@@ -1,9 +1,16 @@
 ## 2.12 - 2.14 Exercises
 
-I) Create app to look at information about various contries.
+I) Create app to list all the contries fron the REST API URL below.
 
 - The API http://restcountries.au
-  - Display single match or list of matches on search by country name.
+
+- List of all countries is fetched from `https://restcountries.com/v3.1/all` (update this link with new version if the REST API does not work)
+
+- Display single match or list of matches on search by country name.
+
+  In this project the weather information is fetched from REST API `http://api.weatherstack.com/current?access_key=${key}&query=${name}` is used.
+
+  \*(Please check the for new version if the weather data does not display, it may be because of changes to keyObject and value in new version )
 
 II) Use search field to match max of 10 countries.
 
@@ -13,5 +20,4 @@ III) Use buttons to display information on population, capital and temperature f
 
 # To run this app install :
 
-> `npm install axios`
-> `npm install json-server --save-dev`
+> `npm install axios` > `npm install json-server --save-dev`
