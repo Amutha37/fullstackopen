@@ -1,5 +1,5 @@
 import './app.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Notification from './components/Notification'
 import Blog from './components/Blog.js'
 import blogService from './services/blogs'
@@ -15,6 +15,8 @@ const App = () => {
   const [errTextColour, setErrTextColour] = useState(true)
   const [blogs, setBlogs] = useState([])
   const [showing, setShowing] = useState(false)
+
+  const blogFormRef = useRef()
 
   useEffect(() => {
     blogService.getAll().then((blogs) => setBlogs(blogs))
@@ -35,7 +37,7 @@ const App = () => {
     // blogService.create(blogObject).then((returnedBlog) => {
     //   setBlogs(blogs.concat(returnedBlog))
     // })
-
+    blogFormRef.current.toggleVisibility()
     setErrTextColour(false)
     try {
       const saveBlog = await blogService.create(blogObject)
@@ -87,7 +89,7 @@ const App = () => {
 
   // === New Blog list form ===
   const blogForm = () => (
-    <Togglable buttonLabel='Create new blog list'>
+    <Togglable buttonLabel='Create new blog list' ref={blogFormRef}>
       <BlogForm createBlog={addBlog} signOff={signOff} />
     </Togglable>
   )

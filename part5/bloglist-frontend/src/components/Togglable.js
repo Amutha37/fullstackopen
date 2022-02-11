@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef, useImperativeHandle } from 'react'
 
-const Togglable = (props) => {
+const Togglable = forwardRef((props, ref) => {
   const [visible, setVisible] = useState(false)
 
   const hideLoginInput = { display: visible ? 'none' : '' }
@@ -9,6 +9,14 @@ const Togglable = (props) => {
   const toggleVisibility = () => {
     setVisible(!visible)
   }
+
+  // === assign toggleVisibility for external use ===
+
+  useImperativeHandle(ref, () => {
+    return {
+      toggleVisibility,
+    }
+  })
 
   return (
     <div className='login_form_container'>
@@ -21,6 +29,6 @@ const Togglable = (props) => {
       </div>
     </div>
   )
-}
+})
 
 export default Togglable
