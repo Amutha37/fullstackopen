@@ -52,6 +52,7 @@ const Blog = ({ blog, ind, handleBlogLikes }) => {
           <ul>
             <li>Url : {blog.url}</li>
             <li>Likes : {likes}</li>
+            <li>user : {blog.user.name}</li>
           </ul>
         </div>
       </ul>

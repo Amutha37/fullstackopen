@@ -110,7 +110,8 @@ const App = () => {
     }
     await blogService.update(blogId, updatedBlog)
   }
-
+  // === sorting data ===
+  const sortedBlogs = blogs.sort((a, b) => (b.likes > a.likes ? 1 : -1))
   return (
     <>
       {/* <h2></h2> */}
@@ -132,7 +133,7 @@ const App = () => {
           </div>
           {blogForm()}
           <h2>List of blogs</h2>
-          {blogs.map((blog, i) => (
+          {sortedBlogs.map((blog, i) => (
             <Blog
               key={blog.id}
               blog={blog}

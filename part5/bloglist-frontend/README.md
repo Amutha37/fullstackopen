@@ -27,3 +27,9 @@ Add create blog button and it only displayed when appropriate button selected.
 ### 5.6
 
 Separate the new blog form into its own component and move all the states that belong the component .
+
+### 5.7 View blog detail using button control
+
+### 5.8 Add Likes button to rate the blog likebility.
+
+### 5.9 Sort the listing of blogs by decending order of likes.
