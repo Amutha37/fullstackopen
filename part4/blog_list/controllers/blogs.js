@@ -50,13 +50,14 @@ blogsRouter.post('/', async (request, response) => {
 
 // update database
 blogsRouter.put('/:id', async (request, response, next) => {
-  const user = request.user
-
+  const { body } = request
+  const user = body.user
   try {
     const blog = await Blog.findById(request.params.id)
+
     if (blog.user.toString() === user.toString()) {
       const blogUpdate = {
-        ...request.body,
+        ...body,
       }
 
       await Blog.findByIdAndUpdate(request.params.id, blogUpdate, { new: true })
