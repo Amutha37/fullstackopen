@@ -1,7 +1,7 @@
 import './app.css'
 import React, { useState, useEffect, useRef } from 'react'
 import Notification from './components/Notification'
-import Blog from './components/Blog1.js'
+import Blog from './components/Blog.js'
 import blogService from './services/blogs'
 import loginService from './services/login'
 import LoginForm from './components/LoginForm'
@@ -99,10 +99,21 @@ const App = () => {
     window.localStorage.removeItem('loggedBlogappUser')
     return setUser(null)
   }
+  // === handleLikes ===
+  const handleBlogLikes = async (blogId) => {
+    const blogToChange = blogs.find((blog) => blog.id === blogId)
+
+    const updatedBlog = {
+      ...blogToChange,
+      likes: ++blogToChange.likes,
+      user: blogToChange.user.id,
+    }
+    await blogService.update(blogId, updatedBlog)
+  }
 
   return (
     <>
-      <h2>List of blogs collections</h2>
+      {/* <h2></h2> */}
       {showing && (
         <Notification message={errorMessage} textColor={errTextColour} />
       )}
@@ -120,9 +131,14 @@ const App = () => {
             </button>
           </div>
           {blogForm()}
-
+          <h2>List of blogs</h2>
           {blogs.map((blog, i) => (
-            <Blog key={blog.id} blog={blog} ind={i} />
+            <Blog
+              key={blog.id}
+              blog={blog}
+              ind={i}
+              handleBlogLikes={handleBlogLikes}
+            />
           ))}
         </>
       )}

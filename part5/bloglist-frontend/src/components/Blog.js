@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
-const Blog = ({ blog, ind }) => {
+// import Blog from './components/RateLikes.js'
+
+const Blog = ({ blog, ind, handleBlogLikes }) => {
   const [showDetails, setShowDetails] = useState(false)
-  const [showText, setShowText] = useState('show')
-  // const [status, setStatus] = useState(
-  //   new Array(filteredList.length).fill(false)
-  // )
-  // const hideBlogInfo = { display: loginVisible ? 'none' : '' }
+  let [likes, setLikes] = useState(blog.likes)
   const showBlogInfo = { display: showDetails ? '' : 'none' }
 
-  // displayDetails = (e) => {
-  //   setShowDetails(!showDetails)
-  // }
-
+  const addLikes = ({ target }) => {
+    handleBlogLikes(target.value)
+    setLikes(++likes)
+    // blog.likes = blog.likes + likes
+  }
   return (
     <div className='table_wraper'>
       <ul>
@@ -19,37 +18,41 @@ const Blog = ({ blog, ind }) => {
           <li>{ind + 1}.</li>
           <li>{blog.title}</li>
           <li>By : {blog.author}</li>
+
           <div className='btn_blog'>
             {!showDetails ? (
               <button
                 type='button'
                 onClick={() => setShowDetails(!showDetails)}
               >
-                More
+                More...
               </button>
             ) : (
-              <button
-                type='button'
-                onClick={() => setShowDetails(!showDetails)}
-              >
-                Hide
-              </button>
+              <>
+                <button
+                  type='button'
+                  onClick={() => setShowDetails(!showDetails)}
+                >
+                  Hide
+                </button>
+                <button
+                  className='count'
+                  type='button'
+                  onClick={addLikes}
+                  value={blog.id}
+                >
+                  +Likes
+                </button>
+              </>
             )}
-
-            {/* <button type='button' onClick={() => setShowDetails(!showDetails)}>
-              Show
-            </button> */}
           </div>
         </div>
 
         <div style={showBlogInfo} className='second'>
           <ul>
             <li>Url : {blog.url}</li>
-            <li>Likes : {blog.likes}</li>
+            <li>Likes : {likes}</li>
           </ul>
-          {/* <td>{blog.author}</td>
-          <td>{blog.url}</td>
-          <td>{blog.likes}</td> */}
         </div>
       </ul>
     </div>
