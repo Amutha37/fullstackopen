@@ -1,7 +1,7 @@
 import './app.css'
 import React, { useState, useEffect, useRef } from 'react'
 import Notification from './components/Notification'
-import Blog from './components/Blog.js'
+import Blog from './components/Blog1.js'
 import blogService from './services/blogs'
 import loginService from './services/login'
 import LoginForm from './components/LoginForm'
@@ -120,22 +120,10 @@ const App = () => {
             </button>
           </div>
           {blogForm()}
-          <table className='dml_table' cellPadding={0} cellSpacing={0}>
-            <thead className='sticky-thc'>
-              <tr>
-                <td>Seq.</td>
-                <td>Title</td>
-                <td>Author</td>
-                <td>URL</td>
-                <td>Likes</td>
-              </tr>
-            </thead>
-            <tbody>
-              {blogs.map((blog, i) => (
-                <Blog key={blog.id} blog={blog} ind={i} />
-              ))}
-            </tbody>
-          </table>
+
+          {blogs.map((blog, i) => (
+            <Blog key={blog.id} blog={blog} ind={i} />
+          ))}
         </>
       )}
     </>

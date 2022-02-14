@@ -63,52 +63,6 @@ input {
   margin: 10px 10px 10px 10px;
   width: 20rem;
 }
-
-table {
-  box-sizing: border-box;
-  margin: 4rem auto;
-  width: 60%;
-  box-sizing: border-box;
-  margin: 3rem auto;
-  text-align: center;
-}
-thead {
-  background-color: rgb(114, 114, 241);
-  color: #fff;
-}
-tr th {
-  font-size: 1rem;
-  padding: 0.6rem;
-  border-bottom: 2px solid rgb(2, 14, 11);
-  border-top: 4px solid rgb(2, 14, 11);
-  border-left: 4px solid rgb(2, 14, 11);
-}
-tr {
-  border-collapse: collapse;
-  font-weight: bold;
-  width: fit-content;
-}
-tr th:last-child {
-  border-right: 4px solid rgb(2, 14, 11);
-}
-tr td {
-  padding: 0.5rem;
-  border-top: 2px solid rgb(2, 12, 11);
-  border-left: 3px solid rgb(2, 14, 11);
-}
-
-tr td:last-child {
-  border-right: 3px solid rgb(1, 11, 9);
-}
-
-tr:last-child td {
-  border-bottom: 2px solid rgb(1, 11, 9);
-}
-
-tr td {
-  font-weight: bold;
-}
-
 .error {
   color: rgb(21, 150, 57);
   background: lightgrey;
@@ -117,4 +71,45 @@ tr td {
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+/* .showInfo {
+  display: flexbox;
+} */
+
+/* table */
+.table_wraper {
+  width: 500px;
+  border: 3px solid black;
+  display: flex-wrap;
+  display: inline-flex;
+  /* flex-direction: row; */
+  height: 7rem;
+  /* overflow: hidden; will contain if #first is longer than #second */
+}
+.first {
+  display: absolute;
+}
+.second {
+  float: left;
+  /* border: 1px solid green; */
+}
+ul {
+  list-style-type: none;
+  /* list-style-position: outside; */
+}
+ul li {
+  float: left;
+  margin-right: 1rem;
+}
+.btn_blog {
+  position: absolute;
+}
+
+.btn_blog button {
+  /* float: right; */
+  /* margin-top: 3rem; */
+  position: relative;
+  left: 7px;
+  top: 4.5rem;
 }
