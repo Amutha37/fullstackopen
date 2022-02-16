@@ -119,7 +119,9 @@ const App = () => {
   // === Delete Blog ===
   const handleDeleteBlog = async (blogId) => {
     const blogToDelete = blogs.find((blog) => blog.id === blogId)
-    const sureToDelete = window.confirm(`Confirm remove :${blogToDelete.title}`)
+    const sureToDelete = window.confirm(
+      `Confirm remove blog you don't need!  :${blogToDelete.title}`
+    )
 
     if (sureToDelete) {
       await blogService.deleteBlog(blogId)
@@ -128,14 +130,11 @@ const App = () => {
           return blog.id !== blogId
         })
       )
-      // setBlogs(resData)
-      // setBlogs(blogs.filter((blog) => blog.id !== blogId))
     }
   }
 
   return (
     <>
-      {/* <h2></h2> */}
       {showing && (
         <Notification message={errorMessage} textColor={errTextColour} />
       )}
