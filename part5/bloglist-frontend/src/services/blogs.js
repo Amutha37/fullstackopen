@@ -24,8 +24,20 @@ const create = async (newObject) => {
 }
 
 const update = async (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject)
-  const response = await request
+  const config = {
+    headers: { Authorization: token },
+  }
+  const request = await axios.put(`${baseUrl}/${id}`, newObject, config)
+  const response = request
+  return response.data
+}
+
+const deleteBlog = async (id) => {
+  const config = {
+    headers: { Authorization: token },
+  }
+  const request = await axios.delete(`${baseUrl}/${id}`, config)
+  const response = request
   return response.data
 }
 // Since the names of the keys and the assigned variables are the same, we can write the object definition with more compact syntax:
@@ -40,6 +52,7 @@ const fetchAll = {
   getAll,
   create,
   update,
+  deleteBlog,
   setToken,
 }
 export default fetchAll

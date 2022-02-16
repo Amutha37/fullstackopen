@@ -75,12 +75,12 @@ input {
 
 /* table */
 .table_wraper {
-  width: 550px;
+  width: 610px;
   border: 3px solid black;
   display: flex;
   display: inline-flex;
   /* flex-direction: row; */
-  height: 7rem;
+  height: 8.5rem;
   /* overflow: hidden; will contain if #first is longer than #second */
 }
 .first {
@@ -107,7 +107,7 @@ ul li {
   /* margin-top: 3rem; */
   position: relative;
   left: 7px;
-  top: 4.5rem;
+  top: 5.8rem;
   margin-right: 6px;
 }
 h2 {
@@ -115,4 +115,10 @@ h2 {
   margin-right: 7rem;
   margin-top: 3rem;
   text-align: center;
+}
+.delBlog {
+  color: red;
+}
+.count {
+  color: green;
 }

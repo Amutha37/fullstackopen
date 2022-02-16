@@ -19,7 +19,11 @@ const App = () => {
   const blogFormRef = useRef()
 
   useEffect(() => {
-    blogService.getAll().then((blogs) => setBlogs(blogs))
+    blogService.getAll().then((blogs) =>
+      // === sorting data ===
+
+      setBlogs(blogs.sort((a, b) => (b.likes > a.likes ? 1 : -1)))
+    )
   }, [])
   // Handle the first loading page with user loged in
   useEffect(() => {
@@ -41,6 +45,7 @@ const App = () => {
     setErrTextColour(false)
     try {
       const saveBlog = await blogService.create(blogObject)
+      console.log('saveBlog', saveBlog)
 
       setBlogs([...blogs, saveBlog])
       setShowing(true)
@@ -108,10 +113,26 @@ const App = () => {
       likes: ++blogToChange.likes,
       user: blogToChange.user.id,
     }
-    await blogService.update(blogId, updatedBlog)
+    const resStatus = await blogService.update(blogId, updatedBlog)
+    console.log('resStatus', resStatus.data)
   }
-  // === sorting data ===
-  const sortedBlogs = blogs.sort((a, b) => (b.likes > a.likes ? 1 : -1))
+  // === Delete Blog ===
+  const handleDeleteBlog = async (blogId) => {
+    const blogToDelete = blogs.find((blog) => blog.id === blogId)
+    const sureToDelete = window.confirm(`Confirm remove :${blogToDelete.title}`)
+
+    if (sureToDelete) {
+      await blogService.deleteBlog(blogId)
+      setBlogs(
+        blogs.filter((blog) => {
+          return blog.id !== blogId
+        })
+      )
+      // setBlogs(resData)
+      // setBlogs(blogs.filter((blog) => blog.id !== blogId))
+    }
+  }
+
   return (
     <>
       {/* <h2></h2> */}
@@ -133,12 +154,14 @@ const App = () => {
           </div>
           {blogForm()}
           <h2>List of blogs</h2>
-          {sortedBlogs.map((blog, i) => (
+          {blogs.map((blog, i) => (
             <Blog
               key={blog.id}
               blog={blog}
               ind={i}
               handleBlogLikes={handleBlogLikes}
+              handleDeleteBlog={handleDeleteBlog}
+              logedUser={user}
             />
           ))}
         </>
