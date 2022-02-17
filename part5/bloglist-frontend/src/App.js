@@ -45,6 +45,7 @@ const App = () => {
     setErrTextColour(false)
     try {
       const saveBlog = await blogService.create(blogObject)
+      console.log('saveBlog', saveBlog)
 
       setBlogs([...blogs, saveBlog])
       setShowing(true)
@@ -119,7 +120,7 @@ const App = () => {
   const handleDeleteBlog = async (blogId) => {
     const blogToDelete = blogs.find((blog) => blog.id === blogId)
     const sureToDelete = window.confirm(
-      `Confirm remove blog you don't need!  :${blogToDelete.title}`
+      `Confirm remove blog you're don't need!  :${blogToDelete.title}`
     )
 
     if (sureToDelete) {
@@ -133,7 +134,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className='main_container'>
       {showing && (
         <Notification message={errorMessage} textColor={errTextColour} />
       )}
@@ -146,7 +147,6 @@ const App = () => {
           <div className='logInBy'>
             <p>{user.name} logged-in</p>
             <button type='button' onClick={signOff}>
-              {' '}
               Log Out
             </button>
           </div>
@@ -164,7 +164,7 @@ const App = () => {
           ))}
         </>
       )}
-    </>
+    </div>
   )
 }
 

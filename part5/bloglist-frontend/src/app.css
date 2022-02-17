@@ -20,6 +20,9 @@
   height: 20rem;
   background-color: rgb(147, 240, 217);
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
 
 .login_form {
@@ -31,16 +34,14 @@ input {
   margin-top: 1rem;
   margin-left: 5px;
 }
-button {
-  padding: 2px 2px 2px 2px;
-}
+
 .logInBy {
   display: inline-flex;
 }
 .logInBy button {
-  background-color: rgb(230, 59, 59);
+  background-color: rgb(192, 67, 233);
   margin-left: 1rem;
-  padding: 2px 2px 2px 2px;
+  /* padding: 2px 2px 2px 2px; */
 }
 /* blog input form */
 
@@ -76,6 +77,8 @@ input {
   flex-direction: row;
   height: 12rem;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 ul {
@@ -93,10 +96,7 @@ ul {
   margin: 0px 6px 0px 1.5rem;
 }
 h2 {
-  color: blue;
-  margin-right: 7rem;
-  margin-top: 3rem;
-  text-align: center;
+  margin: 7rem auto 3rem auto;
 }
 .delBlog {
   color: red;
@@ -104,4 +104,7 @@ h2 {
 }
 .count {
   color: green;
+}
+.main_container {
+  text-align: center;
 }

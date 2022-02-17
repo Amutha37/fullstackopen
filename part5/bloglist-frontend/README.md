@@ -33,3 +33,38 @@ Separate the new blog form into its own component and move all the states that b
 ### 5.8 Add Likes button to rate the blog likebility.
 
 ### 5.9 Sort the listing of blogs by decending order of likes.
+
+### 5.10 Add button to delete a blog.
+
+### 5..11 Define PropTypes
+
+- Implement `buttonLabel` required to prevent no lable text.
+
+- The expected and required props of a component can be defined with the prop-types package.
+
+> `npm install prop-types`
+
+('import PropTypes from 'prop-types'
+
+LoginForm.propTypes = {
+handleSubmit: PropTypes.func.isRequired,
+handleUsernameChange: PropTypes.func.isRequired,
+handlePasswordChange: PropTypes.func.isRequired,
+username: PropTypes.string.isRequired,
+password: PropTypes.string.isRequired
+})
+
+(import PropTypes from 'prop-types'
+
+Togglable.propTypes = {
+buttonLabel: PropTypes.string.isRequired
+})
+
+### 5.12 ESlint
+
+NB: `do not run the eslint --init command. It will install the latest version of ESlint that is not compatible with the configuration file created by create-react-app!`
+
+Next, we will start testing the frontend and in order to avoid undesired and irrelevant linter errors we will install the eslint-plugin-jest package:
+
+> `npm install --save-dev eslint-plugin-jest`
+> insert `Togglable.displayName = 'Togglable'` in toggle bar component for `useRef` not recognised.
