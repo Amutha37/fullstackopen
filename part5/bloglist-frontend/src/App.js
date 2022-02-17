@@ -45,7 +45,6 @@ const App = () => {
     setErrTextColour(false)
     try {
       const saveBlog = await blogService.create(blogObject)
-      console.log('saveBlog', saveBlog)
 
       setBlogs([...blogs, saveBlog])
       setShowing(true)
