@@ -1,13 +1,18 @@
-# PART 5 Bloglist-frontend
-
+<h1 align="center"> PART 5 Bloglist-frontend
+</h1>
+<p align="center">
 ### 5.1 Bloglist-frontend Step 1
 
 Implementing user and password functionallity. Token return with successfull login.
 
-> `npm install axios`
+</p>
+## Dependencies used in this project
+<details>
+<summary> Dependencies </summary>
+- npm install axios
 
+</details>
 > `npm run build`
-
 ### 5.3
 
 Make the login 'permanent' by using local storage and implement a way to log out.
@@ -60,11 +65,21 @@ Togglable.propTypes = {
 buttonLabel: PropTypes.string.isRequired
 })
 
+<details>
 ### 5.12 ESlint
-
+<summary>
 NB: `do not run the eslint --init command. It will install the latest version of ESlint that is not compatible with the configuration file created by create-react-app!`
 
 Next, we will start testing the frontend and in order to avoid undesired and irrelevant linter errors we will install the eslint-plugin-jest package:
 
+</summary>
 > `npm install --save-dev eslint-plugin-jest`
 > insert `Togglable.displayName = 'Togglable'` in toggle bar component for `useRef` not recognised.
+
+</details>
+ # Testing React app
+ 
+ ### 5.13 Testing Blog post component
+
+Test blog renders the blog's title and author.
+Use CSS-class where it needed.
