@@ -51,19 +51,21 @@ Separate the new blog form into its own component and move all the states that b
 
 ('import PropTypes from 'prop-types'
 
-LoginForm.propTypes = {
+`LoginForm.propTypes = {
 handleSubmit: PropTypes.func.isRequired,
 handleUsernameChange: PropTypes.func.isRequired,
 handlePasswordChange: PropTypes.func.isRequired,
 username: PropTypes.string.isRequired,
 password: PropTypes.string.isRequired
-})
+}`
+
+)
 
 (import PropTypes from 'prop-types'
 
-Togglable.propTypes = {
+`Togglable.propTypes = {
 buttonLabel: PropTypes.string.isRequired
-})
+}`)
 
 <details>
 ### 5.12 ESlint
@@ -134,7 +136,9 @@ Use CSS-class where it needed.
 
 <details>
 <summary>
+
 Install `user-event` that makes simulating user input.
+
 </summary>
 
 `npm install --save-dev @testing-library/user-event`
