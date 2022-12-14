@@ -127,9 +127,9 @@ Use CSS-class where it needed.
 
 ### 5.14 More information dislayed on a button "more" clicking.
 
-## Instaling library for button handler
+#### Instaling library for button handler
 
-- <details> 
+ <details> 
   <summary>
   Install `user-event` that makes simulating user input.
   </summar>
@@ -137,7 +137,8 @@ Use CSS-class where it needed.
 `npm install --save-dev @testing-library/user-event`
 
 </details>
-- <details>
+
+ <details>
 <summary>
 Correcting a mismatch (written on 28.1.2022) between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
 </summary>
