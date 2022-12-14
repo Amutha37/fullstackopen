@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Buttons from './Buttons2'
+import Buttons from './Buttons'
 
 const Blog = ({
   blog,
@@ -10,7 +10,6 @@ const Blog = ({
   handleDeleteBlog,
 }) => {
   const [showDetails, setShowDetails] = useState(false)
-  // const [blogUserName, setBlogUserName] = useState(null)
   let [likes, setLikes] = useState(blog.likes)
 
   const addLikes = ({ target }) => {
@@ -22,17 +21,11 @@ const Blog = ({
   const deleteBlogList = ({ target }) => {
     handleDeleteBlog(target.value)
   }
-
-  // if (!blogUserName) {
-  //   blogUserName = logedUser
-  //   // setBlogUserName(logedUser)
-  // }
-
   // === Button control ===
 
   const handleBtn = () => setShowDetails(!showDetails)
   const showBlogInfo = { display: showDetails ? '' : 'none' }
-  // console.log('BLOG', 'blogUserName', blogUserName, 'logedUser', logedUser)
+
   return (
     <>
       <div className='table_wraper blog'>

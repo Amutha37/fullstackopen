@@ -1,5 +1,5 @@
 import React from 'react'
-
+// import PropTypes from 'prop-types'
 // Button component
 const Button = ({
   handleBtn,
@@ -9,15 +9,16 @@ const Button = ({
   logedUser,
   showDetails,
   blogUserName,
+  // props
 }) => {
-  // const moreBtn = {
-  //   color: 'blue',
-  // }
-  // const hideBtn = {
-  //   color: 'black',
-  // }
+  //     const [blogObject, setBlogObject] = useState(blog)
+  //   const [visible, setVisible] = useState(false)
+  //   const showWhenVisible = { display: visible ? '' : 'none' }
+  // console.log('BUTTON', 'blogUserName', blogUserName, 'logedUser', logedUser)
+  const buttonLabel = showDetails ? 'Hide' : 'More...'
+
   const moreDetailBtn = (
-    <div className='btn_blog'>
+    <div className='btn_blog  togglableContent'>
       <button
         className='count'
         type='button'
@@ -26,7 +27,7 @@ const Button = ({
       >
         +Likes
       </button>
-      {blogUserName === logedUser.name && (
+      {blogUserName === logedUser && (
         <button
           className='delBlog'
           type='button'
@@ -41,7 +42,6 @@ const Button = ({
   return (
     <>
       <button
-        className='hideMore_btn'
         style={
           showDetails
             ? { color: 'black', fontWeight: 'bold' }
@@ -50,7 +50,7 @@ const Button = ({
         type='button'
         onClick={handleBtn}
       >
-        {showDetails ? 'Hide' : 'More...'}
+        {buttonLabel}
       </button>
       {showDetails && moreDetailBtn}
     </>
