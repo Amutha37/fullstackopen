@@ -77,10 +77,13 @@ Next, we will start testing the frontend and in order to avoid undesired and irr
 > insert `Togglable.displayName = 'Togglable'` in toggle bar component for `useRef` not recognised.
 
 </details>
- ## Testing React app  
- 
- ### Unit test
- ### 5.13 Testing Blog post component
+
+## Testing React app
+
+### Unit test
+
+## 5.13 Testing Blog post component
+
  <details>
  
  <summary>
