@@ -136,9 +136,7 @@ Use CSS-class where it needed.
 
 <details>
 <summary>
-
 Install `user-event` that makes simulating user input.
-
 </summary>
 
 `npm install --save-dev @testing-library/user-event`
