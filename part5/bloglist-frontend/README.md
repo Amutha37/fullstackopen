@@ -77,9 +77,45 @@ Next, we will start testing the frontend and in order to avoid undesired and irr
 > insert `Togglable.displayName = 'Togglable'` in toggle bar component for `useRef` not recognised.
 
 </details>
- # Testing React app
+ ## Testing React app  
  
+ ### Unit test
  ### 5.13 Testing Blog post component
-
-Test blog renders the blog's title and author.
+ <details>
+ 
+ <summary>
+Step 1
+</summary>
+Test blog renders title and author by default.
 Use CSS-class where it needed.
+</details>
+
+### 5.14 More information dislay on a button more click.
+
+<details>
+ <summary>
+Step 2
+</summary>
+Test blog renders title and author by default.
+Use CSS-class where it needed.
+</details>
+
+### 5.15 Likes button is event handler is received when clicked twice
+
+<details>
+ <summary>
+Step 3
+</summary>
+Make sure button is cliked twice and the event handler receive the props twice.
+</details>
+
+### 5.16 Test the creation of new blog form.
+
+<details>
+ <summary>
+Step 4
+</summary>
+The test should check, that the form calls the event handler and received the right props.
+</details>
+
+## End to end testing
