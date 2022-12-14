@@ -185,6 +185,8 @@ The test should check, that the form calls the event handler and received the ri
 
 ##
 
+- Unit test result
+
 ![UnitTestResult](https://user-images.githubusercontent.com/67087939/207739992-643a0814-4deb-4618-9c69-549d7dea2d82.png)
 
 ##
