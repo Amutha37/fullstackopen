@@ -121,4 +121,14 @@ Step 4
 The test should check, that the form calls the event handler and received the right props.
 </details>
 
-## End to end testing
+## End to end INTERGRATION testing
+
+ <details>
+ 
+### 5.17 Bloglist end to end testing
+
+ <summary>
+Step 1
+</summary>
+Test the application display the login by default.
+</details>
