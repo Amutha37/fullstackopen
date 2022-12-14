@@ -129,10 +129,10 @@ Use CSS-class where it needed.
 
 - Instaling library for button handler
 
- <details> 
+<details>
 <summary>
 Install `user-event` that makes simulating user input.
- </summar>
+</summary>
 
 `npm install --save-dev @testing-library/user-event`
 
