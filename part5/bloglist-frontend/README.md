@@ -125,18 +125,19 @@ Test blog renders title and author by default.
 Use CSS-class where it needed.
 </details>
 
-### 5.14 More information dislay on a button more click.
+### 5.14 More information dislayed on a button "more" clicking.
 
-<details> 
-<summary>
-Install `user-event` that makes simulating user input.
-</summar>
+## Instaling library for button handler
+
+- <details> 
+  <summary>
+  Install `user-event` that makes simulating user input.
+  </summar>
 
 `npm install --save-dev @testing-library/user-event`
 
 </details>
-
-<details>
+- <details>
 <summary>
 Correcting a mismatch (written on 28.1.2022) between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
 </summary>
