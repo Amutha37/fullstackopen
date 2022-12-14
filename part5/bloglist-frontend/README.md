@@ -78,11 +78,11 @@ Next, we will start testing the frontend and in order to avoid undesired and irr
 
 </details>
 
-## Testing React app
+# Testing React app
 
-### Unit test
+## Unit test
 
-## 5.13 Testing Blog post component
+### 5.13 Testing Blog post component
 
  <details>
  
