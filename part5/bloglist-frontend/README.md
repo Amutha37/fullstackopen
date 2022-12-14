@@ -129,7 +129,6 @@ Use CSS-class where it needed.
 
 <details> 
 <summary>
-
 Install `user-event` that makes simulating user input.
 </summar>
 
@@ -141,10 +140,11 @@ Install `user-event` that makes simulating user input.
 <summary>
 Correcting a mismatch (written on 28.1.2022) between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
 </summary>
+
+`npm install -D --exact jest-watch-typeahead@0.6.5 `
+
 </details>
-``
-npm install -D --exact jest-watch-typeahead@0.6.5
-``
+
 <details>
 
  <summary>
