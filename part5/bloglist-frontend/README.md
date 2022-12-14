@@ -82,7 +82,7 @@ Next, we will start testing the frontend and in order to avoid undesired and irr
 
 ## Unit test
 
-## Getting Started
+### Getting Started
 
 <details>
 <summary> First, install react-testing-library </summary>
