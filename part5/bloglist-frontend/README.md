@@ -82,6 +82,38 @@ Next, we will start testing the frontend and in order to avoid undesired and irr
 
 ## Unit test
 
+## Getting Started
+
+<details>
+<summary> First, install react-testing-library </summary>
+
+```
+npm install --save-dev @testing-library/react @testing-library/jest-dom
+# or
+yarn  --save-dev @testing-library/react @testing-library/jest-dom
+```
+
+</details>
+
+<details>
+<summary> Test run after each unit test editing . </summary>
+
+Next, if you want to run tests "normally", you can do so with the command:
+
+```
+CI=true npm test
+
+```
+
+For Windows (PowerShell) users
+
+```
+env:CI=$true; npm test
+
+```
+
+</details>
+
 ### 5.13 Testing Blog post component
 
  <details>
@@ -95,7 +127,26 @@ Use CSS-class where it needed.
 
 ### 5.14 More information dislay on a button more click.
 
+<details> 
+<summary>
+
+Install `user-event` that makes simulating user input.
+</summar>
+
+`npm install --save-dev @testing-library/user-event`
+
+</details>
+
 <details>
+<summary>
+Correcting a mismatch (written on 28.1.2022) between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
+</summary>
+</details>
+``
+npm install -D --exact jest-watch-typeahead@0.6.5
+``
+<details>
+
  <summary>
 Step 2
 </summary>
@@ -123,10 +174,9 @@ The test should check, that the form calls the event handler and received the ri
 
 ## End to end INTERGRATION testing
 
- <details>
- 
 ### 5.17 Bloglist end to end testing
 
+ <details>
  <summary>
 Step 1
 </summary>
