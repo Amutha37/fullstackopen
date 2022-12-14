@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
-import Buttons from './Buttons'
+import Buttons from './Buttons2'
 
-const Blog = ({ blog, ind, handleBlogLikes, logedUser, handleDeleteBlog }) => {
+const Blog = ({
+  blog,
+  blogUserName,
+  ind,
+  handleBlogLikes,
+  logedUser,
+  handleDeleteBlog,
+}) => {
   const [showDetails, setShowDetails] = useState(false)
-  const [blogUserName, setBlogUserName] = useState(blog.user.name)
+  // const [blogUserName, setBlogUserName] = useState(null)
   let [likes, setLikes] = useState(blog.likes)
 
   const addLikes = ({ target }) => {
@@ -16,25 +23,26 @@ const Blog = ({ blog, ind, handleBlogLikes, logedUser, handleDeleteBlog }) => {
     handleDeleteBlog(target.value)
   }
 
-  if (blogUserName === undefined) {
-    setBlogUserName(logedUser.name)
-  }
+  // if (!blogUserName) {
+  //   blogUserName = logedUser
+  //   // setBlogUserName(logedUser)
+  // }
 
   // === Button control ===
 
   const handleBtn = () => setShowDetails(!showDetails)
   const showBlogInfo = { display: showDetails ? '' : 'none' }
-
+  // console.log('BLOG', 'blogUserName', blogUserName, 'logedUser', logedUser)
   return (
     <>
-      <div className='table_wraper first'>
+      <div className='table_wraper blog'>
         <ul>
-          <div className='first'>
+          <div>
             <li>{ind + 1}.</li>
-            <li>Title : {blog.title}</li>
-            <li>By : {blog.author}</li>
+            <li className='title'>Title : {blog.title}</li>
+            <li className='author'>By : {blog.author}</li>
 
-            <div style={showBlogInfo}>
+            <div style={showBlogInfo} className='blogAll'>
               <li>Url : {blog.url}</li>
               <li>Likes : {likes}</li>
               <li>user : {blogUserName}</li>
