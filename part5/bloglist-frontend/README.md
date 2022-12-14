@@ -114,6 +114,8 @@ env:CI=$true; npm test
 
 </details>
 
+##
+
 ### 5.13 Testing Blog post component
 
  <details>
@@ -123,6 +125,8 @@ Step 1
 Test blog renders title and author by default.
 Use CSS-class where it needed.
 </details>
+
+##
 
 ### 5.14 More information dislayed on a button "more" clicking.
 
@@ -155,6 +159,8 @@ Test blog renders title and author by default.
 Use CSS-class where it needed.
 </details>
 
+##
+
 ### 5.15 Likes button is event handler is received when clicked twice
 
 <details>
@@ -163,6 +169,8 @@ Step 3
 </summary>
 Make sure button is cliked twice and the event handler receive the props twice.
 </details>
+
+##
 
 ### 5.16 Test the creation of new blog form.
 
@@ -176,8 +184,6 @@ The test should check, that the form calls the event handler and received the ri
 ##
 
 ## End to end INTERGRATION testing
-
-##
 
 ### 5.17 Bloglist end to end testing
 
