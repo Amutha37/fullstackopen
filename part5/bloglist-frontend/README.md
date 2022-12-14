@@ -117,7 +117,6 @@ env:CI=$true; npm test
 ### 5.13 Testing Blog post component
 
  <details>
- 
  <summary>
 Step 1
 </summary>
@@ -174,7 +173,11 @@ Step 4
 The test should check, that the form calls the event handler and received the right props.
 </details>
 
+##
+
 ## End to end INTERGRATION testing
+
+##
 
 ### 5.17 Bloglist end to end testing
 
