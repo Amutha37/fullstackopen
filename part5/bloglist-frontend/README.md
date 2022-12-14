@@ -127,12 +127,12 @@ Use CSS-class where it needed.
 
 ### 5.14 More information dislayed on a button "more" clicking.
 
-#### Instaling library for button handler
+- Instaling library for button handler
 
  <details> 
-  <summary>
-  Install `user-event` that makes simulating user input.
-  </summar>
+<summary>
+Install `user-event` that makes simulating user input.
+ </summar>
 
 `npm install --save-dev @testing-library/user-event`
 
