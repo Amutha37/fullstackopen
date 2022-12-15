@@ -187,11 +187,13 @@ The test should check, that the form calls the event handler and received the ri
 
 - Unit test result
 
-![UnitTestResult](https://user-images.githubusercontent.com/67087939/207739992-643a0814-4deb-4618-9c69-549d7dea2d82.png)
+![unitTestResult](https://user-images.githubusercontent.com/67087939/207742517-d2680625-e8c8-4376-9d89-c061edcb3899.png)
 
 ##
 
 ## End to end INTERGRATION testing
+
+Unit
 
 ### 5.17 Bloglist end to end testing
 
