@@ -11,10 +11,6 @@ const Button = ({
   blogUserName,
   // props
 }) => {
-  //     const [blogObject, setBlogObject] = useState(blog)
-  //   const [visible, setVisible] = useState(false)
-  //   const showWhenVisible = { display: visible ? '' : 'none' }
-  // console.log('BUTTON', 'blogUserName', blogUserName, 'logedUser', logedUser)
   const buttonLabel = showDetails ? 'Hide' : 'More...'
 
   const moreDetailBtn = (

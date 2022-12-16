@@ -159,7 +159,7 @@ const App = () => {
               ind={i}
               handleBlogLikes={handleBlogLikes}
               handleDeleteBlog={handleDeleteBlog}
-              logedUser={user}
+              logedUser={user.name}
             />
           ))}
         </>

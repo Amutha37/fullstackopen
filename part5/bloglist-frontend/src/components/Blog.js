@@ -1,15 +1,9 @@
 import React, { useState } from 'react'
 import Buttons from './Buttons'
 
-const Blog = ({
-  blog,
-  blogUserName,
-  ind,
-  handleBlogLikes,
-  logedUser,
-  handleDeleteBlog,
-}) => {
+const Blog = ({ blog, ind, handleBlogLikes, logedUser, handleDeleteBlog }) => {
   const [showDetails, setShowDetails] = useState(false)
+  const [blogUserName, setBlogUserName] = useState(blog.user.name)
   let [likes, setLikes] = useState(blog.likes)
 
   const addLikes = ({ target }) => {
@@ -25,6 +19,10 @@ const Blog = ({
 
   const handleBtn = () => setShowDetails(!showDetails)
   const showBlogInfo = { display: showDetails ? '' : 'none' }
+
+  if (blogUserName === undefined) {
+    setBlogUserName(logedUser)
+  }
 
   return (
     <>
