@@ -43,18 +43,19 @@ const LoginForm = ({ createLogin }) => {
       <form onSubmit={handleLogin}>
         <div>
           username
-          <input value={username} onChange={handleUsernameChange} />
+          <input value={username} id='username'   onChange={handleUsernameChange} />
         </div>
         <div>
           password
           <input
+          id="password"
             type='password'
             value={password}
             autoComplete='off'
             onChange={handlePasswordChange}
           />
         </div>
-        <button type='submit'>login</button>
+        <button type='submit'   id='login-button'>Log In</button>
       </form>
     </div>
   )

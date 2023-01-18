@@ -87,7 +87,7 @@ const App = () => {
   // === login form ===
 
   const loginForm = () => (
-    <Togglable buttonLabel='log in'>
+    <Togglable buttonLabel='Log In'>
       <LoginForm createLogin={handleLogin} />
     </Togglable>
   )

@@ -116,6 +116,14 @@ env:CI=$true; npm test
 
 </details>
 
+### Test coverage
+
+- To find out the coverage run with the command :
+
+```
+ CI=true npm test -- --coverage
+```
+
 ##
 
 ### 5.13 Testing Blog post component
@@ -199,7 +207,7 @@ Unit
 
 ### Getting Started with Cypress
 
-E2E library Cypress has become popular within the last year. Cypress is exceptionally easy to use, and when compared to Selenium, for example, it requires a lot less hassle and headache. Its operating principle is radically different than most E2E testing libraries, because Cypress tests are run completely within the browser. Other libraries run the tests in a Node-process, which is connected to the browser through an API.
+"E2E library Cypress has become popular within the last year. Cypress is exceptionally easy to use, and when compared to Selenium, for example, it requires a lot less hassle and headache. Its operating principle is radically different than most E2E testing libraries, because Cypress tests are run completely within the browser. Other libraries run the tests in a Node-process, which is connected to the browser through an API."
 
 <details>
 <summary>
@@ -211,6 +219,10 @@ npm install --save-dev cypress
 ```
 
 and by adding an npm-script :
+
+```
+  "cypress:open": "cypress open"
+  ```
 
 </details>
 
