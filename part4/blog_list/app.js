@@ -15,7 +15,13 @@ const mongoUrl = config.MONGODB_URI
 
 logger.info('connecting to', mongoUrl)
 
-mongoose.connect(mongoUrl)
+// mongoose.connect(mongoUrl)
+mongoose.connect(mongoUrl, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+})
 // .then(() => {
 //   console.log('connected to MongoDB')
 // })
@@ -34,10 +40,10 @@ app.use('/api/login', loginRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/blogs', blogsRouter)
 
-// if (process.env.NODE_ENV === 'test') {
-//   const testingRouter = require('./controllers/testing')
-//   app.use('/api/testing', testingRouter)
-// }
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing')
+  app.use('/api/testing', testingRouter)
+}
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

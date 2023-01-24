@@ -37,7 +37,7 @@ We can now work on the given app. Copy the code into index.js.
 
 In order for the the given application to work as a functioning npm project, we have to install all the npm package dependency libraries.
 
-> `npm install express`
+`npm install express`
 
 > `npm install cors`
 
@@ -325,3 +325,19 @@ Test result of user and token authentication.
 Test result of blog_api.test after implementation of user and token.
 
 ![blog_api test](https://user-images.githubusercontent.com/67087939/150930919-9ba6227a-331a-4757-8d4f-a867992f923e.png)
+
+### Deployment auto set in package.json
+
+<Details>
+Auto build and deloy code for `package.json`
+<Summary>
+Scrit for deployment
+
+- `"build:ui": "rm -rf build && cd ../bloglist-frontend/ && npm run build && cp -r build ../blog_list",`
+- `"deploy": "git push heroku main",`
+- `"deploy:full": "npm run",`
+- `build:ui && git add . && git commit -m uibuild && git push && npm run deploy",`
+- `"logs:prod": "heroku logs --tail"`
+
+</Summary>
+</Details>
