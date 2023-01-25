@@ -207,8 +207,8 @@ The test should check, that the form calls the event handler and received the ri
 
 <details>
 <summary>
-
-First, install `cypress` to the frontend </summary>
+First, install `cypress` to the frontend 
+</summary>
 
 ```
 npm install --save-dev cypress
@@ -232,5 +232,16 @@ Test the application display the login by default.
 ###
 
 ![Screen Shot 2023-01-25 at 3 28 53 pm](https://user-images.githubusercontent.com/67087939/214481742-f22f933a-73b8-4c1c-a6ec-9ee324bc44e7.png)
+
+</details>
+ <summary>
+Step 2 Exercise 5.18
+</summary>
+
+Test both successful and unsuccessful login attempts.
+
+###
+
+![succedandfailwithcredentials](https://user-images.githubusercontent.com/67087939/214494411-dcb63dfb-3f32-4efe-a2e9-d872478ac6a1.png)
 
 </details>
