@@ -194,7 +194,10 @@ The test should check, that the form calls the event handler and received the ri
 ##
 <Details>
 - Unit test result
+ ![unitTestResult](https://user-images.githubusercontent.com/67087939/207742517-d2680625-e8c8-4376-9d89-c061edcb3899.png)
+
 <summary>
+ ###
 ![unitTestResult](https://user-images.githubusercontent.com/67087939/207742517-d2680625-e8c8-4376-9d89-c061edcb3899.png)
 </summary>
 </Details>
@@ -232,6 +235,8 @@ and by adding an npm-script :
 Step 1
 </summary>
 Test the application display the login by default.
+ 
+ ###
 ![Screen Shot 2023-01-25 at 3 28 53 pm](https://user-images.githubusercontent.com/67087939/214481742-f22f933a-73b8-4c1c-a6ec-9ee324bc44e7.png)
 
 </details>
