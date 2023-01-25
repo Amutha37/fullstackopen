@@ -14,7 +14,7 @@
   color: green;
 }
 /* login form   */
-.newBlog{
+.newBlog {
   background-color: rgb(147, 240, 217);
   width: 25rem;
 }
@@ -63,7 +63,7 @@ input {
   width: 20rem;
 }
 .error {
-  color: rgb(21, 150, 57);
+  /* color: rgb(21, 150, 57); */
   background: lightgrey;
   font-size: 20px;
   border-style: solid;
