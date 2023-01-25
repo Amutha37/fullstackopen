@@ -1,11 +1,35 @@
 describe('The Home Page', () => {
   beforeEach(function () {
     cy.request('POST', 'http://localhost:3003/api/testing/reset')
+    const user = {
+      name: 'Ashaa',
+      username: 'AshaaM',
+      password: 'passAshaa',
+    }
+    cy.request('POST', 'http://localhost:3003/api/users', user)
     cy.visit('http://localhost:3000')
     // cy.contains('Log In').click()
   })
   it('Login form is shown', () => {
-    cy.contains('Log In')
+    cy.contains('Log In').click()
+  })
+  // test loggin success 5:18
+  describe('Login', () => {
+    it('succed with correct credentials', () => {
+      cy.contains('Log In').click()
+      cy.get('#username').type('AshaaM')
+      cy.get('#password').type('passAshaa')
+      cy.get('#login-button').click()
+      cy.contains('logged-in')
+    })
+
+    it('fails with wrong credentials', () => {
+      cy.contains('Log In').click()
+      cy.get('#username').type('AshaaM')
+      cy.get('#password').type('passAshaaa')
+      cy.get('#login-button').click()
+      // cy.contains('logged-in')
+    })
   })
 
   // describe('When logged in', () => {
