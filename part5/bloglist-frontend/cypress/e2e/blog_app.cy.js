@@ -36,30 +36,31 @@ describe('Blog app', () => {
       cy.get('#username').type('AshaaM')
       cy.get('#password').type('passAshaa')
       cy.get('#login-button').click()
-      cy.contains('logged-in')
       cy.contains('Ashaa logged-in')
     })
   })
+  // ? Test for creating new common and useing custom common to avoid UI loggin
+  // * Custom commands are declared in cypress/support/commands.js. The code for logging  cy.request, like all Cypress commands, are promises
 
-  // describe('When logged in', () => {
-  //   beforeEach(function () {
+  describe('When logged in', () => {
+    beforeEach(function () {
+      cy.login({ username: 'AshaaM', password: 'passAshaa' })
+    })
+    // check content exist
+    it('a new blog can be created', () => {
+      cy.contains('Create new blog list').click()
+      cy.get('#title').type('End to end testing')
+      cy.get('#author').type('Matti Luukkainen')
+      cy.get('#url').type(
+        'https://fullstackopen.com/en/part5/end_to_end_testing/#some-things-to-note'
+      )
 
-  //   })
-  //   // check content exist
-  //   it('a new blog can be created', () => {
-  //     cy.contains('Create new blog list').click()
-  //     cy.get('#title').type('End to end testing')
-  //     cy.get('#author').type('Matti Luukkainen')
-  //     cy.get('#url').type(
-  //       'https://fullstackopen.com/en/part5/end_to_end_testing/#some-things-to-note'
-  //     )
-
-  //     cy.contains('Save').click()
-  //     cy.contains('End to end testing')
-  //     cy.contains('Matti Luukkainen')
-  //     cy.contains(
-  //       'https://fullstackopen.com/en/part5/end_to_end_testing/#some-things-to-note'
-  //     )
-  //   })
-  // })
+      cy.contains('Save').click()
+      cy.contains('End to end testing')
+      cy.contains('Matti Luukkainen')
+      cy.contains(
+        'https://fullstackopen.com/en/part5/end_to_end_testing/#some-things-to-note'
+      )
+    })
+  })
 })
