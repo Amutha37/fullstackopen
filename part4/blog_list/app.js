@@ -16,12 +16,20 @@ const mongoUrl = config.MONGODB_URI
 logger.info('connecting to', mongoUrl)
 
 // mongoose.connect(mongoUrl)
-mongoose.connect(mongoUrl, {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-})
+mongoose
+  .connect(mongoUrl, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => {
+    logger.info('connected to MongoDB')
+  })
+  .catch(() => {
+    logger.info('error connecting to MongoDb:', error.message)
+  })
+
 // .then(() => {
 //   console.log('connected to MongoDB')
 // })
