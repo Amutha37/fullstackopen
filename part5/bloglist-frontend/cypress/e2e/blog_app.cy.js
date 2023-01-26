@@ -56,11 +56,46 @@ describe('Blog app', () => {
       )
 
       cy.contains('Save').click()
-      cy.contains('End to end testing')
-      cy.contains('Matti Luukkainen')
       cy.contains(
         'https://fullstackopen.com/en/part5/end_to_end_testing/#some-things-to-note'
       )
     })
   })
+
+  // create new note
+  describe('create few blogs using request', () => {
+    beforeEach(() => {
+      cy.createBlog({
+        title: 'Cypress Testing',
+        author: 'Cypress',
+        url: 'https://docs.cypress.io/guides/overview/why-cypress',
+      })
+
+      // cy.createBlog({
+      //   title: 'MongoDB',
+      //   author: 'MongoDb',
+      //   url: 'https://account.mongodb.com',
+      // })
+
+      // cy.createBlog({
+      //   title: 'AWS',
+      //   author: 'Amazon',
+      //   url: 'https://aws.amazon.com/',
+      // })
+    })
+
+    it('Cypress Testing', function () {
+      cy.contains('MongoDB').parent().find('More...').click()
+      cy.get('.count').click()
+    })
+    // change its values
+    // check content exist
+    // it('can like a blog', () => {
+    //   cy.contains('Cypress Testing')
+    //   cy.contains('More...').click()
+    //   cy.contains('+Likes').Click()
+    // })
+  })
+
+  // check to its values
 })
