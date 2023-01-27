@@ -286,7 +286,7 @@ Logged in user can delete their own blog list.
 
 ###
 
-![CanAddLikesToBlogs](https://user-images.githubusercontent.com/67087939/215013258-cd373743-4ed0-4e60-8d10-07e66cec65d9.png)
+![UsercanDelBlog](https://user-images.githubusercontent.com/67087939/215013617-1bbc4f65-1db5-4ed9-91ba-93c8655fc085.png)
 
 
 </details>
