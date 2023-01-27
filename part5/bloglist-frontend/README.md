@@ -256,7 +256,8 @@ Verifies a logged in user can create a new blog successfully.
 
 ###
 
-![succedandfailwithcredentials](https://user-images.githubusercontent.com/67087939/214494411-dcb63dfb-3f32-4efe-a2e9-d872478ac6a1.png)
+
+![CanCreateNewBlog](https://user-images.githubusercontent.com/67087939/215013856-13175df6-dc83-4851-8a2e-e6a8cc265626.png)
 
 </details>
 <!-- 4 step -->
