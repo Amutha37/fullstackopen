@@ -272,19 +272,6 @@ Confirm test users can add likes to a blog.
 
 </details>
 
-<!-- 4 step -->
-
-<details>
- <summary>
-Step 4 Exercise 5.20
-</summary>
-
-Confirm test users can add likes to a blog.
-
-###
-
-</details>
-
 <!-- 5 step -->
 
 <details>
