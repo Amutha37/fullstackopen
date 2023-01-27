@@ -256,7 +256,7 @@ Verifies a logged in user can create a new blog successfully.
 
 ###
 
-![succedandfailwithcredentials](https://user-images.githubusercontent.com/67087939/214494411-dcb63dfb-3f32-4efe-a2e9-d872478ac6a1.png)
+![CanCreateNewBlog](https://user-images.githubusercontent.com/67087939/215013856-13175df6-dc83-4851-8a2e-e6a8cc265626.png)
 
 </details>
 <!-- 4 step -->
@@ -269,6 +269,8 @@ Step 4 Exercise 5.20
 Confirm test users can add likes to a blog.
 
 ###
+
+![CanAddLikesToBlogs](https://user-images.githubusercontent.com/67087939/215013209-19f823eb-cccf-49b4-a7a0-6bda3032f437.png)
 
 </details>
 
@@ -283,17 +285,21 @@ Logged in user can delete their own blog list.
 
 ###
 
+![UsercanDelBlog](https://user-images.githubusercontent.com/67087939/215013617-1bbc4f65-1db5-4ed9-91ba-93c8655fc085.png)
+
 </details>
 
 <!-- 6 step -->
 
 <details>
  <summary>
-Step 5 Exercise 5.22
+Step 6 Exercise 5.22
 </summary>
 
 Test blogs are listed in number of most likes.
 
 ###
+
+![BlogsOrderedBaseOnMostLikes](https://user-images.githubusercontent.com/67087939/215013319-3d77f46a-1d51-4e14-a141-8dc07d48daef.png)
 
 </details>
