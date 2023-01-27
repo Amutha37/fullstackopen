@@ -31,7 +31,7 @@ describe('Blog app', () => {
       cy.get('html').should('not.contain', 'Ashaa Muhun')
     })
 
-    it('succed with correct credentials', () => {
+    it('Succeeded login with correct credentials', () => {
       cy.contains('Log In').click()
       cy.get('#username').type('AshaaM')
       cy.get('#password').type('passAshaa')
@@ -47,7 +47,7 @@ describe('Blog app', () => {
       cy.login({ username: 'AshaaM', password: 'passAshaa' })
     })
     // check content exist
-    it('a new blog can be created', () => {
+    it('A new blog can be created', () => {
       cy.contains('Create new blog list').click()
       cy.get('#title').type('End to end testing')
       cy.get('#author').type('Matti Luukkainen')
@@ -61,66 +61,41 @@ describe('Blog app', () => {
       )
     })
 
-    it('2 another new blog can be created', () => {
-      cy.contains('Create new blog list').click()
-      cy.get('#title').type('Cypress Testing')
-      cy.get('#author').type('Cypress')
-      cy.get('#url').type('https://docs.cypress.io/guides/overview/why-cypress')
-      cy.contains('Save').click()
+    // several blogs can be
+    describe('create several blogs for exist', function () {
+      beforeEach(function () {
+        cy.createBlog({
+          title: 'Cypress Testing',
+          author: 'Cyress',
+          url: 'https://docs.cypress.io/guides/overview/why-cypress',
+        })
+        cy.createBlog({
+          title: 'CSS Grid',
+          author: 'Chris House',
+          url: 'https://css-tricks.com/snippets/css/complete-guide-grid/',
+        })
+        cy.createBlog({
+          title: 'W3School',
+          author: 'W3School',
+          url: 'https://www.w3schools.com/whatis/whatis_fullstack.asp',
+        })
+      })
 
-      cy.contains('Cypress Testing')
+      it('Can add likes to a blog', function () {
+        // add 1 likes
+        cy.get('.blog').then((blogs) => {
+          cy.wrap(blogs[0]).contains('More...').click()
+          cy.wrap(blogs[0]).contains('+Likes').click()
+          // add 2 likes
+          cy.wrap(blogs[2]).contains('More...').click()
+          cy.wrap(blogs[2]).contains('+Likes').click()
+          cy.wrap(blogs[2]).contains('+Likes').click()
+        })
+        cy.get('.blog').then((blogs) => {
+          cy.wrap(blogs[0]).contains(1)
+          cy.wrap(blogs[2]).contains(2)
+        })
+      })
     })
   })
-
-  // create new note
-  // describe('when logged in', function () {
-  //   beforeEach(function () {
-  //     cy.login({ username: 'AshaaM', password: 'passAshaa' })
-  //   })
-  //   it('2 another new blog can be created', () => {
-  //     cy.contains('Create new blog list').click()
-  //     cy.get('#title').type('Cypress Testing')
-  //     cy.get('#author').type('Cypress')
-  //     cy.get('#url').type('https://docs.cypress.io/guides/overview/why-cypress')
-  //     cy.contains('Save').click()
-
-  //     cy.contains('Cypress Testing')
-  //   })
-
-  // })
-  // describe('create new note', function () {
-  //   beforeEach(function () {
-  //     cy.request('POST', 'http://localhost:3003/api/blogs', {
-  //       title: 'Cypress Testing',
-  //       author: 'Cypress',
-  //       url: 'https://docs.cypress.io/guides/overview/why-cypress',
-  //       headers: {
-  //         Authorization: `bearer ${
-  //           JSON.parse(localStorage.getItem('loggedNoteappUser')).token
-  //         }`,
-  //       },
-  //     }).then((response) => {
-  //       localStorage.setItem('loggedBlogappUser', JSON.stringify(response.body))
-  //       cy.visit('http://localhost:3000')
-  //     })
-  //   })
-  // })
-  // describe('create few blogs using request', () => {
-  //   beforeEach(() => {
-  //     cy.createBlog({
-  //       title: 'Cypress Testing',
-  //       author: 'Cypress',
-  //       url: 'https://docs.cypress.io/guides/overview/why-cypress',
-  //     })
-  //   })
-
-  //   it('add likes count', () => {
-  //     cy.contains('Cypress Testing')
-  //     cy.contains('More...').click()
-  //     // cy.contains('.count').click()
-  //   })
-  //   // change its values
-  // })
-
-  // check to its values
 })

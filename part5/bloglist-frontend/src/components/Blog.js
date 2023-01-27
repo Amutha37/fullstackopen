@@ -35,7 +35,7 @@ const Blog = ({ blog, ind, handleBlogLikes, logedUser, handleDeleteBlog }) => {
 
             <div style={showBlogInfo} className='blogAll'>
               <li>Url : {blog.url}</li>
-              <li>Likes : {likes}</li>
+              <li id='likesCount'>Likes : {likes}</li>
               <li>user : {blogUserName}</li>
             </div>
           </div>
