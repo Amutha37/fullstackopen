@@ -270,6 +270,9 @@ Confirm test users can add likes to a blog.
 
 ###
 
+![CanAddLikesToBlogs](https://user-images.githubusercontent.com/67087939/215013209-19f823eb-cccf-49b4-a7a0-6bda3032f437.png)
+
+
 </details>
 
 <!-- 5 step -->
@@ -283,17 +286,23 @@ Logged in user can delete their own blog list.
 
 ###
 
+![CanAddLikesToBlogs](https://user-images.githubusercontent.com/67087939/215013258-cd373743-4ed0-4e60-8d10-07e66cec65d9.png)
+
+
 </details>
 
 <!-- 6 step -->
 
 <details>
  <summary>
-Step 5 Exercise 5.22
+Step 6 Exercise 5.22
 </summary>
 
 Test blogs are listed in number of most likes.
 
 ###
+
+![BlogsOrderedBaseOnMostLikes](https://user-images.githubusercontent.com/67087939/215013319-3d77f46a-1d51-4e14-a141-8dc07d48daef.png)
+
 
 </details>
