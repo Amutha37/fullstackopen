@@ -247,3 +247,66 @@ Test both successful and unsuccessful login attempts.
 ![succedandfailwithcredentials](https://user-images.githubusercontent.com/67087939/214494411-dcb63dfb-3f32-4efe-a2e9-d872478ac6a1.png)
 
 </details>
+ <details>
+ <summary>
+Step 3 Exercise 5.19
+</summary>
+
+Verifies a logged in user can create a new blog successfully.
+
+###
+
+![succedandfailwithcredentials](https://user-images.githubusercontent.com/67087939/214494411-dcb63dfb-3f32-4efe-a2e9-d872478ac6a1.png)
+
+</details>
+<!-- 4 step -->
+
+<details>
+ <summary>
+Step 4 Exercise 5.20
+</summary>
+
+Confirm test users can add likes to a blog.
+
+###
+
+</details>
+
+<!-- 4 step -->
+
+<details>
+ <summary>
+Step 4 Exercise 5.20
+</summary>
+
+Confirm test users can add likes to a blog.
+
+###
+
+</details>
+
+<!-- 5 step -->
+
+<details>
+ <summary>
+Step 5 Exercise 5.21
+</summary>
+
+Logged in user can delete their own blog list.
+
+###
+
+</details>
+
+<!-- 6 step -->
+
+<details>
+ <summary>
+Step 5 Exercise 5.22
+</summary>
+
+Test blogs are listed in number of most likes.
+
+###
+
+</details>

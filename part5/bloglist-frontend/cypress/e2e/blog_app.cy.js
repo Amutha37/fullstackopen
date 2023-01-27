@@ -61,7 +61,7 @@ describe('Blog app', () => {
       )
     })
 
-    // several blogs can be
+    // create several blogs and test for likes button and delete
     describe('create several blogs for exist', function () {
       beforeEach(function () {
         cy.createBlog({
@@ -94,6 +94,67 @@ describe('Blog app', () => {
         cy.get('.blog').then((blogs) => {
           cy.wrap(blogs[0]).contains(1)
           cy.wrap(blogs[2]).contains(2)
+        })
+      })
+
+      // deleting a blog
+      it('Deleting a blog', function () {
+        // deleting 2nd blog
+        cy.get('.blog').then((blogs) => {
+          cy.wrap(blogs[1]).contains('More...').click()
+          cy.wrap(blogs[1]).contains('Remove').click()
+          cy.get('html').should('not.contain', 'CSS Grid')
+        })
+      })
+    })
+  })
+
+  // test the blogs are in accending order by it highest likes count
+  describe('Blogs should be in asccending orders list', () => {
+    beforeEach(function () {
+      cy.login({ username: 'AshaaM', password: 'passAshaa' })
+    })
+
+    describe('create several blogs for exist', function () {
+      beforeEach(function () {
+        cy.createBlog({
+          title: 'test1',
+          author: 'Amuth',
+          url: 'https://docs.cypress.io/',
+        })
+        cy.createBlog({
+          title: 'Test2',
+          author: 'Amutha',
+          url: 'https://css-tricks.com/snippets/css/',
+        })
+
+        cy.createBlog({
+          title: 'Test3',
+          author: 'Ash',
+          url: 'https://css-tricks.com',
+        })
+      })
+
+      it('add like for blogs order and check the blogs in asccending orders', async function () {
+        // add 1 likes
+        cy.get('.blog').then((blogs) => {
+          cy.wrap(blogs[0]).contains('More...').click().wait(500)
+
+          // add 3 likes
+          cy.wrap(blogs[1]).contains('More...').click().wait(500)
+          cy.wrap(blogs[0]).contains('+Likes').click().wait(500)
+
+          cy.wrap(blogs[1]).contains('+Likes').click().wait(500)
+          cy.wrap(blogs[1]).contains('+Likes').click().wait(500)
+          cy.wrap(blogs[1]).contains('+Likes').click().wait(500)
+
+          cy.wrap(blogs[2]).contains('+Likes').click().wait(500)
+          cy.wrap(blogs[2]).contains('+Likes').click().wait(500)
+        })
+        cy.get('.blog').then((blogs) => {
+          cy.wrap(blogs[0]).contains(3)
+          cy.wrap(blogs[1]).contains(2)
+          cy.wrap(blogs[2]).contains(1)
         })
       })
     })

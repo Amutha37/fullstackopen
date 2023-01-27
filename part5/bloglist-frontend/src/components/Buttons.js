@@ -38,6 +38,7 @@ const Button = ({
   return (
     <>
       <button
+        id='moreHideBtn'
         style={
           showDetails
             ? { color: 'black', fontWeight: 'bold' }
