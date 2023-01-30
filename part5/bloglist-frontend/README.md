@@ -206,7 +206,6 @@ The test should check, that the form calls the event handler and received the ri
 
 <details>
 <summary>
-
 Install `cypress` to the frontend </summary>
 
 ```
@@ -305,12 +304,11 @@ Test blogs are listed by number of most likes.
 
 <details>
  <summary>
- 
  Command line testing 
 </summary>
-
-`npm run test:e2e`
-
+```
+npm run test:e2e
+```
 ###
 
 ![debuggingTest](https://user-images.githubusercontent.com/67087939/215616948-da7e35c9-b00b-43e8-8655-00fcd329e8df.png)
