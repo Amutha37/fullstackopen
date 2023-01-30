@@ -197,7 +197,7 @@ The test should check, that the form calls the event handler and received the ri
  
 </details>
 
-## End to end INTERGRATION testing - Blog List
+## $\testcolor{blue}{End\ to\ end\ INTERGRATION\ testing\ -\ Blog\ List}$
 
 
 ### Getting Started with Cypress
@@ -304,7 +304,7 @@ Test blogs are listed by number of most likes.
 
 <details>
  <summary>
-$\color{green} {Command}{ line}{ testing}$
+  Command line testing
 </summary>
  
 ```
