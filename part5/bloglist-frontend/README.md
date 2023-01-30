@@ -197,9 +197,8 @@ The test should check, that the form calls the event handler and received the ri
  
 </details>
 
-## End to end INTERGRATION testing
+## End to end INTERGRATION testing - Blog List
 
-### 5.17 Bloglist end to end testing
 
 ### Getting Started with Cypress
 
@@ -208,7 +207,7 @@ The test should check, that the form calls the event handler and received the ri
 <details>
 <summary>
 
-First, install `cypress` to the frontend </summary>
+Install `cypress` to the frontend </summary>
 
 ```
 npm install --save-dev cypress
@@ -296,10 +295,26 @@ Logged in user can delete their own blog list.
 Step 6 Exercise 5.22
 </summary>
 
-Test blogs are listed in number of most likes.
+Test blogs are listed by number of most likes.
 
 ###
 
 ![BlogsOrderedBaseOnMostLikes](https://user-images.githubusercontent.com/67087939/215013319-3d77f46a-1d51-4e14-a141-8dc07d48daef.png)
+
+</details>
+
+<details>
+ <summary>
+ 
+ Command line testing 
+</summary>
+
+`npm run test:e2e`
+
+###
+
+![debuggingTest](https://user-images.githubusercontent.com/67087939/215616948-da7e35c9-b00b-43e8-8655-00fcd329e8df.png)
+![debugSummary](https://user-images.githubusercontent.com/67087939/215617140-1bc94853-2b8f-43c3-98a7-fe4fd727ad4e.png)
+
 
 </details>
