@@ -304,7 +304,7 @@ Test blogs are listed by number of most likes.
 
 <details>
  <summary>
-$\color{green} {Command line testing}$
+$\color{green} {Command}{ line}{ testing}$
 </summary>
  
 ```
