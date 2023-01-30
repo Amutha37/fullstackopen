@@ -304,12 +304,13 @@ Test blogs are listed by number of most likes.
 
 <details>
  <summary>
- Command line testing 
+$\color{green} {Command line testing}$
 </summary>
+ 
 ```
 npm run test:e2e
 ```
-###
+
 
 ![debuggingTest](https://user-images.githubusercontent.com/67087939/215616948-da7e35c9-b00b-43e8-8655-00fcd329e8df.png)
 ![debugSummary](https://user-images.githubusercontent.com/67087939/215617140-1bc94853-2b8f-43c3-98a7-fe4fd727ad4e.png)
