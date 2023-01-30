@@ -8,10 +8,10 @@ describe('Blog app', () => {
     }
     cy.request('POST', 'http://localhost:3003/api/users', user)
     cy.visit('http://localhost:3000')
-    // cy.contains('Log In').click()
   })
-  it('Login form is shown', () => {
-    cy.contains('Log In').click()
+  it('Front age of login form is shown', () => {
+    cy.contains('Log In')
+    cy.contains('Blog List')
   })
   // test loggin success 5:18
   describe('Login', () => {
@@ -39,6 +39,7 @@ describe('Blog app', () => {
       cy.contains('Ashaa logged-in')
     })
   })
+
   // ? Test for creating new common and useing custom common to avoid UI loggin
   // * Custom commands are declared in cypress/support/commands.js. The code for logging  cy.request, like all Cypress commands, are promises
 
@@ -139,15 +140,14 @@ describe('Blog app', () => {
         // add 1 likes
         cy.get('.blog').then((blogs) => {
           cy.wrap(blogs[0]).contains('More...').click().wait(500)
-
+          cy.wrap(blogs[0]).contains('+Likes').click().wait(500)
           // add 3 likes
           cy.wrap(blogs[1]).contains('More...').click().wait(500)
-          cy.wrap(blogs[0]).contains('+Likes').click().wait(500)
-
           cy.wrap(blogs[1]).contains('+Likes').click().wait(500)
           cy.wrap(blogs[1]).contains('+Likes').click().wait(500)
           cy.wrap(blogs[1]).contains('+Likes').click().wait(500)
-
+          // 2 likes
+          cy.wrap(blogs[2]).contains('More...').click().wait(500)
           cy.wrap(blogs[2]).contains('+Likes').click().wait(500)
           cy.wrap(blogs[2]).contains('+Likes').click().wait(500)
         })
@@ -157,6 +157,13 @@ describe('Blog app', () => {
           cy.wrap(blogs[2]).contains(1)
         })
       })
+    })
+  })
+
+  it('then example', function () {
+    cy.get('button').then((buttons) => {
+      console.log('number of buttons', buttons.length)
+      cy.wrap(buttons[0]).click()
     })
   })
 })

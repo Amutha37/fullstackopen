@@ -135,6 +135,7 @@ const App = () => {
 
   return (
     <div className='main_container'>
+      <h2>Blog List </h2>
       {showing && (
         <Notification message={errorMessage} textColor={errTextColour} />
       )}
