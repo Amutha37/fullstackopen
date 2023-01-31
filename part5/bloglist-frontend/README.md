@@ -1,12 +1,13 @@
 <h1 align="center"> $\colorbox{green}{{\color{white}{PART\ 5\ Bloglist-frontend}}}$
 </h1>
 <p>
-### 5.1 Bloglist-frontend Step 1
+### 5.1
+ 5.1 - 5.2 Bloglist-frontend Step 1 & 2
 
 Implementing user and password functionallity. Token return with successfull login.
 
 </p>
-## Dependencies used in this project
+ Dependencies used in this project
 <details>
 <summary> Dependencies </summary>
 - npm install axios
@@ -199,7 +200,6 @@ The test should check, that the form calls the event handler and received the ri
 
 ## $\textcolor{orange}{End\ to\ end\ INTERGRATION\ testing\ -\ Blog\ List}$
 
-
 ### Getting Started with Cypress
 
 "E2E library Cypress has become popular within the last year. Cypress is exceptionally easy to use, and when compared to Selenium, for example, it requires a lot less hassle and headache. Its operating principle is radically different than most E2E testing libraries, because Cypress tests are run completely within the browser. Other libraries run the tests in a Node-process, which is connected to the browser through an API."
@@ -311,9 +311,7 @@ Test blogs are listed by number of most likes.
 npm run test:e2e
 ```
 
-
 ![debuggingTest](https://user-images.githubusercontent.com/67087939/215616948-da7e35c9-b00b-43e8-8655-00fcd329e8df.png)
 ![debugSummary](https://user-images.githubusercontent.com/67087939/215617140-1bc94853-2b8f-43c3-98a7-fe4fd727ad4e.png)
-
 
 </details>
