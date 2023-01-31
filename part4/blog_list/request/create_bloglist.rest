@@ -1,0 +1,11 @@
+POST  http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFzaGFhTSIsImlkIjoiNjNkMWUwYmFhMWIxMjIxMzU3NTU0MWU0IiwiaWF0IjoxNjc0Njk5MTA5LCJleHAiOjE2NzQ3MTM1MDl9.I3qFDom-2X3wsYqh46vWA3NzQqJ9DpC8ZwdI7pJQSJ8
+
+{
+        "title": "Dell windows test",
+       "author": "Intel3",
+          "url": "Testing",
+        "likes": 1
+}
+
