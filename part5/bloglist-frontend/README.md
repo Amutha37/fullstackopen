@@ -1,6 +1,6 @@
-<h1 align="center"> ## $\colorbox{green}{{\color{white}{PART\ 5\ Bloglist-frontend}}}$
+<h1 align="center"> $\colorbox{green}{{\color{white}{PART\ 5\ Bloglist-frontend}}}$
 </h1>
-<p align="center">
+<p>
 ### 5.1 Bloglist-frontend Step 1
 
 Implementing user and password functionallity. Token return with successfull login.
