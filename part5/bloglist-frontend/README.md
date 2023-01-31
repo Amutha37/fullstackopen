@@ -197,7 +197,7 @@ The test should check, that the form calls the event handler and received the ri
  
 </details>
 
-## $\textcolor{blue}{End\ to\ end\ INTERGRATION\ testing\ -\ Blog\ List}$
+## $\textcolor{orange}{End\ to\ end\ INTERGRATION\ testing\ -\ Blog\ List}$
 
 
 ### Getting Started with Cypress
