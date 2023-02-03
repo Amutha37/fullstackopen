@@ -9,7 +9,8 @@ Exercise 6.1 - 6.2 uses `unicafe` exercise from part 1 to handle the state manag
 
 <details>
 <summary>
-Exercise 6.1 
+ $\color{lime}{Exercise 6.1}$
+
  </summary>
 
 Step 1
@@ -20,6 +21,7 @@ Using base project :
 ```
 
 next
+
 `cd unicafe-redux `
 // go to the directory of cloned repository
 
@@ -27,14 +29,10 @@ next
 rm -rf .git
 ```
 
-$\color{lighgreen}{
-
 ```
 
 npm install
 ```
-
-}$
 
 ```
 npm start
