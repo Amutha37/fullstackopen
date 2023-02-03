@@ -1,5 +1,5 @@
-<h3 align="center"> $\textcolor{orange}{REDUX\ }$
-</h3>
+<h1 align="center"> $\textcolor{orange}{REDUX\ }$
+</h1>
 
 ## $\color{cyan}{Part6}$
 
@@ -9,7 +9,7 @@ Exercise 6.1 - 6.2 uses `unicafe` exercise from part 1 to handle the state manag
 
 <details>
 <summary>
- $\color{lime}{Exercise 6.1}$
+ $\color{blue}{Exercise 6.1}$
 
  </summary>
 
@@ -17,7 +17,7 @@ Step 1
 Using base project :
 
 ```
-  "git clone https://github.com/fullstack-hy2020/unicafe-redux.git"
+"git clone https://github.com/fullstack-hy2020/unicafe-redux.git"
 ```
 
 next
