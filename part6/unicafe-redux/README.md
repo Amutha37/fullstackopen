@@ -1,7 +1,7 @@
 <h3 align="center"> $\textcolor{orange}{REDUX\ }$
 </h3>
 
-## $\color{teal}{Part6}$
+## $\color{cyan}{Part6}$
 
 ### Getting Started with Redux
 
@@ -24,13 +24,17 @@ next
 // go to the directory of cloned repository
 
 ```
-`rm -rf .git`
+rm -rf .git
 ```
 
+$\color{lighgreen}{
+
 ```
-$\color{lightgreen}{npm install}$
-$\textcolor{lightgreen}{npm install}$
+
+npm install
 ```
+
+}$
 
 ```
 npm start
