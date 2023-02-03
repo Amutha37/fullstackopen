@@ -1,7 +1,7 @@
 <h3 align="center"> $\textcolor{orange}{REDUX\ }$
 </h3>
 
-## $\color{olive}{Part6}$
+## $\color{teal}{Part6}$
 
 ### Getting Started with Redux
 
@@ -19,15 +19,17 @@ Using base project :
   "git clone https://github.com/fullstack-hy2020/unicafe-redux.git"
 ```
 
-next `cd unicafe-redux `
+next
+`cd unicafe-redux `
 // go to the directory of cloned repository
 
 ```
-"rm -rf .git"
+`rm -rf .git`
 ```
 
 ```
-npm install
+$\color{lightgreen}{npm install}$
+$\textcolor{lightgreen}{npm install}$
 ```
 
 ```
