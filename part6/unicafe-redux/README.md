@@ -40,7 +40,7 @@ npm start
 
 <details>
  <summary>
- $\color{lightgreen}{Run\ Test}$
+ $\color{purle}{Run\ Test}$
 </summary>
 Testing the Reduce method.
 Install deep-freeze to ensure reducer has been correctly define as an immutable function.
