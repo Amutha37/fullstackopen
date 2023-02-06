@@ -75,12 +75,16 @@ npm test -- -t  "should return a proper initial state when called with undefined
 
 <details>
  <summary>
-Error
+$\color{lightgreen}{Error}$
 </summary>
 At the moment of writing (28.1.2022) there is a mismatch between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
 
 `npm install -D --exact jest-watch-typeahead@0.6.5`
 
 </details>
+
+Test result 
+
+![unicafe-reduxtest](https://user-images.githubusercontent.com/67087939/216877500-a5aed3b6-f618-4573-bfe3-e9515a789347.png)
 
 </details>
