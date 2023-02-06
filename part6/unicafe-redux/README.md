@@ -9,7 +9,7 @@ Exercise 6.1 - 6.2 uses `unicafe` exercise from part 1 to handle the state manag
 
 <details>
 <summary>
- $\color{lightgreen}{Exercise/6.1/ &amp;/ Exercise/ 6.2}$
+ $\color{lightgreen}{Exercise/6.1/ -/ Exercise/ 6.2}$
 
  </summary>
 
