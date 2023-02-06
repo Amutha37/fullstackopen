@@ -9,7 +9,7 @@ Exercise 6.1 - 6.2 uses `unicafe` exercise from part 1 to handle the state manag
 
 <details>
 <summary>
- $\color{blue}{Exercise 6.1}$
+ $\color{lightgreen}{Exercise 6.1}$
 
  </summary>
 
@@ -23,7 +23,7 @@ Using base project :
 next
 
 `cd unicafe-redux `
-// go to the directory of cloned repository
+// go to the directory of cloned repository and remove the git configuration
 
 ```
 rm -rf .git
@@ -37,5 +37,50 @@ npm install
 ```
 npm start
 ```
+
+<details>
+ <summary>
+Step 1
+</summary>
+Testing the Reduce method.
+Install deep-freeze to ensure reducer has been correctly define as an immutable function.
+
+```
+npm install --save-dev deep-freeze
+```
+
+### To run individual test file : -
+
+```
+run test file :
+```
+
+```
+npm test -- reducer/counterReducer.test.js
+```
+
+### run specific test name or describe block name
+
+- test name
+
+```
+npm test -- -t  "should return a proper initial state when called with undefined state"
+```
+
+- test describtion
+
+```
+  npm test -- -t 'unicafe reducer'
+```
+
+<details>
+ <summary>
+Error
+</summary>
+At the moment of writing (28.1.2022) there is a mismatch between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
+
+`npm install -D --exact jest-watch-typeahead@0.6.5`
+
+</details>
 
 </details>
