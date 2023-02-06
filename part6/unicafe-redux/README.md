@@ -9,7 +9,7 @@ Exercise 6.1 - 6.2 uses `unicafe` exercise from part 1 to handle the state manag
 
 <details>
 <summary>
- $\color{lightgreen}{Exercise/ 6.1 - Exercise/ 6.2}$
+ $\color{lightgreen}{Exercise  6.1 - Exercise  6.2}$
 
  </summary>
 
@@ -40,7 +40,7 @@ npm start
 
 <details>
  <summary>
- $\color{lightgreen}{Test/ Run}$
+ $\color{lightgreen}{Test Run}$
 </summary>
 Testing the Reduce method.
 Install deep-freeze to ensure reducer has been correctly define as an immutable function.
