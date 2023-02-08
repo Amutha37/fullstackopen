@@ -13,7 +13,18 @@
 
  </summary>
 
-Step 1
 Implement fuctionality for the number of votes to be stored to a Redux store.
+
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.4}$
+
+ </summary>
+
+Implement fuctionality for adding new anecdotes to be stored to a Redux store.
+
+- You can keep the form uncontrolled like we did earlier
 
 </details>
