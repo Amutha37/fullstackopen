@@ -28,3 +28,13 @@ Implement fuctionality for adding new anecdotes to be stored to a Redux store.
 - You can keep the form uncontrolled like we did earlier
 
 </details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.5}$
+
+ </summary>
+
+List of anecdotes are ordered by the number of votes.
+
+</details>
