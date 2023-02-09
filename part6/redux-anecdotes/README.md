@@ -38,3 +38,13 @@ Implement fuctionality for adding new anecdotes to be stored to a Redux store.
 List of anecdotes are ordered by the number of votes.
 
 </details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.6}$
+
+ </summary>
+
+Separate the creation of action-objects to action creator-functions and place them in the src/reducers/anecdoteReducer.js file
+
+</details>

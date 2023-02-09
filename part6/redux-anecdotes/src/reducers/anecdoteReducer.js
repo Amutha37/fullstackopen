@@ -40,4 +40,28 @@ const reducer = (state = initialState, action) => {
   }
 }
 
+// The below are action creator for the reduce above this line
+
+// create new anecdote
+const generateId = () => Number((Math.random() * 1000000).toFixed(0))
+
+export const createNewAnecdote = (content) => {
+  return {
+    type: 'NEW_ANECDOTES',
+    payload: {
+      content,
+      id: generateId(),
+      votes: 0,
+    },
+  }
+}
+
+// vote
+export const addVote = (id) => {
+  return {
+    type: 'VOTE',
+    payload: { id },
+  }
+}
+
 export default reducer
