@@ -7,6 +7,8 @@
 
 - Exercise 6.3 - 6.8 `anecdotes` exercise from part 1 to handle the state management with Redux.
 
+- The exercises are done in branches.
+
 <details>
 <summary>
  $\color{lightgreen}{Exercise\ 6.3}$
