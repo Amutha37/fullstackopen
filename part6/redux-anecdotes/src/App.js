@@ -1,13 +1,11 @@
-import NewAnecdote from './components/NewAnecdote'
-import Votes from './components/Votes'
+import AnecdoteForm from './components/AnecdoteForm'
+import AnecdoteList from './components/AnecdoteList'
 
 const App = () => {
-  // * const importantNotes = useSelector(state => state.filter(note => note.important))
-
   return (
     <div>
-      <NewAnecdote />
-      <Votes />
+      <AnecdoteForm />
+      <AnecdoteList />
     </div>
   )
 }

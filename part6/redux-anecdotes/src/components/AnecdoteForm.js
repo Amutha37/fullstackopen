@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux'
-// none default  function exported with curly bracess
 import { createNewAnecdote } from '../reducers/anecdoteReducer'
 
-const NewAnecdote = () => {
+const AnecdoteForm = () => {
   const dispatch = useDispatch()
+
+  // add new anecdotes
 
   const addAnecdotes = (event) => {
     event.preventDefault()
@@ -13,17 +14,17 @@ const NewAnecdote = () => {
   }
 
   return (
-    <div>
-      <div id='form'>
-        <h2>Anecdotes</h2>
-        <h3>create new</h3>
-        <form onSubmit={addAnecdotes}>
+    <div id='form'>
+      <h1>Anecdotes</h1>
+      <h2>create new</h2>
+      <form onSubmit={addAnecdotes}>
+        <div>
           <input name='anecdote' />
-          <button type='submit'>create</button>
-        </form>
-      </div>
+        </div>
+        <button type='submit'>create</button>
+      </form>
     </div>
   )
 }
 
-export default NewAnecdote
+export default AnecdoteForm

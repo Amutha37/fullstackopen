@@ -5,7 +5,7 @@
 
 ### Getting Started with Redux
 
-Exercise 6.3 - 6.8 `anecdotes` exercise from part 1 to handle the state management with Redux.
+- Exercise 6.3 - 6.8 `anecdotes` exercise from part 1 to handle the state management with Redux.
 
 <details>
 <summary>
@@ -13,78 +13,58 @@ Exercise 6.3 - 6.8 `anecdotes` exercise from part 1 to handle the state manageme
 
  </summary>
 
-Step 1
-Using base project :
-
-```
-git clone https://github.com/fullstack-hy2020/redux-anecdotes.git
-```
-
-next
-
-`cd redux-anecdotes`
-// go to the directory of cloned repository and remove the git configuration
-
-```
-rm -rf .git
-```
-
-```
-npm install
-```
-
-```
-npm start
-```
-
-<details>
- <summary>
- $\color{yellow}{Run\ Test}$
-</summary>
-Testing the Reduce method.
-Install deep-freeze to ensure reducer has been correctly define as an immutable function.
-
-```
-npm install --save-dev deep-freeze
-```
-
-### To run individual test file : -
-
-```
-run test file :
-```
-
-```
-npm test -- reducer/counterReducer.test.js
-```
-
-### run specific test name or describe block name
-
-- test name
-
-```
-npm test -- -t  "should return a proper initial state when called with undefined state"
-```
-
-- test describtion
-
-```
-  npm test -- -t 'unicafe reducer'
-```
-
-<details>
- <summary>
-$\color{red}{ERROR}$
-</summary>
- Test may fail with a message, install jest-watch-typeahead.
-At the moment of writing (28.1.2022) there is a mismatch between the version of a dependency jest-watch-typeahead that create-react-app and user-event are using. The problem is fixed by installing a specific version:
-
-`npm install -D --exact jest-watch-typeahead@0.6.5`
+Implement fuctionality for the number of votes to be stored to a Redux store.
 
 </details>
 
-Test result
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.4}$
 
-![unicafe-reduxtest](https://user-images.githubusercontent.com/67087939/216877500-a5aed3b6-f618-4573-bfe3-e9515a789347.png)
+ </summary>
+
+Implement fuctionality for adding new anecdotes to be stored to a Redux store.
+
+- You can keep the form uncontrolled like we did earlier
+
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.5}$
+
+ </summary>
+
+List of anecdotes are ordered by the number of votes.
+
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.6}$
+
+ </summary>
+
+Separate the creation of action-objects to action creator-functions and place them in the src/reducers/anecdoteReducer.js file
+
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.7}$
+
+ </summary>
+
+Separate the creation of new anecdote logic to its own component called AnecdoteForm.js
+
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.8}$
+
+ </summary>
+
+Move rendering of the anecdote list and logic and voting count logic to one component.Component called AnecdoteList.js
 
 </details>

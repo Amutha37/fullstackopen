@@ -40,6 +40,8 @@ const reducer = (state = initialState, action) => {
   }
 }
 
+// The below are action creator for the reduce above this line
+
 // create new anecdote
 const generateId = () => Number((Math.random() * 1000000).toFixed(0))
 

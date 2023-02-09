@@ -11,11 +11,15 @@ const Vote = ({ anecdote, handleClick }) => {
   )
 }
 
-const Votes = () => {
+const AnecdoteList = () => {
   // * const importantNotes = useSelector(state => state.filter(note => note.important))
 
   const anecdotes = useSelector((state) => state)
   const dispatch = useDispatch()
+
+  let sortVotes = (a, b) => b.votes - a.votes
+
+  anecdotes.sort(sortVotes)
 
   return (
     <div>
@@ -30,4 +34,4 @@ const Votes = () => {
   )
 }
 
-export default Votes
+export default AnecdoteList
