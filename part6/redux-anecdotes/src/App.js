@@ -30,10 +30,14 @@ const App = () => {
     })
   }
 
+  let sortVotes = (a, b) => b.votes - a.votes
+
+  const highestVotes = anecdotes.sort(sortVotes)
+
   return (
     <div id='form'>
       <h2>Anecdotes</h2>
-      {anecdotes.map((anecdote) => (
+      {highestVotes.map((anecdote) => (
         <div key={anecdote.id}>
           <div id='list'>{anecdote.content}</div>
           <div>
