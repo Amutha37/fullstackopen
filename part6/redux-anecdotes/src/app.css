@@ -3,16 +3,22 @@
 }
 
 #vote {
-  /* align-content: center; */
   margin-left: 1rem;
+}
+#vote button {
+  color: blue;
 }
 button {
   font-weight: 5;
   margin-left: 1rem;
+  margin-top: 1rem;
 }
 #form {
   text-align: center;
   margin-bottom: 2rem;
+}
+#form button {
+  color: green;
 }
 #list {
   margin-top: 1rem;

@@ -48,3 +48,13 @@ List of anecdotes are ordered by the number of votes.
 Separate the creation of action-objects to action creator-functions and place them in the src/reducers/anecdoteReducer.js file
 
 </details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.7}$
+
+ </summary>
+
+Separate the creation of new anecdote logic to its own component called AnecdoteForm.js
+
+</details>
