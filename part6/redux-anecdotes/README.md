@@ -58,3 +58,13 @@ Separate the creation of action-objects to action creator-functions and place th
 Separate the creation of new anecdote logic to its own component called AnecdoteForm.js
 
 </details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.8}$
+
+ </summary>
+
+Move rendering of the anecdote list and logic and voting count logic to one component.Component called AnecdoteList.js
+
+</details>
