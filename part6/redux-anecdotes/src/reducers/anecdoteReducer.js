@@ -33,7 +33,7 @@ const reducer = (state = initialState, action) => {
         ...voteToAdd,
         votes: voteToAdd.votes + 1,
       }
-      return state.map((note) => (note.id !== id ? note : addVote))
+      return state.map((dote) => (dote.id !== id ? dote : addVote))
     }
     default:
       return state

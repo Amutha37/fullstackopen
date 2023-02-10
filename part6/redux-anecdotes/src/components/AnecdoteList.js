@@ -14,7 +14,7 @@ const Vote = ({ anecdote, handleClick }) => {
 const AnecdoteList = () => {
   // * const importantNotes = useSelector(state => state.filter(note => note.important))
 
-  const anecdotes = useSelector((state) => state)
+  const anecdotes = useSelector((state) => state.anecdotes)
   const dispatch = useDispatch()
 
   let sortVotes = (a, b) => b.votes - a.votes
