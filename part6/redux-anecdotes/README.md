@@ -81,7 +81,8 @@ Move rendering of the anecdote list and logic and voting count logic to one comp
 
  </summary>
 
-Move rendering of the anecdote list and logic and voting count logic to one component.Component called
-`AnecdoteList.js`
+Implementing filtering of the acnecdotes list.
+
+Create Filter component and `combineReducer function`.
 
 </details>

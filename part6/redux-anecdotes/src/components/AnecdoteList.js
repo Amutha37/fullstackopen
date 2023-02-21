@@ -12,11 +12,18 @@ const Vote = ({ anecdote, handleClick }) => {
 }
 
 const AnecdoteList = () => {
+  const dispatch = useDispatch()
   // * const importantNotes = useSelector(state => state.filter(note => note.important))
 
-  const anecdotes = useSelector((state) => state.anecdotes)
-  const dispatch = useDispatch()
-
+  const anecdotes = useSelector(({ filter, anecdotes }) => {
+    if (filter === '') {
+      return anecdotes
+    }
+    return anecdotes.filter((row) =>
+      row.content.toString().toLowerCase().includes(filter)
+    )
+  })
+  // ? above
   let sortVotes = (a, b) => b.votes - a.votes
 
   anecdotes.sort(sortVotes)

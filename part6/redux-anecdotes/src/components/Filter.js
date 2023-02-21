@@ -5,11 +5,9 @@ const Filter = () => {
   const dispatch = useDispatch()
 
   const handleChange = (event) => {
-    // input-field value is in variable event.target.value
-    event.preventDefault()
-    const searchContent = event.target.search.value
-    event.target.search.value = ''
-    dispatch(filterAnecdote(searchContent))
+    const searchContent = event.target.value
+
+    dispatch(filterAnecdote(searchContent.toString().toLowerCase()))
   }
 
   return (
