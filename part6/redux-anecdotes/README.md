@@ -3,13 +3,13 @@
 
 ## $\color{cyan}{Part6}$
 
-`Part6-a`
-
 ### Getting Started with Redux
 
 - Exercise 6.3 - 6.8 `anecdotes` exercise from part 1 to handle the state management with Redux.
 
 - The exercises are done in branches.
+
+## `Part6-a`
 
 <details>
 <summary>
@@ -75,7 +75,7 @@ Move rendering of the anecdote list and logic and voting count logic to one comp
 
 </details>
 
-`Part6-b`
+## `Part6-b`
 
 <details>
 <summary>
