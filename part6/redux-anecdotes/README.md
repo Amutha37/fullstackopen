@@ -3,6 +3,8 @@
 
 ## $\color{cyan}{Part6}$
 
+$\color{orange}{`Part6-a`}$
+
 ### Getting Started with Redux
 
 - Exercise 6.3 - 6.8 `anecdotes` exercise from part 1 to handle the state management with Redux.
