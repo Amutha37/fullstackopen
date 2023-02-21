@@ -3,7 +3,7 @@
 
 ## $\color{cyan}{Part6}$
 
-$\color{orange}{`Part6-a`}$
+`Part6-a`
 
 ### Getting Started with Redux
 
