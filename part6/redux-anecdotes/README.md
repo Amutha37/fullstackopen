@@ -88,3 +88,27 @@ Implementing filtering of the acnecdotes list.
 Create Filter component and `combineReducer function`.
 
 </details>
+
+## <h3 align="center"> $\textcolor{orange}{REDUX\ }$
+
+</h3>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.10}$
+
+Step 8
+
+ </summary>
+
+Implementing `Redux Toolkit` to run the project.
+
+```
+npm install @reduxjs/toolkit
+```
+
+Create the store using Redux Toolkit's `configureStore` function
+
+With Redux Toolkit,create reducer and related action creators using the `createSlice function`.
+
+</details>
