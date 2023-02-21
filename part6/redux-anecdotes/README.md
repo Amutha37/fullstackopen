@@ -89,7 +89,7 @@ Create Filter component and `combineReducer function`.
 
 </details>
 
-## <h3 align="center"> $\textcolor{orange}{REDUX\ }$
+## <h3 > $\textcolor{orange}{Redux Toolkit\ }$
 
 </h3>
 
@@ -97,9 +97,8 @@ Create Filter component and `combineReducer function`.
 <summary>
  $\color{lightgreen}{Exercise\ 6.10}$
 
-Step 8
-
  </summary>
+Step 8
 
 Implementing `Redux Toolkit` to run the project.
 
