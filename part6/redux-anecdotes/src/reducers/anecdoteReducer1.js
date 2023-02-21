@@ -1,5 +1,3 @@
-import { createSlice } from '@reduxjs/toolkit'
-
 const anecdotesAtStart = [
   'If it hurts, do it more often',
   'Adding manpower to a late software project makes it later!',
@@ -21,35 +19,49 @@ const asObject = (anecdote) => {
 
 const initialState = anecdotesAtStart.map(asObject)
 
-const anecdoteSlice = createSlice({
-  name: 'anecdotes',
-  initialState,
-  reducers: {
-    createNewAnecdote(state, action) {
-      const content = action.payload
-      state.push({
-        content,
-        id: getId(),
-        votes: 0,
-      })
-    },
-    addVote(state, action) {
-      const id = action.payload
+const reducer = (state = initialState, action) => {
+  console.log('state now: ', state)
+  console.log('action', action)
+  switch (action.type) {
+    case 'NEW_ANECDOTES':
+      return [...state, action.payload]
+
+    case 'VOTE': {
+      const id = action.payload.id
       const voteToAdd = state.find((n) => n.id === id)
       const addVote = {
         ...voteToAdd,
         votes: voteToAdd.votes + 1,
       }
-
-      console.log('STATE', JSON.parse(JSON.stringify(state)))
       return state.map((dote) => (dote.id !== id ? dote : addVote))
+    }
+    default:
+      return state
+  }
+}
+
+// ? The below are action creator for the reduce above this line
+
+// create new anecdote
+const generateId = () => Number((Math.random() * 1000000).toFixed(0))
+
+export const createNewAnecdote = (content) => {
+  return {
+    type: 'NEW_ANECDOTES',
+    payload: {
+      content,
+      id: generateId(),
+      votes: 0,
     },
-  },
-})
+  }
+}
 
-// switch (action.type) {
-//   case 'NEW_ANECDOTES':
-//   case 'VOTE': {
+// vote
+export const addVote = (id) => {
+  return {
+    type: 'VOTE',
+    payload: { id },
+  }
+}
 
-export const { createNewAnecdote, addVote } = anecdoteSlice.actions
-export default anecdoteSlice.reducer
+export default reducer
