@@ -6,9 +6,9 @@ import { Provider } from 'react-redux'
 import App from './App'
 import anecdoteReducer from './reducers/anecdoteReducer'
 import filterReducer from './reducers/filterReducer'
-import filterAnecdote from './reducers/filterReducer'
+// import filterAnecdote from './reducers/filterReducer'
 //...
-
+console.log('here1')
 const store = configureStore({
   reducer: {
     anecdotes: anecdoteReducer,
@@ -16,7 +16,8 @@ const store = configureStore({
   },
 })
 
-store.subscribe(() => console.log('ALL', store.getState()))
+store.subscribe(() => console.log('', store.getState()))
+console.log('here')
 // store.dispatch(filterAnecdote(''))
 // store.dispatch(
 //   createNewAnecdote(

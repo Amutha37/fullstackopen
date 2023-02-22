@@ -110,4 +110,21 @@ npm install @reduxjs/toolkit
 
 - With Redux Toolkit,create reducer and related action creators using the `createSlice function`.
 
+- Change filter reducer and action creators(filterReducer.js) to use the Redux Toolkit's createSlice function.
+
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.11}$
+
+ </summary>
+Step 9
+
+- Create the store using Redux Toolkit's `configureStore` function
+
+- With Redux Toolkit,create reducer and related action creators using the `createSlice function`.
+
+- Change filter reducer and action creators(anecdoteReduce.js) to use the Redux Toolkit's createSlice function.
+
 </details>
