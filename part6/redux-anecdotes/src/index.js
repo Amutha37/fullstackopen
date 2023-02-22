@@ -17,7 +17,7 @@ const store = configureStore({
 })
 
 store.subscribe(() => console.log('ALL', store.getState()))
-store.dispatch(filterAnecdote(''))
+// store.dispatch(filterAnecdote(''))
 // store.dispatch(
 //   createNewAnecdote(
 //     'Combine reducers forms one reducer from many simple reducers'

@@ -16,7 +16,7 @@ const AnecdoteList = () => {
   // * const importantNotes = useSelector(state => state.filter(note => note.important))
 
   const anecdotes = useSelector(({ filter, anecdotes }) => {
-    if (filter === '') {
+    if (filter === null) {
       return anecdotes
     }
     return anecdotes.filter((row) =>

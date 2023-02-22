@@ -106,8 +106,8 @@ Implementing `Redux Toolkit` to run the project.
 npm install @reduxjs/toolkit
 ```
 
-Create the store using Redux Toolkit's `configureStore` function
+- Create the store using Redux Toolkit's `configureStore` function
 
-With Redux Toolkit,create reducer and related action creators using the `createSlice function`.
+- With Redux Toolkit,create reducer and related action creators using the `createSlice function`.
 
 </details>
