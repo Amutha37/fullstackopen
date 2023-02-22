@@ -98,7 +98,7 @@ Create Filter component and `combineReducer function`.
  $\color{lightgreen}{Exercise\ 6.10}$
 
  </summary>
-Step 8
+$\color{blue}{Step\ 8}$
 
 Implementing `Redux Toolkit` to run the project.
 
@@ -106,9 +106,9 @@ Implementing `Redux Toolkit` to run the project.
 npm install @reduxjs/toolkit
 ```
 
-- Create the store using Redux Toolkit's `configureStore` function
+- Separate the creation of the store in `store.js` instead of inside `index.js` . Use Redux Toolkit's `configureStore` function for store creation.
 
-- With Redux Toolkit,create reducer and related action creators using the `createSlice function`.
+- With Redux Toolkit,create reducer and related action creators using the `createSlice` function.
 
 - Change filter reducer and action creators(filterReducer.js) to use the Redux Toolkit's createSlice function.
 
