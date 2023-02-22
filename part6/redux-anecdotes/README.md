@@ -98,7 +98,7 @@ Create Filter component and `combineReducer function`.
  $\color{lightgreen}{Exercise\ 6.10}$
 
  </summary>
-$\color{blue}{Step\ 8}$
+$\color{lightblue}{Step\ 8}$
 
 Implementing `Redux Toolkit` to run the project.
 
@@ -119,7 +119,7 @@ npm install @reduxjs/toolkit
  $\color{lightgreen}{Exercise\ 6.11}$
 
  </summary>
-Step 9
+$\color{lightblue}{Step\ 9}$
 
 - Create the store using Redux Toolkit's `configureStore` function
 
