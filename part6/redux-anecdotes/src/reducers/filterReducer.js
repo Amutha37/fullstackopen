@@ -18,11 +18,11 @@
 
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialFilterState = ''
+const initialState = []
 
 const filterReducer = createSlice({
   name: 'filter',
-  initialFilterState,
+  initialState,
   reducers: {
     filterAnecdote(state, action) {
       return (state = action.payload)
