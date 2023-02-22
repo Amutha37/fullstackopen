@@ -89,7 +89,7 @@ Create Filter component and `combineReducer function`.
 
 </details>
 
-## <h3 > $\textcolor{orange}{Redux Toolkit\ }$
+## <h3 > $\textcolor{orange}{Redux\ Toolkit\ }$
 
 </h3>
 
