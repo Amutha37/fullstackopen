@@ -13,7 +13,7 @@ const Notification = () => {
     borderWidth: 1,
     marginBottom: 30,
     borderRadius: 5,
-    color: 'y',
+    color: 'yellow',
   }
   return <div style={style}>{notification}</div>
 }

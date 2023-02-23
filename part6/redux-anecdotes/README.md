@@ -131,12 +131,15 @@ npm install @reduxjs/toolkit
 
 <details>
 <summary>
- $\color{lightgreen}{Exercise\ 6.12}$
+ $\color{lightgreen}{Exercise\ 6.12 - 13}$
 
  </summary>
-   $\color{lightblue}{Step\ 1}$
+   $\color{lightblue}{Step\ 10\ -\ 11}$
 
-- Render message stored in the Redux store.
+- Render notification message stored in the Redux store.
 
-- Create separate reducer for the notification using `createSlice` .
+- Create separate reducer for the notification using `createSlice` and include it in `configureStore` for store creation.
+
+- Set timeout for the notification message.
+
 </details>

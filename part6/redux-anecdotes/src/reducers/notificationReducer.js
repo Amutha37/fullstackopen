@@ -1,8 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialState = null
+
 const notificationReducer = createSlice({
   name: 'notification',
-  initialState: null,
+  initialState,
   reducers: {
     anecdoteNotification(state, action) {
       state = action.payload
