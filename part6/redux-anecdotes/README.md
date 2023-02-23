@@ -119,7 +119,7 @@ npm install @reduxjs/toolkit
  $\color{lightgreen}{Exercise\ 6.11}$
 
  </summary>
-$\color{lightblue}{Step\ 9}$
+   $\color{lightblue}{Step\ 9}$
 
 - Create the store using Redux Toolkit's `configureStore` function
 
@@ -127,4 +127,16 @@ $\color{lightblue}{Step\ 9}$
 
 - Change filter reducer and action creators(anecdoteReduce.js) to use the Redux Toolkit's createSlice function.
 
+</details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.12}$
+
+ </summary>
+   $\color{lightblue}{Step\ 1}$
+
+- Render message stored in the Redux store.
+
+- Create separate reducer for the notification using `createSlice` .
 </details>

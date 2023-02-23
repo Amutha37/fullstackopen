@@ -1,15 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux'
 // none default  function exported with curly bracess
+import React from 'react'
 import { addVote } from '../reducers/anecdoteReducer'
+import { setNotification } from '../reducers/notificationReducer'
 
-const Vote = ({ anecdote, handleClick }) => {
-  return (
-    <div id='list'>
-      {anecdote.content} has {anecdote.votes}
-      <button onClick={handleClick}>vote</button>
-    </div>
-  )
-}
+// const Vote = ({ anecdote, handleClick }) => {
+//   const handleVote = (anecdote) => {
+//     dispatch(addVote(anecdote.id))
+//     dispatch(setNotification(`You voted '${anecdote.content}'`, 5))
+//   }
+//   return (
+
+//   )
+// }
 
 const AnecdoteList = () => {
   const dispatch = useDispatch()
@@ -30,15 +33,21 @@ const AnecdoteList = () => {
 
   anecdotes.sort(sortVotes)
 
+  const handleVote = (anecdote) => {
+    dispatch(addVote(anecdote))
+    dispatch(setNotification(`You voted for : '${anecdote.content}'`, 5))
+  }
+
   return (
     <div>
-      {anecdotes.map((anecdote) => (
-        <Vote
-          key={anecdote.id}
-          anecdote={anecdote}
-          handleClick={() => dispatch(addVote(anecdote.id))}
-        />
-      ))}
+      <ol>
+        {anecdotes.map((anecdote) => (
+          <li id='list' key={anecdote.id}>
+            {anecdote.content} has {anecdote.votes}
+            <button onClick={() => handleVote(anecdote)}>vote</button>
+          </li>
+        ))}
+      </ol>
     </div>
   )
 }

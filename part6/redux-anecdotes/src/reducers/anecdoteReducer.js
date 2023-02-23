@@ -34,15 +34,15 @@ const anecdoteSlice = createSlice({
       })
     },
     addVote(state, action) {
-      const id = action.payload
-      const voteToAdd = state.find((n) => n.id === id)
+      const anec = action.payload
+      const voteToAdd = state.find((n) => n.id === anec.id)
       const addVote = {
         ...voteToAdd,
-        votes: voteToAdd.votes + 1,
+        votes: anec.votes + 1,
       }
 
       console.log('STATE', JSON.parse(JSON.stringify(state)))
-      return state.map((dote) => (dote.id !== id ? dote : addVote))
+      return state.map((dote) => (dote.id !== anec.id ? dote : addVote))
     },
   },
 })
