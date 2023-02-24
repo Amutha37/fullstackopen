@@ -206,3 +206,19 @@ $\color{lightblue}{Step\ 2}$
 5. Change the creation of new anecdotes to be stored in backend(db.json).
 
 </details>
+
+## <h3 > $\textcolor{orange}{Redux\ Thunk\ }$
+
+</h3>
+
+<details>
+<summary>
+$\color{lightgreen}{Exercise\ 6.16}$
+
+ </summary>
+
+$\color{lightblue}{Step\ 3}$
+
+- Modify the initialization of the Redux store to happen using asynchronous action creators, which are made possible by the Redux Thunk library.
+
+</details>

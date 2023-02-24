@@ -12,9 +12,8 @@ const AnecdoteForm = () => {
     event.preventDefault()
     const content = event.target.anecdote.value
     event.target.anecdote.value = ''
-    // add new anecdote to backend server and redux
-    const newNote = await anecdoteService.createNew(content)
-    dispatch(createNewAnecdote(newNote))
+
+    dispatch(createNewAnecdote(content))
     dispatch(setNotification(`Added new anecdote ${content}`, 5))
   }
 
