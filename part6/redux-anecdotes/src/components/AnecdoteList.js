@@ -41,8 +41,8 @@ const AnecdoteList = () => {
   return (
     <div>
       <ol>
-        {anecdotes.map((anecdote) => (
-          <li id='list' key={anecdote.id}>
+        {anecdotes.map((anecdote, index) => (
+          <li id='list' key={index}>
             {anecdote.content} has {anecdote.votes}
             <button onClick={() => handleVote(anecdote)}>vote</button>
           </li>

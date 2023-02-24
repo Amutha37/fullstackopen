@@ -189,3 +189,16 @@ npm install axios
 \*\* We did not use `await` where it only works inside `async` functions.For the simple nature of this operation we'll abtain from using `async`.
 
 </details>
+
+<details>
+<summary>
+
+$\color{lightgreen}{Exercise\ 6.15}$
+
+ </summary>
+
+$\color{lightblue}{Step\ 2}$
+
+5. Change the creation of new anecdotes to be stored in backend(db.json).
+
+</details>
