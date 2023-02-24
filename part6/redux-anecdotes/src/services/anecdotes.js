@@ -21,7 +21,7 @@ const createNew = async (content) => {
 }
 
 const fetchAll = {
-  getAll,
-  createNew,
+  getAll: getAll,
+  createNew: createNew,
 }
 export default fetchAll
