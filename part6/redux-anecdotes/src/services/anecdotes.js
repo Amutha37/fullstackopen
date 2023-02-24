@@ -20,8 +20,8 @@ const createNew = async (content) => {
   // return response.data
 }
 
-// const fetchAll = {
-//   getAll,
-//   createNew,
-// }
-export default { getAll, createNew }
+const fetchAll = {
+  getAll,
+  createNew,
+}
+export default fetchAll

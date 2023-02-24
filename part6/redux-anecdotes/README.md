@@ -11,7 +11,7 @@
 
 ### `Part6-a`
 
-#### Flux-architecture and Redux
+### Flux-architecture and Redux
 
 - Flux-achirecture used my Facebook for the same purpose as Redux state management. We will use Redux library.
 
@@ -81,7 +81,7 @@ Move rendering of the anecdote list and logic and voting count logic to one comp
 
 ### `Part6-b`
 
-#### Many Reducers
+### Many Reducers
 
 <details>
 <summary>
@@ -152,7 +152,7 @@ npm install @reduxjs/toolkit
 
 ### `Part6-c`
 
-#### Communicating with server
+### Communicating with server
 
 <details>
 <summary>
