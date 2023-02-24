@@ -222,3 +222,15 @@ $\color{lightblue}{Step\ 3}$
 - Modify the initialization of the Redux store to happen using asynchronous action creators, which are made possible by the Redux Thunk library.
 
 </details>
+
+<details>
+<summary>
+$\color{lightgreen}{Exercise\ 6.17}$
+
+ </summary>
+
+$\color{lightblue}{Step\ 4}$
+
+- Modify the creation of a new anecdote to happen using asynchronous action creators, made possible by the Redux Thunk library.
+
+</details>
