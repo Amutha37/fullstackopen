@@ -9,7 +9,9 @@
 
 - The exercises are done in branches.
 
-## `Part6-a`
+### `Part6-a - Flux-architecture and Redux`
+
+- Flux-achirecture used my Facebook for the same purpose as Redux state management. We will use Redux library.
 
 <details>
 <summary>
@@ -75,7 +77,7 @@ Move rendering of the anecdote list and logic and voting count logic to one comp
 
 </details>
 
-## `Part6-b`
+### `Part6-b  Many Reducers`
 
 <details>
 <summary>
@@ -141,5 +143,49 @@ npm install @reduxjs/toolkit
 - Create separate reducer for the notification using `createSlice` and include it in `configureStore` for store creation.
 
 - Set timeout for the notification message.
+
+</details>
+
+### `Part6-c - Communicating with server`
+
+<details>
+<summary>
+
+$\color{lightgreen}{Exercise\ 6.14}$
+
+ </summary>
+
+$\color{lightblue}{Step\ 1}$
+
+- Getting data from the backend
+  In this exercise we will use `json-server`.
+
+1. Create dummy data in `db.json` placed in the 'root' of the project.
+2. Install json-server for the project ...
+
+```
+npm install json-server --save-dev
+```
+
+3.  Add scripts line in `package.json`
+
+```
+"server": "json-server -p3001 --watch db.
+
+```
+
+4.  Launch json-server
+    `   npm run server`
+    'preview `http://localhost:3001/anecdotes`
+
+$\color{lightyellow}{Fetching\ data\ from\ the\ backend}$
+
+Use a fetch method to get the data using `axios` in `services/anecdotes.js` .
+
+```
+npm install axios
+```
+
+\*\* We did not use `await` where it only works inside `async` functions.For the simple nature of this operation we'll abtain from using `async`.
 
 </details>
