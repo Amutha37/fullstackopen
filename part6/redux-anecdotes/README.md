@@ -9,7 +9,9 @@
 
 - The exercises are done in branches.
 
-### `Part6-a - Flux-architecture and Redux`
+### `Part6-a`
+
+#### Flux-architecture and Redux
 
 - Flux-achirecture used my Facebook for the same purpose as Redux state management. We will use Redux library.
 
@@ -77,7 +79,9 @@ Move rendering of the anecdote list and logic and voting count logic to one comp
 
 </details>
 
-### `Part6-b  Many Reducers`
+### `Part6-b`
+
+#### Many Reducers
 
 <details>
 <summary>
@@ -146,11 +150,12 @@ npm install @reduxjs/toolkit
 
 </details>
 
-### `Part6-c - Communicating with server`
+### `Part6-c`
+
+#### Communicating with server
 
 <details>
 <summary>
-
 $\color{lightgreen}{Exercise\ 6.14}$
 
  </summary>
@@ -192,7 +197,6 @@ npm install axios
 
 <details>
 <summary>
-
 $\color{lightgreen}{Exercise\ 6.15}$
 
  </summary>
