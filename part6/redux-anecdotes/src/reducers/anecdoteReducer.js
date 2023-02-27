@@ -7,7 +7,8 @@ const anecdoteSlice = createSlice({
   reducers: {
     addVote(state, action) {
       const anec = action.payload
-      return state.map((dote) => (dote.id !== anec.id ? dote : anec))
+      const statee = state.map((dote) => (dote.id !== anec.id ? dote : anec))
+      return statee
     },
     // Add note object to the backend db
     appendAnecdote(state, action) {
@@ -32,18 +33,18 @@ export const initializeAnecdotes = () => {
 export const createNewAnecdote = (content) => {
   return async (dispatch) => {
     const newAnecdote = await anecdoteService.createNew(content)
-    dispatch(addVote(newAnecdote))
+    dispatch(appendAnecdote(newAnecdote))
   }
 }
 
 export const updateChangedVote = (anecdote) => {
-  const changeAnnecdoteVote = {
+  const newVote = {
     ...anecdote,
     votes: anecdote.votes + 1,
   }
   return async (dispatch) => {
-    dispatch(addVote(changeAnnecdoteVote))
-    await anecdoteService.updateVote(changeAnnecdoteVote)
+    dispatch(addVote(newVote))
+    await anecdoteService.updateVote(newVote)
   }
 }
 

@@ -3,7 +3,7 @@
     {
       "content": "If it hurts, do it more often",
       "id": "1",
-      "votes": 4
+      "votes": 5
     },
     {
       "content": "Adding manpower to a late software project makes it later!",
@@ -13,7 +13,7 @@
     {
       "content": "The first 90 percent of the code accounts for the first 10 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
       "id": "3",
-      "votes": 12
+      "votes": 13
     },
     {
       "content": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
@@ -23,26 +23,11 @@
     {
       "content": "Premature optimization is the root of all evil.",
       "id": "5",
-      "votes": 13
+      "votes": 15
     },
     {
       "content": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
       "id": "98312",
-      "votes": 0
-    },
-    {
-      "content": "If it hurts, do it more often",
-      "id": "6",
-      "votes": 0
-    },
-    {
-      "content": "Adding manpower to a late software project makes it later!",
-      "id": "7",
-      "votes": 0
-    },
-    {
-      "content": "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
-      "id": "8",
       "votes": 0
     },
     {
@@ -51,54 +36,14 @@
       "votes": 0
     },
     {
-      "content": "Premature optimization is the root of all evil.",
-      "id": "10",
-      "votes": 1
-    },
-    {
-      "content": "Testing note",
-      "votes": 0,
-      "id": "11"
-    },
-    {
       "content": "Reducer is easier to manage.",
       "votes": 0,
       "id": "12"
     },
     {
       "content": "Give reducer a try.",
-      "votes": 0,
-      "id": "utgjsm6"
-    },
-    {
-      "content": "Testing note",
-      "votes": 0,
-      "id": "MsH8-BK"
-    },
-    {
-      "content": "Give reducer a try.",
-      "votes": 0,
-      "id": "N9XuaXh"
-    },
-    {
-      "content": "Reducer is easier to manage.",
-      "votes": 0,
-      "id": "iyrcaTA"
-    },
-    {
-      "content": "Testing note",
-      "votes": 0,
-      "id": "wd50uhC"
-    },
-    {
-      "content": "thank you",
-      "votes": 0,
-      "id": "hRxaDLi"
-    },
-    {
-      "content": "Testing note",
-      "votes": 0,
-      "id": "LFo2cXI"
+      "votes": 1,
+      "id": "60iP9aq"
     }
   ]
 }
