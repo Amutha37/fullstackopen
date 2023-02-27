@@ -8,7 +8,7 @@
     {
       "content": "Adding manpower to a late software project makes it later!",
       "id": "2",
-      "votes": 6
+      "votes": 7
     },
     {
       "content": "The first 90 percent of the code accounts for the first 10 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
@@ -99,6 +99,11 @@
       "content": "Testing note",
       "votes": 0,
       "id": "LFo2cXI"
+    },
+    {
+      "content": "Reducer is easier to manage.",
+      "votes": 0,
+      "id": "_rLXkKc"
     }
   ]
 }
