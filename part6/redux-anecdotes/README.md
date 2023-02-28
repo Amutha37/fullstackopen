@@ -20,6 +20,7 @@
  $\color{lightgreen}{Exercise\ 6.3 }$
 
  </summary>
+$\color{lightblue}{Step\ 1}$
 
 Implement fuctionality for the number of votes to be stored to a Redux store.
 
@@ -30,6 +31,8 @@ Implement fuctionality for the number of votes to be stored to a Redux store.
  $\color{lightgreen}{Exercise\ 6.4}$
 
  </summary>
+
+$\color{lightblue}{Step\ 2}$
 
 Implement fuctionality for adding new anecdotes to be stored to a Redux store.
 
@@ -42,6 +45,7 @@ Implement fuctionality for adding new anecdotes to be stored to a Redux store.
  $\color{lightgreen}{Exercise\ 6.5}$
 
  </summary>
+$\color{lightblue}{Step\ 3}$
 
 List of anecdotes are ordered by the number of votes.
 
@@ -52,6 +56,7 @@ List of anecdotes are ordered by the number of votes.
  $\color{lightgreen}{Exercise\ 6.6}$
 
  </summary>
+$\color{lightblue}{Step\ 4}$
 
 Separate the creation of action-objects to action creator-functions and place them in the src/reducers/anecdoteReducer.js file
 
@@ -62,6 +67,7 @@ Separate the creation of action-objects to action creator-functions and place th
  $\color{lightgreen}{Exercise\ 6.7}$
 
  </summary>
+$\color{lightblue}{Step\ 5}$
 
 Separate the creation of new anecdote logic to its own component called
 `AnecdoteForm.js`
@@ -73,6 +79,7 @@ Separate the creation of new anecdote logic to its own component called
  $\color{lightgreen}{Exercise\ 6.8}$
 
  </summary>
+$\color{lightblue}{Step\ 6}$
 
 Move rendering of the anecdote list and logic and voting count logic to one component.Component called
 `AnecdoteList.js`
@@ -88,6 +95,7 @@ Move rendering of the anecdote list and logic and voting count logic to one comp
  $\color{lightgreen}{Exercise\ 6.9}$
 
  </summary>
+$\color{lightblue}{Step\ 7}$
 
 Implementing filtering of the acnecdotes list.
 
