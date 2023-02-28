@@ -17,7 +17,7 @@
 
 <details>
 <summary>
- $\color{lightgreen}{main\ }$
+ $\color{lightgreen}{Exercise\ 6.3 }$
 
  </summary>
 
