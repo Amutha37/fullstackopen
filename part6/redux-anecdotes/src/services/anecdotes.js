@@ -8,8 +8,14 @@ const getAll = async () => {
 }
 
 const createNew = async (content) => {
-  const object = { content, votes: 0 }
-  return await axios.post(baseUrl, object)
+  const object = { content, votes: 0, id: (100000 * Math.random()).toFixed(0) }
+  console.log('object', object)
+  const request = await axios
+    .post(baseUrl, object)
+    .then((response) => response.data)
+
+  return request
+  // return response.data
 }
 
 const updateVote = (anecdote) => {

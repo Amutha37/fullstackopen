@@ -3,17 +3,17 @@
     {
       "content": "If it hurts, do it more often",
       "id": "1",
-      "votes": 4
+      "votes": 6
     },
     {
       "content": "Adding manpower to a late software project makes it later!",
       "id": "2",
-      "votes": 7
+      "votes": 8
     },
     {
       "content": "The first 90 percent of the code accounts for the first 10 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
       "id": "3",
-      "votes": 12
+      "votes": 13
     },
     {
       "content": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
@@ -23,7 +23,7 @@
     {
       "content": "Premature optimization is the root of all evil.",
       "id": "5",
-      "votes": 13
+      "votes": 14
     },
     {
       "content": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
@@ -33,12 +33,12 @@
     {
       "content": "If it hurts, do it more often",
       "id": "6",
-      "votes": 0
+      "votes": 7
     },
     {
       "content": "Adding manpower to a late software project makes it later!",
       "id": "7",
-      "votes": 0
+      "votes": 1
     },
     {
       "content": "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
@@ -53,7 +53,7 @@
     {
       "content": "Premature optimization is the root of all evil.",
       "id": "10",
-      "votes": 1
+      "votes": 2
     },
     {
       "content": "Testing note",
@@ -92,7 +92,7 @@
     },
     {
       "content": "thank you",
-      "votes": 0,
+      "votes": 1,
       "id": "hRxaDLi"
     },
     {
@@ -109,6 +109,31 @@
       "content": "Serializable value error",
       "votes": 0,
       "id": "_xGFy12"
+    },
+    {
+      "content": "thank you",
+      "votes": 0,
+      "id": "8399"
+    },
+    {
+      "content": "Testing for second time",
+      "votes": 0,
+      "id": "38507"
+    },
+    {
+      "content": "Testing for second time",
+      "votes": 0,
+      "id": "49001"
+    },
+    {
+      "content": "Give reducer a try.",
+      "votes": 0,
+      "id": "84859"
+    },
+    {
+      "content": "Testing for second time",
+      "votes": 1,
+      "id": "81925"
     }
   ]
 }

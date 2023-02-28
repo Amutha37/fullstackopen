@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 // none default  function exported with curly bracess
 import React from 'react'
-import { updateChangedVote } from '../reducers/anecdoteReducer'
+import { updateNewVote } from '../reducers/anecdoteReducer'
 import { setNotification } from '../reducers/notificationReducer'
 
 // const Vote = ({ anecdote, handleClick }) => {
@@ -20,7 +20,7 @@ const AnecdoteList = () => {
 
   // const anecdotes = useSelector(({ filter, anecdotes }) => {
   const anecdotes = useSelector((state) => {
-    console.log('state', state)
+    // console.log('state', state)
     if (state.filter === null) {
       return state.anecdotes
     }
@@ -34,7 +34,7 @@ const AnecdoteList = () => {
   anecdotes.sort(sortVotes)
 
   const handleVote = (anecdote) => {
-    dispatch(updateChangedVote(anecdote))
+    dispatch(updateNewVote(anecdote))
     dispatch(setNotification(`You voted for : '${anecdote.content}'`, 5))
   }
 
