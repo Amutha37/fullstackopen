@@ -22,8 +22,12 @@ const createNew = async (content) => {
   // return response.data
 }
 
+const updateVote = (anecdote) => {
+  return axios.put(`${baseUrl}/${anecdote.id}`, anecdote)
+}
 const fetchAll = {
   getAll: getAll,
   createNew: createNew,
+  updateVote: updateVote,
 }
 export default fetchAll

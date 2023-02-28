@@ -8,14 +8,14 @@ const anecdoteSlice = createSlice({
     addVote(state, action) {
       const anec = action.payload
       console.log('anec', anec)
-      const voteToAdd = state.find((n) => n.id === anec.id)
-      const addVote = {
-        ...voteToAdd,
-        votes: anec.votes + 1,
-      }
+      // const voteToAdd = state.find((n) => n.id === anec.id)
+      // const addVote = {
+      //   ...voteToAdd,
+      //   votes: anec.votes + 1,
+      // }
 
       console.log('STATE', JSON.parse(JSON.stringify(state)))
-      return state.map((dote) => (dote.id !== anec.id ? dote : addVote))
+      return state.map((dote) => (dote.id !== anec.id ? dote : anec))
     },
     // Add note object to the backend db
     appendAnecdote(state, action) {
@@ -45,6 +45,17 @@ export const createNewAnecdote = (content) => {
   return async (dispatch) => {
     const newAnecdote = await anecdoteService.createNew(content)
     dispatch(appendAnecdote(newAnecdote))
+  }
+}
+
+export const updateNewVote = (anecdote) => {
+  const changeVote = {
+    ...anecdote,
+    votes: anecdote.votes + 1,
+  }
+  return async (dispatch) => {
+    dispatch(addVote(changeVote))
+    await anecdoteService.updateVote(changeVote)
   }
 }
 
