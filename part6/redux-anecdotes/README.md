@@ -5,7 +5,7 @@
 
 ### Getting Started with Redux
 
-- $\color{lightgreen}{Exercise\ 6.3\ -\ 6.8}$ `anecdotes` the final work of part1-anecdotes is taken into part6 to handle the state management with Redux.
+- $\color{lightgreen}{Exercise\ 6.3\ -\ 6.8}$ uses `anecdotes` base project from part 1 to handle the state management with Redux.
 
 - The work of each exercise done in branches.
 
