@@ -4,23 +4,11 @@ import React from 'react'
 import { updateChangedVote } from '../reducers/anecdoteReducer'
 import { setNotification } from '../reducers/notificationReducer'
 
-// const Vote = ({ anecdote, handleClick }) => {
-//   const handleVote = (anecdote) => {
-//     dispatch(addVote(anecdote.id))
-//     dispatch(setNotification(`You voted '${anecdote.content}'`, 5))
-//   }
-//   return (
-
-//   )
-// }
-
 const AnecdoteList = () => {
   const dispatch = useDispatch()
   // * const importantNotes = useSelector(state => state.filter(note => note.important))
 
-  // const anecdotes = useSelector(({ filter, anecdotes }) => {
   const anecdotes = useSelector((state) => {
-    console.log('state', state)
     if (state.filter === null) {
       return state.anecdotes
     }

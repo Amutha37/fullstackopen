@@ -234,3 +234,25 @@ $\color{lightblue}{Step\ 4}$
 - Modify the creation of a new anecdote to happen using asynchronous action creators, made possible by the Redux Thunk library.
 
 </details>
+<details>
+<summary>
+$\color{lightgreen}{Exercise\ 6.18}$
+
+ </summary>
+
+$\color{lightblue}{Step\ 5}$
+
+- Modify the udate of votes to backend using the Redux Thunk library method.
+
+</details>
+<details>
+<summary>
+$\color{lightgreen}{Exercise\ 6.19}$
+
+ </summary>
+
+$\color{lightblue}{Step\ 6}$
+
+- Modify the notification display message using Redux Thunk library.
+
+</details>
