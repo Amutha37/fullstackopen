@@ -3,7 +3,7 @@
 
 # $\color{cyan}{Part6}$
 
-## Getting Started with Redux
+## Getting Started with $\textcolor{orange}{Redux\ }$
 
 <details>
 <summary>
@@ -20,7 +20,8 @@
 
 <details>
 <summary>
- $\color{cyan}{Part6b}$
+
+### $\color{cyan}{Part6b}$
 
  </summary>
 
@@ -43,7 +44,8 @@
 
 <details>
 <summary>
- $\color{cyan}{Part6d}$
+
+### $\color{cyan}{Part6d}$
 
  </summary>
 
