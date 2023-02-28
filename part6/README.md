@@ -1,13 +1,14 @@
 <h1 align="center"> $\textcolor{orange}{REDUX\ }$
 </h1>
 
-$\color{cyan}{Part6}$
+# $\color{cyan}{Part6}$
 
-### Getting Started with Redux
+## Getting Started with Redux
 
 <details>
 <summary>
- $\color{cyan}{Part6a}$
+
+### $\color{cyan}{Part6a}$
 
  </summary>
 
@@ -28,8 +29,10 @@ $\color{cyan}{Part6}$
 </details>
 
 <details>
+
 <summary>
- $\color{cyan}{Part6c}$
+
+### $\color{cyan}{Part6c}$
 
  </summary>
 
