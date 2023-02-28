@@ -11,7 +11,9 @@ const getAll = async () => {
 }
 
 const createNew = async (content) => {
-  const object = { content, votes: 0 }
+  // const getId = () => (100000 * Math.random()).toFixed(0)
+  const object = { content, votes: 0, id: (100000 * Math.random()).toFixed(0) }
+  console.log('object', object)
   const request = await axios
     .post(baseUrl, object)
     .then((response) => response.data)
