@@ -253,6 +253,6 @@ $\color{lightgreen}{Exercise\ 6.19}$
 
 $\color{lightblue}{Step\ 6}$
 
-- Modify the notification display message using Redux Thunk library.
+- Modify the notification for handling of 2 actions message and setTimeOut.
 
 </details>
