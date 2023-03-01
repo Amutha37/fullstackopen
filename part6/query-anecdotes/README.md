@@ -68,6 +68,8 @@ npm install json-server --save-dev
 
  </summary>
 
-- Implement retrieving anecdotes from the server using React Query.
+- Implement fetching all anecdotes from the server using React Query.
+
+- Implement displaying error message when server is has problem.
 
 </details>

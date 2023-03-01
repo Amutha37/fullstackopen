@@ -9,12 +9,22 @@ const App = () => {
     console.log('vote', anecdote)
   }
 
-  const result = useQuery('anecdotes', getAll, { refetchOnWindowFocus: false })
+  const { data, isError, isLoading } = useQuery('anecdotes', getAll, {
+    retry: 1,
+  })
 
-  if (result.isLoading) {
+  if (isLoading) {
     return <div>loading data...</div>
   }
-  const anecdotes = result.data
+  if (isError) {
+    return (
+      <span>
+        Error : {`anecdote service not available due to problem in server`}
+      </span>
+    )
+  }
+
+  const anecdotes = data
 
   return (
     <div>
