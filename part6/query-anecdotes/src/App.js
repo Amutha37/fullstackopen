@@ -28,20 +28,22 @@ const App = () => {
 
   return (
     <div>
-      <h3>Anecdote app</h3>
-
+      <h3>Anecdote App</h3>
       <Notification />
       <AnecdoteForm />
-
-      {anecdotes.map((anecdote) => (
-        <div key={anecdote.id}>
-          <div>{anecdote.content}</div>
-          <div>
-            has {anecdote.votes}
-            <button onClick={() => handleVote(anecdote)}>vote</button>
+      <ol>
+        {anecdotes.map((anecdote) => (
+          <div key={anecdote.id}>
+            <li>
+              <div>{anecdote.content}</div>
+              <div>
+                has {anecdote.votes}
+                <button onClick={() => handleVote(anecdote)}>vote</button>
+              </div>
+            </li>
           </div>
-        </div>
-      ))}
+        ))}
+      </ol>
     </div>
   )
 }

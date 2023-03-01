@@ -73,3 +73,13 @@ npm install json-server --save-dev
 - Implement displaying error message when server is has problem.
 
 </details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.21}$
+
+ </summary>
+
+- Implement adding of new anecdotes to server using React Query.
+
+</details>

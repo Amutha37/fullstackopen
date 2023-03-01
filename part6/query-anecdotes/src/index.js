@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import App from './App'
+import './app.css'
 
 const queryClient = new QueryClient()
 
