@@ -5,12 +5,15 @@
 
 ### Getting Started with React Query
 
--   Take this project as your starting point. `https://github.com/fullstack-hy2020/query-anecdotes`
+- Take this project as your starting point. `https://github.com/fullstack-hy2020/query-anecdotes`
 
 ```
 npm install
 ```
 
+```
+npm install axios
+```
 
 - The project has a ready-installed `JSON Server`, the operation of which has been slightly modified. Start the server with :
 
