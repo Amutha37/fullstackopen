@@ -83,3 +83,13 @@ npm install json-server --save-dev
 - Implement adding of new anecdotes to server using React Query.
 
 </details>
+
+<details>
+<summary>
+ $\color{lightgreen}{Exercise\ 6.22}$
+
+ </summary>
+
+- Implement voting for anecdotes to server using React Query. Should render the increse votes.
+
+</details>
