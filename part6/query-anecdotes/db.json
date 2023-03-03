@@ -13,12 +13,16 @@
     {
       "content": "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
       "id": "69581",
+<<<<<<< HEAD
       "votes": 9
+=======
+      "votes": 7
+>>>>>>> Exercise6.22
     },
     {
       "content": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
       "id": "36975",
-      "votes": 1
+      "votes": 3
     },
     {
       "content": "Premature optimization is the root of all evil.",
@@ -32,12 +36,12 @@
     },
     {
       "content": "Reducer is easier to manage.",
-      "votes": 0,
+      "votes": 1,
       "id": "30720"
     },
     {
       "content": "Reducer is easier to manage.",
-      "votes": 0,
+      "votes": 2,
       "id": "93601"
     },
     {
@@ -47,12 +51,20 @@
     },
     {
       "content": "Give reducer a try.",
+<<<<<<< HEAD
       "votes": 5,
+=======
+      "votes": 4,
+>>>>>>> Exercise6.22
       "id": "42072"
     },
     {
       "content": "Udate rerender is to work.",
+<<<<<<< HEAD
       "votes": 5,
+=======
+      "votes": 7,
+>>>>>>> Exercise6.22
       "id": "52493"
     },
     {
