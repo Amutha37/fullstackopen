@@ -12,7 +12,7 @@ const App = () => {
   }
 
   const updateAnecdoteMutation = useMutation(updateVote, {
-    onSuccess: (anecdote) => {
+    onSuccess: () => {
       queryClient.getQueryData('anecdotes')
       queryClient.invalidateQueries('anecdotes')
     },

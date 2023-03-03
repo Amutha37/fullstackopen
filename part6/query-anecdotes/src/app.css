@@ -6,3 +6,9 @@ h3 {
   margin-top: 2rem;
   text-align: center;
 }
+
+#lengtherr {
+  margin-top: 4rem;
+  color: red;
+  font-size: 21px;
+}
