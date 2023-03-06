@@ -12,3 +12,13 @@ h3 {
   color: red;
   font-size: 21px;
 }
+
+.message {
+  border: 'solid';
+  padding: 10px;
+  border-width: 1;
+  margin-bottom: 5;
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -41,7 +41,7 @@ const AnecdoteForm = () => {
       ) : (
         <>
           {newAnecdoteMutation.isError ? (
-            <div>
+            <div className='message'>
               An error occurred : {''}
               {newAnecdoteMutation.error.response.data.error}
             </div>

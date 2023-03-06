@@ -15,7 +15,11 @@ const Notification = () => {
 
   // if (true) return null
 
-  return <div style={style}>{counter}</div>
+  return (
+    <div className='message' style={style}>
+      {counter}
+    </div>
+  )
 }
 
 export default Notification
