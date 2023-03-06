@@ -3,12 +3,12 @@
     {
       "content": "If it hurts, do it more often",
       "id": "47145",
-      "votes": 9
+      "votes": 18
     },
     {
       "content": "Adding manpower to a late software project makes it later!",
       "id": "21149",
-      "votes": 10
+      "votes": 24
     },
     {
       "content": "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
@@ -23,42 +23,67 @@
     {
       "content": "Premature optimization is the root of all evil.",
       "id": "25170",
-      "votes": 4
+      "votes": 7
     },
     {
       "content": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
       "id": "98312",
-      "votes": 5
-    },
-    {
-      "content": "Reducer is easier to manage.",
-      "votes": 1,
-      "id": "30720"
+      "votes": 11
     },
     {
       "content": "Reducer is easier to manage.",
       "votes": 2,
-      "id": "93601"
+      "id": "30720"
     },
     {
-      "content": "React query make it easier to handle backend data.",
-      "votes": 4,
-      "id": "50479"
+      "content": "Clearing without time digit.",
+      "votes": 2,
+      "id": "53039"
     },
     {
-      "content": "Give reducer a try.",
-      "votes": 5,
-      "id": "42072"
+      "content": "Clearing with time digit.",
+      "votes": 3,
+      "id": "17937"
     },
     {
-      "content": "Udate rerender is to work.",
-      "votes": 5,
-      "id": "52493"
-    },
-    {
-      "content": "Error message is loading.",
+      "content": "Testing note",
       "votes": 0,
-      "id": "82812"
+      "id": "94391"
+    },
+    {
+      "content": "thank you",
+      "votes": 0,
+      "id": "2703"
+    },
+    {
+      "content": "Time out is working . hurey ",
+      "votes": 0,
+      "id": "92658"
+    },
+    {
+      "content": "thank you",
+      "votes": 0,
+      "id": "46646"
+    },
+    {
+      "content": "Reducer is easier to manage.",
+      "votes": 0,
+      "id": "30444"
+    },
+    {
+      "content": "Happy morning all done.",
+      "votes": 0,
+      "id": "63792"
+    },
+    {
+      "content": "thank you",
+      "votes": 0,
+      "id": "70193"
+    },
+    {
+      "content": "Wonderful finish of part6.",
+      "votes": 0,
+      "id": "54728"
     }
   ]
 }

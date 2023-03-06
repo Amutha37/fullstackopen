@@ -1,8 +1,10 @@
 import { useMutation, useQueryClient } from 'react-query'
 import { createAnecdote } from '../requests'
+import { useCounterDispatch } from '../CounterContext'
 
 const AnecdoteForm = () => {
   const queryClient = useQueryClient()
+  const dispatch = useCounterDispatch()
 
   const newAnecdoteMutation = useMutation(createAnecdote, {
     onSuccess: (newAnecdote) => {
@@ -10,11 +12,6 @@ const AnecdoteForm = () => {
       const anecdotes = queryClient.getQueryData('anecdotes')
       queryClient.setQueryData('anecdotes', anecdotes.concat(newAnecdote))
     },
-    // onError: (error) => {
-    //   const err = error.response.data
-    //   console.log('catch error', err)
-    //   console.log(error.response.status)
-    // },
   })
 
   const onCreate = (event) => {
@@ -28,6 +25,12 @@ const AnecdoteForm = () => {
       votes: 0,
       id: (100000 * Math.random()).toFixed(0),
     })
+    // console.log('new anecdote', content)
+
+    dispatch({ type: 'MES', payload: `Added new anecdote : ${content}` })
+    setTimeout(() => {
+      dispatch({ type: 'CLE', payload: null })
+    }, 5000)
   }
 
   return (
@@ -44,7 +47,7 @@ const AnecdoteForm = () => {
             </div>
           ) : null}
 
-          {newAnecdoteMutation.isSuccess ? <div> added!</div> : null}
+          {/* {newAnecdoteMutation.isSuccess ? <div> added!</div> : null} */}
 
           <form onSubmit={onCreate}>
             <input name='anecdote' />
