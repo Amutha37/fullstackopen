@@ -2,9 +2,9 @@ import { createContext, useReducer, useContext } from 'react'
 
 const counterReducer = (state, action) => {
   switch (action.type) {
-    case 'CRE':
+    case 'MES':
       return action.payload
-    case 'VOT':
+    case 'CLE':
       return action.payload
     default:
       return state

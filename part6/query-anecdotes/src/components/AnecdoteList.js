@@ -9,15 +9,17 @@ const AnecdoteList = () => {
 
   const handleVote = (anecdote) => {
     updateAnecdoteMutation.mutate({ ...anecdote, votes: anecdote.votes + 1 })
-    console.log('vote', anecdote)
-    dispatch({ type: 'VOT', payload: `voted ${anecdote.content}` })
+    // console.log('vote', anecdote)
+
+    dispatch({ type: 'MES', payload: `Voted for : ${anecdote.content}` })
+    setTimeout(() => {
+      dispatch({ type: 'CLE', payload: null })
+    }, 5000)
   }
 
   const updateAnecdoteMutation = useMutation(updateVote, {
     onSuccess: () => {
       queryClient.invalidateQueries('anecdotes')
-      // const anecdotes = queryClient.getQueryData('anecdotes')
-      // queryClient.setQueryData('anecdotes', anecdotes.concat(newAnecdote))
     },
   })
 
@@ -52,16 +54,6 @@ const AnecdoteList = () => {
               <div>{anecdote.content}</div>
               <div>
                 has {anecdote.votes}
-                {/* <Button
-                  type='VOT'
-                  label='Vote'
-                  onClick={() => handleVote(anecdote)}
-                /> */}
-                {/* <Button
-                  type='VOT'
-                  label='Vote'
-                  onClick={() => handleVote(anecdote)}
-                /> */}
                 <button
                   type='VOT'
                   onClick={() => {

@@ -25,9 +25,12 @@ const AnecdoteForm = () => {
       votes: 0,
       id: (100000 * Math.random()).toFixed(0),
     })
-    console.log('new anecdote', content)
+    // console.log('new anecdote', content)
 
-    dispatch({ type: 'CRE', payload: `Added ${content}` })
+    dispatch({ type: 'MES', payload: `Added new anecdote : ${content}` })
+    setTimeout(() => {
+      dispatch({ type: 'CLE', payload: null })
+    }, 5000)
   }
 
   return (

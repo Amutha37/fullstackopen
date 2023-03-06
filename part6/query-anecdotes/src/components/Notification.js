@@ -8,6 +8,9 @@ const Notification = () => {
     padding: 10,
     borderWidth: 1,
     marginBottom: 5,
+    color: 'green',
+    fontWeight: 'bold',
+    fontSize: '20px',
   }
 
   // if (true) return null
