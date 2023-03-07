@@ -1,11 +1,11 @@
 import React from 'react'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { getAll, updateVote } from '../requests'
-import { useCounterDispatch } from '../CounterContext'
+import { useAnecdoteDispatch } from '../AnecdoteContext'
 
 const AnecdoteList = () => {
   const queryClient = useQueryClient()
-  const dispatch = useCounterDispatch()
+  const dispatch = useAnecdoteDispatch()
 
   const handleVote = (anecdote) => {
     updateAnecdoteMutation.mutate({ ...anecdote, votes: anecdote.votes + 1 })

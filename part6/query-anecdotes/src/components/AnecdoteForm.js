@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from 'react-query'
 import { createAnecdote } from '../requests'
-import { useCounterDispatch } from '../CounterContext'
+import { useAnecdoteDispatch } from '../AnecdoteContext'
 
 const AnecdoteForm = () => {
   const queryClient = useQueryClient()
-  const dispatch = useCounterDispatch()
+  const dispatch = useAnecdoteDispatch()
 
   const newAnecdoteMutation = useMutation(createAnecdote, {
     onSuccess: (newAnecdote) => {

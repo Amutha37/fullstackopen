@@ -1,7 +1,7 @@
-import { useCounterValue } from '../CounterContext'
+import { useAnecdoteValue } from '../AnecdoteContext'
 
 const Notification = () => {
-  const counter = useCounterValue()
+  const anecdote = useAnecdoteValue()
 
   const style = {
     border: 'solid',
@@ -17,7 +17,7 @@ const Notification = () => {
 
   return (
     <div className='message' style={style}>
-      {counter}
+      {anecdote}
     </div>
   )
 }

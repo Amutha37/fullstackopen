@@ -1,17 +1,17 @@
 import AnecdoteForm from './components/AnecdoteForm'
 import Notification from './components/Notification'
 import AnecdoteList from './components/AnecdoteList'
-import { CounterContextProvider } from './CounterContext'
+import { AnecdoteContextProvider } from './AnecdoteContext'
 
 const App = () => {
   return (
     <div>
-      <CounterContextProvider>
+      <AnecdoteContextProvider>
         <h3>Anecdote App</h3>
         <Notification />
         <AnecdoteForm />
         <AnecdoteList />
-      </CounterContextProvider>
+      </AnecdoteContextProvider>
     </div>
   )
 }
