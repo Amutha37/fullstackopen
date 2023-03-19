@@ -10,8 +10,8 @@ content-type: application/json
 
 {
     "blogs": [],
-    "username": "Amutha",
-     "name": "Amutha",
-    "password": "passAmutha"
+    "username": "Ashaa",
+     "name": "Ashaa",
+    "password": "passAshaa"
 }
 
