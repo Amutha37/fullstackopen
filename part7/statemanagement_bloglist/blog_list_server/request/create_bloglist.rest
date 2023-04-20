@@ -1,0 +1,12 @@
+POST  http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iktpc2hlbiIsImlkIjoiNjQzOGZlMDFmMjBkOGUxODc5N2VkMTFlIiwiaWF0IjoxNjgxNDU4MTY0LCJleHAiOjE2ODE0NzI1NjR9.ELyp80ELGjSvikP0dT-rVHyj0T0-FlaidsRuoqmju7M
+
+{
+        "title": "Test1345",
+       "author": "Intel3",
+          "url": "Testing",
+        "likes": 1,
+"comments": "add more fdf "
+}
+

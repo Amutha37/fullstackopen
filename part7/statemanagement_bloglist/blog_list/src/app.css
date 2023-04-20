@@ -1,0 +1,218 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+}
+
+/* .error,
+.success {
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+} */
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+/* login form   */
+.newBlog {
+  background-color: rgb(147, 240, 217);
+  width: 25rem;
+}
+.login_form_container {
+  height: 20rem;
+  background-color: rgb(147, 240, 217);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.login_form {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+input {
+  margin-top: 1rem;
+  margin-left: 5px;
+}
+
+.logInBy {
+  display: inline-flex;
+}
+.logInBy button {
+  background-color: rgb(192, 67, 233);
+  margin-left: 1rem;
+  /* padding: 2px 2px 2px 2px; */
+}
+/* blog input form */
+
+.blog_list_container {
+  padding: 4rem;
+  background-color: rgb(99, 230, 201);
+  display: block;
+  text-align: center;
+}
+label {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+input {
+  margin: 10px 10px 10px 10px;
+  width: 20rem;
+}
+.error {
+  /* color: rgb(21, 150, 57); */
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* table */
+/* .table_wraper {
+  max-width: 100%;
+  
+} */
+
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+.btn_blog {
+  display: flex;
+  margin-right: 5px;
+  bottom: 0;
+}
+.btn_blog button {
+  height: 22px;
+  margin: 0px 6px 0px 1.5rem;
+}
+
+#del_btn {
+  background-color: rgb(117, 12, 12);
+  color: white;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.count {
+  color: green;
+}
+.main_container {
+  text-align: center;
+}
+#userRender {
+  margin-bottom: 1rem;
+}
+#like_btn {
+  font-weight: 700;
+  background-color: green;
+  color: white;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  margin-bottom: 5rem;
+}
+
+td,
+th {
+  border: 3px solid #cabda1dd;
+  padding: 8px;
+}
+
+tbody:nth-child(even) {
+  background-color: #fbf8f8fe;
+}
+
+#sign_out {
+  background-color: rgb(12, 11, 11);
+  color: white;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+button.launch {
+  background-color: #f9a300;
+  border: none;
+  height: 40px;
+  padding: 5px 15px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+button.launch:hover {
+  cursor: pointer;
+  background-color: #fabd44;
+}
+
+button.change {
+  background-color: #f88f00;
+  border: none;
+  height: 40px;
+  padding: 5px 15px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+button.change:hover {
+  cursor: pointer;
+  background-color: #f89900;
+}
+button:focus {
+  outline: 0;
+  text-decoration: none;
+}
+Button {
+  text-decoration: none;
+}
+#sign_out {
+  border: solid;
+  padding: 10px;
+  border-width: 2px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  color: yellow;
+  width: 800;
+  background-color: rgb(125, 18, 18);
+}
+#log_in {
+  text-align: right;
+  margin: 1rem;
+  color: rgb(131, 19, 57);
+  font-weight: 800;
+}
+
+.link {
+  text-decoration: none;
+  padding: 1rem;
+  color: rgba(193, 74, 35, 0.787);
+  font-weight: 600;
+}
+#logOut {
+  color: blue;
+  font-weight: 800;
+}
+#reset {
+  background-color: red;
+}
