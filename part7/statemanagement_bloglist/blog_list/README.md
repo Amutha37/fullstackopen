@@ -106,15 +106,18 @@ Styling dependencies :
 
 - Login
 
-![Screenshot 2023-04-21 at 11 17 18 am](https://user-images.githubusercontent.com/67087939/233518230-1acd3770-e568-40a1-8f38-973cc0e6d565.png)
+![Screenshot 2023-04-21 at 1 20 35 pm](https://user-images.githubusercontent.com/67087939/233533212-9b64b0ce-297a-4d60-82b1-e5b0c52d5d14.png)
+
+
+- Create New User
+
+![Screenshot 2023-04-21 at 1 20 03 pm](https://user-images.githubusercontent.com/67087939/233533150-423c9415-8e19-4181-829f-a1abc8d9fd00.png)
+
 
 - Create New Blog
 
 ![Screenshot 2023-04-21 at 11 16 20 am](https://user-images.githubusercontent.com/67087939/233518132-d5d5df80-001f-45ae-a0dd-7c1059005ff1.png)
 
-- Create New User
-
-![Screenshot 2023-04-21 at 11 19 00 am](https://user-images.githubusercontent.com/67087939/233518371-2948064b-5253-4598-80cc-8cd02a717b06.png)
 
 </details>
 
