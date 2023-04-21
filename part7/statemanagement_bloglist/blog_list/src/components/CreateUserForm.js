@@ -62,15 +62,15 @@ const CreateUserForm = (props) => {
 
       <form onSubmit={handleSubmit}>
         <div>
-          username
+          Username :
           <Input label='username' {...username} />
         </div>
         <div>
-          name
+          Name :
           <Input label='name' {...name} />
         </div>
         <div>
-          password
+          Password :
           <Input label='password' {...password} autoComplete='off' />
         </div>
 
