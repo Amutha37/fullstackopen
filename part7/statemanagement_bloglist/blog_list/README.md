@@ -88,6 +88,6 @@ Styling dependencies :
 
 - The backend for this frontend repository is `blog_list_server` which runs in `localhost:3003`.
 
-- `npm run dev` the backend first before runnint the front end.
+- `npm run dev` the backend first before running the front end.
 
 </details>

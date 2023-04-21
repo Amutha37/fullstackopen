@@ -1,5 +1,3 @@
-// import userService from './user'
-
 import axios from 'axios'
 const baseUrl = '/api/blogs'
 
@@ -32,18 +30,13 @@ const updateLikes = async (id, newLike) => {
 
   const response = await axios.put(`${baseUrl}/${id}`, newLike, config)
 
-  // const response = await axios.get(`${baseUrl}/${newLike.id}`, newLike, config)
-
   return response.data
 }
 
 const addComment = async (id, comment) => {
-  // const config = {
-  //   headers: { Authorization: token },
-  // }
   console.log('addNewComment', comment, 'id', id)
   const response = await axios.post(`${baseUrl}/${id}/comments`, { comment })
-  // post(baseUrl, newObject, config)
+
   console.log('responseComment', response.data)
   return response.data
 }

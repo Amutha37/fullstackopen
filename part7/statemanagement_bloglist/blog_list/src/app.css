@@ -7,15 +7,6 @@ body {
   text-align: center;
 }
 
-/* .error,
-.success {
-  background: lightgrey;
-  font-size: 20px;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-} */
 .error {
   color: red;
 }
@@ -52,7 +43,6 @@ input {
 .logInBy button {
   background-color: rgb(192, 67, 233);
   margin-left: 1rem;
-  /* padding: 2px 2px 2px 2px; */
 }
 /* blog input form */
 
@@ -80,11 +70,6 @@ input {
   padding: 10px;
   margin-bottom: 10px;
 }
-/* table */
-/* .table_wraper {
-  max-width: 100%;
-  
-} */
 
 ul {
   list-style-type: none;

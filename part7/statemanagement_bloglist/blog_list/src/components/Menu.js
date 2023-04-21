@@ -27,7 +27,6 @@ const Navigation = styled.div`
 
 const Menu = (props) => {
   const blogs = props.blogs
-  const logedUser = props.logedUser
   const blogFormRef = props.blogFormRef
 
   const notification = useSelector((state) => state.notification)
@@ -83,12 +82,12 @@ const Menu = (props) => {
 
           <Route
             path='/blogs'
-            element={<BlogList blogs={blogs} logedUser={logedUser} />}
+            element={<BlogList blogs={blogs} user={user} />}
           />
 
           <Route
             path='/users'
-            element={logedUser ? <Users /> : <Navigate replace to='/login' />}
+            element={user ? <Users /> : <Navigate replace to='/login' />}
           />
 
           <Route path='/login' element={<LoginForm />} />
@@ -103,7 +102,7 @@ const Menu = (props) => {
           <Route path='/logout' element={<LogOut />} />
 
           <Route path='/' element={<Home />} />
-          {logedUser && <Route path='/' element={<Home />} />}
+          {user && <Route path='/' element={<Home />} />}
         </Routes>
       </Page>
       <Footer />

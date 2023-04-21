@@ -5,8 +5,6 @@ import { useSelector } from 'react-redux'
 const Users = () => {
   const users = useSelector((state) => state.users)
 
-
-
   return (
     <div>
       <header>
@@ -25,9 +23,6 @@ const Users = () => {
             <tr>
               <td>{i + 1}. </td>
               <td>
-                {' '}
-                {/* <Link to={`/users/${ user.id }`}> */}
-                {/* style="float: right" */}
                 <Link to={`/users/${user.id}`}>{user.name}</Link>
               </td>
 

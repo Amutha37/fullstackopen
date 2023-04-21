@@ -1,8 +1,11 @@
+import React, { useState } from 'react'
 import { useField } from '../hooks'
+
 import { createComment } from '../reducers/blogReducer'
 import { setNotification } from '../reducers/notificationReducer'
+
 import { useDispatch } from 'react-redux'
-import React, { useState } from 'react'
+
 import ListComments from './ListComments'
 
 const CommentForm = ({ blog }) => {

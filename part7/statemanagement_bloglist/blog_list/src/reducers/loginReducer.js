@@ -44,7 +44,4 @@ export const logUserOut = () => {
   }
 }
 
-// const user = await loginService.getUser()
-// dispatch(setUser(user))
-
 export default loginSlice.reducer

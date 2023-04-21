@@ -1,10 +1,11 @@
 import React from 'react'
 import { useField } from '../hooks'
+
 import { createBlogInfo } from '../reducers/blogReducer'
 import { setNotification } from '../reducers/notificationReducer'
 import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
 
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Button = styled.button`
@@ -42,12 +43,11 @@ const BlogForm = ({ togglableRef }) => {
       title: title.value,
       author: author.value,
       url: url.value,
-      // user: {
-      //   name: { user },
-      // },
     }
     dispatch(createBlogInfo(newBlogInfo))
-    dispatch(setNotification(`Added new blog link to list : ${newBlogInfo.title}`, 5))
+    dispatch(
+      setNotification(`Added new blog link to list : ${newBlogInfo.title}`, 5)
+    )
 
     resetTitle()
     resetAuthor()
