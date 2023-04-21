@@ -1,12 +1,12 @@
 <h1 align="center"> $\textcolor{orange}{Bloglist\ Project\ Using Redux}$
 </h1>
 
-# $\color{cyan}{Part7f - State Management}$
+# $\color{cyan}{Part7f - State\ Management}$
 
 <details>
 <summary>
 
-### $\color{cyan}{General Info}$
+### $\color{cyan}{General\ Info}$
 
  </summary>
 
@@ -14,7 +14,7 @@
 
 - What is new:
 
-- The backend is added with `comment schema model ` and updating comments in array to the database(MangoDb).
+- Field to capture comments added in `schema model ` and updating comments in array to database(MangoDb).
 
 ### Frontend
 
@@ -30,7 +30,7 @@ Tools used for state management :
 
 <summary>
 
-### $\color{cyan}{Additional Info}$
+### $\color{cyan}{Additional\ Info}$
 
  </summary>
 
