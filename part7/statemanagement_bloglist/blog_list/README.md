@@ -173,3 +173,42 @@ Styling dependencies :
 ![Screenshot 2023-04-21 at 11 15 16 am](https://user-images.githubusercontent.com/67087939/233518047-0cfd064b-46df-4f01-b03e-3f38cc4f0de9.png)
 
 </details>
+
+<details>
+<summary>
+
+### $\color{cyan}{General/ Information}$
+
+ </summary>
+
+- Front End `blog_list` database is view after running starting/activating backend.
+
+- To backend :
+
+```
+npm run dev
+
+```
+
+view
+
+```
+localhost:3001/api/blogs
+```
+
+```
+localhost:3003/api/users
+```
+
+- To frontend :
+
+```
+npm start
+
+```
+
+```
+localhost:3001
+```
+
+</details>
