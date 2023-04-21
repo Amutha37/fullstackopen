@@ -94,6 +94,7 @@ Styling dependencies :
 
 </details>
 
+<<<<<<< HEAD
 # Visual look of the project output.
 
 <details>
@@ -175,3 +176,40 @@ Styling dependencies :
 
 </summary>
 </details>
+=======
+![Screenshot 2023-04-21 at 11 02 12 am](https://user-images.githubusercontent.com/67087939/233516745-c1e9f0d3-e6f7-4d1f-9c63-23d09fb661e5.png)
+
+![Screenshot 2023-04-21 at 11 06 59 am](https://user-images.githubusercontent.com/67087939/233517198-51ead446-4500-4d3a-8c01-25ee08046ad4.png)
+
+
+![Screenshot 2023-04-21 at 11 12 33 am](https://user-images.githubusercontent.com/67087939/233517753-b99f2f25-4b18-4c52-8484-a9e6dbc7a7e0.png)
+
+- Individual user blogs
+
+
+![Screenshot 2023-04-21 at 11 13 48 am](https://user-images.githubusercontent.com/67087939/233517879-181d69b3-8bcb-4f06-9a2f-2231d42b717c.png)
+
+
+- Commenting of blogs and list of comments
+
+
+![Screenshot 2023-04-21 at 11 15 16 am](https://user-images.githubusercontent.com/67087939/233518047-0cfd064b-46df-4f01-b03e-3f38cc4f0de9.png)
+
+Forms
+
+Login 
+
+![Screenshot 2023-04-21 at 11 17 18 am](https://user-images.githubusercontent.com/67087939/233518230-1acd3770-e568-40a1-8f38-973cc0e6d565.png)
+
+
+Create New Blog
+
+
+![Screenshot 2023-04-21 at 11 16 20 am](https://user-images.githubusercontent.com/67087939/233518132-d5d5df80-001f-45ae-a0dd-7c1059005ff1.png)
+
+
+Create New User 
+
+![Screenshot 2023-04-21 at 11 19 00 am](https://user-images.githubusercontent.com/67087939/233518371-2948064b-5253-4598-80cc-8cd02a717b06.png)
+
+>>>>>>> 58951d0fe81801e7b9e0e8601b32a0f3e1be4711
