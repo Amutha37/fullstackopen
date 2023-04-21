@@ -1,4 +1,4 @@
-import { useNavigate, useMatch } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import Footer from './components/Footer'
 import Menu from './components/Menu'
@@ -23,6 +23,7 @@ const App = () => {
       id: 2,
     },
   ])
+  // const [message, setMessage] = useState(null)
 
   const addNew = (anecdote) => {
     anecdote.id = Math.round(Math.random() * 10000)
@@ -34,23 +35,27 @@ const App = () => {
     navigate('/')
   }
 
-  const anecdoteById = (id) => anecdotes.find((a) => a.id === id)
+  // const anecdoteById = (id) => anecdotes.find((a) => a.id === id)
 
-  const vote = (id) => {
-    const anecdote = anecdoteById(id)
+  // const vote = (id) => {
+  //   const anecdote = anecdoteById(id)
 
-    const voted = {
-      ...anecdote,
-      votes: anecdote.votes + 1,
-    }
+  //   const voted = {
+  //     ...anecdote,
+  //     votes: anecdote.votes + 1,
+  //   }
 
-    setAnecdotes(anecdotes.map((a) => (a.id === id ? voted : a)))
-  }
+  //   setAnecdotes(anecdotes.map((a) => (a.id === id ? voted : a)))
+  // }
 
   return (
-    <div>
+    <div className='container'>
       <h1>Software anecdotes</h1>
-
+      {/* {(message &&
+    <Alert variant="success">
+      {message}
+    </Alert>
+  )} */}
       {notification ? <Notification notification={notification} /> : null}
       <Menu anecdotes={anecdotes} addNew={addNew} />
 
