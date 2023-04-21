@@ -177,7 +177,7 @@ Styling dependencies :
 <details>
 <summary>
 
-### $\color{cyan}{General/ Information}$
+### $\color{cyan}{General\ Information}$
 
  </summary>
 
