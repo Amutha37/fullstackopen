@@ -1,4 +1,4 @@
-<h1 align="center"> $\textcolor{orange}{Extending\ the\ bloglist\ }$
+<h1 align="center"> $\textcolor{orange}{Bloglist\ Project\ Using Redux}$
 </h1>
 
 # $\color{cyan}{Part7f}$
@@ -121,7 +121,7 @@ Styling dependencies :
 <details>
 <summary>
 
-### $\color{cyan}{Home Page}$
+### $\color{cyan}{Home\ Page}$
 
  </summary>
 
@@ -132,7 +132,7 @@ Styling dependencies :
 <details>
 <summary>
 
-### $\color{cyan}{Blog List}$
+### $\color{cyan}{Blog\ List}$
 
 </summary>
 
@@ -143,7 +143,7 @@ Styling dependencies :
 <details>
 <summary>
 
-### $\color{cyan}{Users List}$
+### $\color{cyan}{Users\ List}$
 
 </summary>
 
@@ -154,7 +154,7 @@ Styling dependencies :
 <details>
 <summary>
 
-### $\color{cyan}{Blogs list of a user }$
+### $\color{cyan}{Blogs\ list\ of\ a\ user }$
 
 </summary>
 
@@ -166,7 +166,7 @@ Styling dependencies :
 
 <summary>
 
-### $\color{cyan}{Commenting of blogs and list of comments }$
+### $\color{cyan}{Commenting\ of\ blogs\ and\ list\ of\ comments }$
 
 </summary>
 
