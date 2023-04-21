@@ -1,4 +1,4 @@
-<h1 align="center"> $\textcolor{orange}{Bloglist\ Project\ Using Redux}$
+<h1 align="center"> $\textcolor{orange}{Bloglist\ Project\ Using/ Redux}$
 </h1>
 
 # $\color{cyan}{Part7f - State\ Management}$
