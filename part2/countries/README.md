@@ -21,3 +21,60 @@ III) Use buttons to display information on population, capital and temperature f
 # To run this app install :
 
 > `npm install axios` > `npm install json-server --save-dev`
+
+
+<details>
+<summary>
+
+### $\color{cyan}{Fixing Digital Envolope routine error - `npm start`}$
+
+
+ </summary>
+
+ Set NODE_OPTIONS Environment Variable:
+
+Unix-like (Linux, macOS, Git bash, etc.):
+
+> `export NODE_OPTIONS=--openssl-legacy-provider`
+
+
+Windows Command Prompt:
+
+>`set NODE_OPTIONS=--openssl-legacy-provider`
+
+PowerShell:
+
+`$env:NODE_OPTIONS = "--openssl-legacy-provider"`
+
+Additionally, integrate these into scripts in your package.json:
+
+> `
+"scripts": {
+  "start": "export NODE_OPTIONS=--openssl-legacy-provider && ng serve" // use set instead of export in case of windows machine
+}`
+
+
+Alternatively, install cross-env globally (npm install --global cross-env) and use it in your scripts:
+
+`
+"scripts": {
+  "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider && ng serve"
+}
+`
+
+</details>
+
+
+
+<details>
+<summary>
+
+### $\color{cyan}{STACKOVERFLOW link for the above error fixing options}$
+
+
+ </summary>
+
+https://stackoverflow.com/questions/74797727/error-error0308010cdigital-envelope-routinesunsupported
+
+</details>
+

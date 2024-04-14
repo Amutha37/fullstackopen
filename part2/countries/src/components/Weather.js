@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 // Api key
-const API_key = process.env.REACT_APP_API_KEY
+const API_key = process.env.REACT_APP_API_KEY1
 
 export const Weather = ({ countryname }) => {
   const [weather, setWeather] = useState([{}])
@@ -38,15 +38,18 @@ export const Weather = ({ countryname }) => {
     <div className='weatherdisplay'>
       {weather ? (
         <ul>
-          <li>Temperature : {weather.temperature} ℃</li>
+          <li className='temparature'>Temperature : {weather.temperature} ℃</li>
           <li>
             <img
               src={weather.weather_icons}
               alt={weather.weather_descriptions}
             />
           </li>
+          <li className='win_direction'>
+            Wind : {weather.wind_speed} km/h 
+          </li>
           <li>
-            Wind : {weather.wind_speed} km/h direction :{weather.wind_dir}
+            Direction :{weather.wind_dir}
           </li>
         </ul>
       ) : (

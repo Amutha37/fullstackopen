@@ -82,3 +82,17 @@ img {
 .weatherdisplay ul li {
   list-style-type: none;
 }
+
+.win_direction{
+  text-align: left;
+ font-size: 14px;
+ color:rgb(39, 201, 83);
+
+}
+
+.temparature{
+
+ color:orangered;
+ font-weight: 900;
+ 
+}
