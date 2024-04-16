@@ -26,7 +26,7 @@ III) Use buttons to display information on population, capital and temperature f
 <details>
 <summary>
 
-### $\color{cyan}{Fixing/ Digita/l Envolope/ routine/ error/ to/ - `npm start`}$
+### $\color{cyan}{Fixing\ Digital\ Envolope\ routine\ error\ to\ or legacy error - `npm start`}$
 
 
  </summary>
@@ -71,7 +71,7 @@ Alternatively, install cross-env globally (npm install --global cross-env) and u
 <details>
 <summary>
 
-### $\color{cyan}{STACKOVERFLOW/ link/ for/  the / above/  error/ fixing /options}$
+### $\color{cyan}{STACKOVERFLOW\ link\ for\  the\ above\  error\ fixing\ options}$
 
 
  </summary>
