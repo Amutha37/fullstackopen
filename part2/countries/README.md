@@ -26,8 +26,7 @@ III) Use buttons to display information on population, capital and temperature f
 <details>
 <summary>
 
-### $\color{cyan}{Fixing\ Digital\ Envolope\ routine\ error\ to\ or legacy error - `npm start`}$
-
+### $\color{cyan}{Fixing\ Digital\ Envolope\  routine\ error\ to\ or\ legacy\ error}$
 
  </summary>
 
@@ -61,6 +60,12 @@ Alternatively, install cross-env globally (npm install --global cross-env) and u
   "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider && ng serve"
 }
 `
+
+` 
+// "start": "react-scripts start",
+    // "build": "react-scripts build",
+    
+    `
 
 </details>
 
